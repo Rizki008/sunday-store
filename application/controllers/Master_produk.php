@@ -68,7 +68,7 @@ class Master_produk extends CI_Controller
 		$this->form_validation->set_rules('kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('harga', 'Harga Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('berat', 'Berat Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-		$this->form_validation->set_rules('diskon', 'Diskon Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		// $this->form_validation->set_rules('diskon', 'Diskon Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('stok', 'Stok Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 
@@ -106,7 +106,7 @@ class Master_produk extends CI_Controller
 		$this->form_validation->set_rules('kategori', 'Kategori Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('harga', 'Harga Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('berat', 'Berat Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
-		$this->form_validation->set_rules('diskon', 'Diskon Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
+		// $this->form_validation->set_rules('diskon', 'Diskon Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('stok', 'Stok Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required', array('required' => '%s Mohon Untuk Diisi!!!'));
 
