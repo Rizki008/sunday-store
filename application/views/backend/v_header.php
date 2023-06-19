@@ -4,55 +4,38 @@
 		<nav class="sidebar sidebar-offcanvas" id="sidebar">
 			<ul class="nav">
 				<li class="nav-item sidebar-category">
-					<p>Navigation</p>
+					<p>Sunday Store</p>
 					<span></span>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">
+					<a class="nav-link" href="<?= base_url('admin') ?>">
 						<i class="mdi mdi-view-quilt menu-icon"></i>
 						<span class="menu-title">Dashboard</span>
-						<div class="badge badge-info badge-pill">2</div>
+						<!-- <div class="badge badge-info badge-pill">2</div> -->
 					</a>
 				</li>
 				<li class="nav-item sidebar-category">
-					<p>Components</p>
+					<p>Master</p>
 					<span></span>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-						<i class="mdi mdi-palette menu-icon"></i>
-						<span class="menu-title">UI Elements</span>
+						<i class="mdi mdi-barcode-scan menu-icon"></i>
+						<span class="menu-title">Master Produk</span>
 						<i class="menu-arrow"></i>
 					</a>
 					<div class="collapse" id="ui-basic">
 						<ul class="nav flex-column sub-menu">
-							<li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-							<li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+							<li class="nav-item"> <a class="nav-link" href="<?= base_url('master_produk/kategori') ?>">Kategori</a></li>
+							<li class="nav-item"> <a class="nav-link" href="<?= base_url('master_produk/produk') ?>">Produk</a></li>
+							<li class="nav-item"> <a class="nav-link" href="<?= base_url('master_produk/gambarproduk') ?>">Gambar</a></li>
 						</ul>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="pages/forms/basic_elements.html">
-						<i class="mdi mdi-view-headline menu-icon"></i>
-						<span class="menu-title">Form elements</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="pages/charts/chartjs.html">
-						<i class="mdi mdi-chart-pie menu-icon"></i>
-						<span class="menu-title">Charts</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="pages/tables/basic-table.html">
-						<i class="mdi mdi-grid-large menu-icon"></i>
-						<span class="menu-title">Tables</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="pages/icons/mdi.html">
-						<i class="mdi mdi-emoticon menu-icon"></i>
-						<span class="menu-title">Icons</span>
+					<a class="nav-link" href="<?= base_url('transaksi') ?>">
+						<i class="mdi mdi-coin menu-icon"></i>
+						<span class="menu-title">Transaksi</span>
 					</a>
 				</li>
 				<li class="nav-item sidebar-category">
@@ -60,36 +43,36 @@
 					<span></span>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+					<a class="nav-link" href="<?= base_url('admin/user') ?>">
 						<i class="mdi mdi-account menu-icon"></i>
-						<span class="menu-title">User Pages</span>
-						<i class="menu-arrow"></i>
+						<span class="menu-title">User</span>
 					</a>
-					<div class="collapse" id="auth">
-						<ul class="nav flex-column sub-menu">
-							<li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-							<li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-							<li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-							<li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
-							<li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
-						</ul>
-					</div>
 				</li>
 				<li class="nav-item sidebar-category">
-					<p>Apps</p>
+					<p>Analisis</p>
 					<span></span>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('analisis') ?>">
+						<i class="mdi mdi-chart-pie menu-icon"></i>
+						<span class="menu-title">Analisis K-Means</span>
+					</a>
+				</li>
+				<!-- <li class="nav-item sidebar-category">
+					<p>Apps</p>
+					<span></span>
+				</li> -->
+				<!-- <li class="nav-item">
 					<a class="nav-link" href="docs/documentation.html">
 						<i class="mdi mdi-file-document-box-outline menu-icon"></i>
 						<span class="menu-title">Documentation</span>
 					</a>
-				</li>
-				<li class="nav-item">
+				</li> -->
+				<!-- <li class="nav-item">
 					<a class="nav-link" href="http://www.bootstrapdash.com/demo/spica/template/">
 						<button class="btn bg-danger btn-sm menu-title">Upgrade to pro</button>
 					</a>
-				</li>
+				</li> -->
 			</ul>
 		</nav>
 		<!-- partial -->
