@@ -28,6 +28,9 @@
 											Harga
 										</th>
 										<th>
+											Diskon
+										</th>
+										<th>
 											Berat
 										</th>
 										<th>
@@ -56,6 +59,9 @@
 											</td>
 											<td>
 												<?= number_format($value->harga), 0 ?>
+											</td>
+											<td>
+												<?= $value->diskon ?>
 											</td>
 											<td>
 												<?= $value->berat ?>
@@ -120,6 +126,10 @@
 						<input type="number" name="harga" class="form-control" placeholder="Harga Produk">
 					</div>
 					<div class="form-group">
+						<label>Diskon</label>
+						<input type="number" name="diskon" class="form-control" placeholder="Diskon Produk">
+					</div>
+					<div class="form-group">
 						<label>Berat</label>
 						<input type="number" name="berat" class="form-control" placeholder="Harga Produk">
 					</div>
@@ -176,6 +186,10 @@
 							<div class="form-group">
 								<label>Harga</label>
 								<input type="number" name="harga" value="<?= $value->harga ?>" class="form-control" placeholder="Harga Produk">
+							</div>
+							<div class="form-group">
+								<label>Diskon</label>
+								<input type="number" name="diskon" value="<?= $value->diskon ?>" class="form-control" placeholder="Diskon Produk">
 							</div>
 							<div class="form-group">
 								<label>Berat</label>
