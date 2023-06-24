@@ -42,10 +42,10 @@ class login_pelanggan
 		}
 	}
 
-	public function proteksi()
+	public function proteksi_halaman()
 	{
-		if ($this->ci->session->userdata('email_pelanggan' == '')) {
-			$this->ci->session->set_flashdata('error', 'Silahkan Login Terlebih dahulu!!!');
+		if ($this->ci->session->userdata('email_pelanggan') == '') {
+			$this->ci->session->set_flashdata('error', 'Anda Belum Login');
 			redirect('pelanggan');
 		}
 	}
