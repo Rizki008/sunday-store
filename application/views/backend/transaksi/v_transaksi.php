@@ -25,27 +25,30 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">No Pemesanan</th>
-												<th scope="col">Harga Tiket</th>
-												<th scope="col">Qty</th>
-												<th scope="col">Tanggal Booking</th>
-												<th scope="col">Metode Bayar</th>
-												<th scope="col">Status Bayar/Pemesanan</th>
-												<th scope="col">Setting</th>
+												<th>#</th>
+												<th>No Pemesanan</th>
+												<th>Qty</th>
+												<th>Harga Pembelian</th>
+												<th>Biaya Pengiriman</th>
+												<th>Total Bayar</th>
+												<th>Status Pesanan</th>
+												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
+											<?php $no = 1;
+											foreach ($masuk as $key => $value) { ?>
+												<tr>
+													<td><?= $no++ ?></td>
+													<td><?= $value->id_pesanan ?></td>
+													<td><?= $value->qty ?></td>
+													<td>Rp. <?= number_format($value->total_harga), 0 ?></td>
+													<td>Rp. <?= number_format($value->ongkir), 0 ?></td>
+													<td>Rp. <?= number_format($value->total_bayar), 0 ?></td>
+													<td><span class="badge badge-danger">Belum Bayar</span></td>
+													<td><a href="<?= base_url('transaksi/detail/' . $value->id_pesanan) ?>" class="btn btn-primary btn-sm">Detail Pesanan</a></td>
+												</tr>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>
@@ -53,27 +56,30 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">No Pemesanan</th>
-												<th scope="col">Harga Tiket</th>
-												<th scope="col">Qty</th>
-												<th scope="col">Tanggal Booking</th>
-												<th scope="col">Metode Bayar</th>
-												<th scope="col">Status Bayar/Pemesanan</th>
-												<th scope="col">Setting</th>
+												<th>#</th>
+												<th>No Pemesanan</th>
+												<th>Harga Tiket</th>
+												<th>Qty</th>
+												<th>Tanggal Booking</th>
+												<th>Metode Bayar</th>
+												<th>Status Bayar/Pemesanan</th>
+												<th>Setting</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
+											<?php $no = 1;
+											foreach ($proses as $key => $values) { ?>
+												<tr>
+													<td><?= $no++ ?></td>
+													<td><?= $values->id_pesanan ?></td>
+													<td><?= $values->qty ?></td>
+													<td>Rp. <?= number_format($values->total_harga), 0 ?></td>
+													<td>Rp. <?= number_format($values->ongkir), 0 ?></td>
+													<td>Rp. <?= number_format($values->total_bayar), 0 ?></td>
+													<td><span class="badge badge-warning">Sudah Bayar</span></td>
+													<td><a href="<?= base_url('transaksi/konfirmasi/' . $values->id_pesanan) ?>" class="btn btn-success">Konfirmaai</a></td>
+												</tr>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>
@@ -81,27 +87,28 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">No Pemesanan</th>
-												<th scope="col">Harga Tiket</th>
-												<th scope="col">Qty</th>
-												<th scope="col">Tanggal Booking</th>
-												<th scope="col">Metode Bayar</th>
-												<th scope="col">Status Bayar/Pemesanan</th>
-												<th scope="col">Setting</th>
+												<th>#</th>
+												<th>No Pemesanan</th>
+												<th>Harga Tiket</th>
+												<th>Qty</th>
+												<th>Tanggal Booking</th>
+												<th>Metode Bayar</th>
+												<th>Status Bayar/Pemesanan</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
+											<?php $no = 1;
+											foreach ($kirim as $key => $valuesa) { ?>
+												<tr>
+													<td><?= $no++ ?></td>
+													<td><?= $valuesa->id_pesanan ?></td>
+													<td><?= $valuesa->qty ?></td>
+													<td>Rp. <?= number_format($valuesa->total_harga), 0 ?></td>
+													<td>Rp. <?= number_format($valuesa->ongkir), 0 ?></td>
+													<td>Rp. <?= number_format($valuesa->total_bayar), 0 ?></td>
+													<td><span class="badge badge-primary">Kirim</span></td>
+												</tr>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>
@@ -109,27 +116,28 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">No Pemesanan</th>
-												<th scope="col">Harga Tiket</th>
-												<th scope="col">Qty</th>
-												<th scope="col">Tanggal Booking</th>
-												<th scope="col">Metode Bayar</th>
-												<th scope="col">Status Bayar/Pemesanan</th>
-												<th scope="col">Setting</th>
+												<th>#</th>
+												<th>No Pemesanan</th>
+												<th>Harga Tiket</th>
+												<th>Qty</th>
+												<th>Tanggal Booking</th>
+												<th>Metode Bayar</th>
+												<th>Status Bayar/Pemesanan</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
+											<?php $no = 1;
+											foreach ($selesai as $key => $valueda) { ?>
+												<tr>
+													<td><?= $no++ ?></td>
+													<td><?= $valueda->id_pesanan ?></td>
+													<td><?= $valueda->qty ?></td>
+													<td>Rp. <?= number_format($valueda->total_harga), 0 ?></td>
+													<td>Rp. <?= number_format($valueda->ongkir), 0 ?></td>
+													<td>Rp. <?= number_format($valueda->total_bayar), 0 ?></td>
+													<td><span class="badge badge-success">Selesai</span></td>
+												</tr>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>
