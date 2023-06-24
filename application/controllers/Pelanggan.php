@@ -11,6 +11,7 @@ class Pelanggan extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_auth');
+		$this->load->model('m_master_produk');
 	}
 
 	// List all your items
