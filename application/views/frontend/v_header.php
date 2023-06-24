@@ -18,52 +18,16 @@
 									<ul>
 										<li class="top-hover"><a href="<?= base_url() ?>">home</a>
 										</li>
+										<?php $kategori = $this->m_master_produk->kategori(); ?>
 										<li class="mega-menu-position top-hover"><a href="shop.html">kategori</a>
 											<ul class="mega-menu">
-												<li>
-													<ul>
-														<li class="mega-menu-title">Categories 01</li>
-														<li><a href="shop.html">Aconite</a></li>
-														<li><a href="shop.html">Ageratum</a></li>
-														<li><a href="shop.html">Allium</a></li>
-														<li><a href="shop.html">Anemone</a></li>
-														<li><a href="shop.html">Angelica</a></li>
-														<li><a href="shop.html">Angelonia</a></li>
-													</ul>
-												</li>
-												<li>
-													<ul>
-														<li class="mega-menu-title">Categories 02</li>
-														<li><a href="shop.html">Balsam</a></li>
-														<li><a href="shop.html">Baneberry</a></li>
-														<li><a href="shop.html">Bee Balm</a></li>
-														<li><a href="shop.html">Begonia</a></li>
-														<li><a href="shop.html">Bellflower</a></li>
-														<li><a href="shop.html">Bergenia</a></li>
-													</ul>
-												</li>
-												<li>
-													<ul>
-														<li class="mega-menu-title">Categories 03</li>
-														<li><a href="shop.html">Caladium</a></li>
-														<li><a href="shop.html">Calendula</a></li>
-														<li><a href="shop.html">Carnation</a></li>
-														<li><a href="shop.html">Catmint</a></li>
-														<li><a href="shop.html">Celosia</a></li>
-														<li><a href="shop.html">Chives</a></li>
-													</ul>
-												</li>
-												<li>
-													<ul>
-														<li class="mega-menu-title">Categories 04</li>
-														<li><a href="shop.html">Daffodil</a></li>
-														<li><a href="shop.html">Dahlia</a></li>
-														<li><a href="shop.html">Daisy</a></li>
-														<li><a href="shop.html">Diascia</a></li>
-														<li><a href="shop.html">Dusty Miller</a></li>
-														<li><a href="shop.html">Dame’s Rocket</a></li>
-													</ul>
-												</li>
+												<?php foreach ($kategori as $key => $kategoris) { ?>
+													<li>
+														<ul>
+															<li><a href="<?= base_url('home/kategori/' . $kategoris->id_kategori) ?>"><?= $kategoris->nama_kategori ?></a></li>
+														</ul>
+													</li>
+												<?php } ?>
 											</ul>
 										</li>
 									</ul>
