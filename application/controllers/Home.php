@@ -8,28 +8,33 @@ class Home extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		//Load Dependencies
-
+		$this->load->model('m_master_produk');
 	}
 
 	// List all your items
 	public function index()
 	{
+		$data = array(
+			'title' => 'Home',
+			'produk' => $this->m_master_produk->produk_list(),
+			'isi' => 'frontend/v_home'
+		);
+		// echo $this->db->last_query();
+		// die();
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
 
-	// Add a new item
-	public function add()
+	public function detail($id_produk)
 	{
-	}
-
-	//Update one item
-	public function update($id = NULL)
-	{
-	}
-
-	//Delete one item
-	public function delete($id = NULL)
-	{
+		$data = array(
+			'title' => 'Detail Produk',
+			'produk' => $this->m_master_produk->detailprod($id_produk),
+			'gambar' => $this->m_master_produk->gambarprod($id_produk),
+			'produklain' => $this->m_master_produk->produk_lain($id_produk),
+			// 'ulasan' => $this->m_ulasan->ulasan($id_produk),
+			'isi' => 'frontend/detail/v_detail'
+		);
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
 }
 
