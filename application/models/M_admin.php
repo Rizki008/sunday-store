@@ -12,4 +12,12 @@ class M_admin extends CI_Model
 		$this->db->group_by('id_user');
 		return $this->db->get()->result();
 	}
+
+	public function data_setting()
+	{
+		$this->db->select('*');
+		$this->db->from('setting');
+		$this->db->where('id', 1);
+		return $this->db->get()->row();
+	}
 }
