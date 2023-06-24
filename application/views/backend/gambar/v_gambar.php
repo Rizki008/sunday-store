@@ -7,9 +7,9 @@
 						<h4 class="card-title"><?= $title ?></h4>
 						<p class="card-description">
 							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+							<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
 								Add
-							</button>
+							</button> -->
 						</p>
 						<div class="table-responsive">
 							<table class="table table-striped">
