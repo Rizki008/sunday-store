@@ -36,6 +36,15 @@ class m_master_produk extends CI_Model
 		$this->db->group_by('id_produk');
 		return $this->db->get()->result();
 	}
+	public function produk_list()
+	{
+		$this->db->select('*');
+		$this->db->from('produk');
+		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
+		$this->db->limit('4');
+		$this->db->group_by('id_produk');
+		return $this->db->get()->result();
+	}
 	public function detail_produk($id_produk)
 	{
 		$this->db->select('*');
@@ -64,9 +73,10 @@ class m_master_produk extends CI_Model
 	public function gambar()
 	{
 		$this->db->select('produk.*,COUNT(gambar.id_gambar) as jumlah_gambar');
-		$this->db->select('gambar.gambar');
 		$this->db->from('produk');
 		$this->db->join('gambar', 'gambar.id_produk=produk.id_produk', 'left');
+		$this->db->group_by('produk.id_produk');
+		$this->db->order_by('produk.id_produk', 'desc');
 		return $this->db->get()->result();
 	}
 	public function detail($id_gambar)
@@ -91,5 +101,27 @@ class m_master_produk extends CI_Model
 	{
 		$this->db->where('id_gambar', $data['id_gambar']);
 		$this->db->delete('gambar', $data);
+	}
+
+	//VIEW UNTUK FRONTEND
+	public function gambarprod($id_produk)
+	{
+		$this->db->select('*');
+		$this->db->from('gambar');
+		$this->db->where('id_produk', $id_produk);
+		return $this->db->get()->result();
+	}
+	public function detailprod($id_produk)
+	{
+		$this->db->select('*');
+		$this->db->from('produk');
+		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
+		$this->db->join('gambar', 'gambar.id_produk = produk.id_produk', 'left');
+		$this->db->where('produk.id_produk', $id_produk);
+		return $this->db->get()->row();
+	}
+	public function produk_lain($id_produk)
+	{
+		return $this->db->where(array('id_produk !=' => $id_produk))->limit(4)->get('produk')->result();
 	}
 }
