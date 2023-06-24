@@ -6,7 +6,7 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-4 col-6">
 						<div class="logo">
-							<a href="index.html">
+							<a href="<?= base_url() ?>">
 								<img alt="" src="<?= base_url() ?>frontend/assets/img/logo/logo.png">
 							</a>
 						</div>
@@ -16,14 +16,9 @@
 							<div class="main-menu">
 								<nav>
 									<ul>
-										<li class="top-hover"><a href="index.html">home</a>
-											<ul class="submenu">
-												<li><a href="index.html">home version 1</a></li>
-												<li><a href="index-2.html">home version 2</a></li>
-											</ul>
+										<li class="top-hover"><a href="<?= base_url() ?>">home</a>
 										</li>
-										<li><a href="about-us.html">about</a></li>
-										<li class="mega-menu-position top-hover"><a href="shop.html">shop</a>
+										<li class="mega-menu-position top-hover"><a href="shop.html">kategori</a>
 											<ul class="mega-menu">
 												<li>
 													<ul>
@@ -71,43 +66,6 @@
 												</li>
 											</ul>
 										</li>
-										<li class="top-hover"><a href="blog-left-sidebar.html">blog</a>
-											<ul class="submenu">
-												<li><a href="blog-masonry.html">Blog Masonry</a></li>
-												<li><a href="#">Blog Standard <span><i class="ion-ios-arrow-right"></i></span></a>
-													<ul class="lavel-menu">
-														<li><a href="blog-left-sidebar.html">left sidebar</a></li>
-														<li><a href="blog-right-sidebar.html">right sidebar</a></li>
-														<li><a href="blog-no-sidebar.html">no sidebar</a></li>
-													</ul>
-												</li>
-												<li><a href="#">Post Types <span><i class="ion-ios-arrow-right"></i></span> </a>
-													<ul class="lavel-menu">
-														<li><a href="blog-details-standerd.html">Standard post</a></li>
-														<li><a href="blog-details-audio.html">audio post</a></li>
-														<li><a href="blog-details-video.html">video post</a></li>
-														<li><a href="blog-details-gallery.html">gallery post</a></li>
-														<li><a href="blog-details-link.html">link post</a></li>
-														<li><a href="blog-details-quote.html">quote post</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li class="top-hover"><a href="#">pages</a>
-											<ul class="submenu">
-												<li><a href="about-us.html">about us </a></li>
-												<li><a href="shop.html">shop Grid</a></li>
-												<li><a href="shop-list.html">shop list</a></li>
-												<li><a href="product-details.html">product details</a></li>
-												<li><a href="cart-page.html">cart page</a></li>
-												<li><a href="checkout.html">checkout</a></li>
-												<li><a href="wishlist.html">wishlist</a></li>
-												<li><a href="my-account.html">my account</a></li>
-												<li><a href="login-register.html">login / register</a></li>
-												<li><a href="contact.html">contact</a></li>
-											</ul>
-										</li>
-										<li><a href="contact.html">contact</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -117,10 +75,6 @@
 									<div class="dollar-submenu">
 										<ul>
 											<li><a href="<?= base_url('pelanggan') ?>">Login/Register</a></li>
-											<li><a href="#">€ EUR</a></li>
-											<li><a href="#">£ GBP</a></li>
-											<li><a href="#">₹ INR</a></li>
-											<li><a href="#">¥ JPY</a></li>
 										</ul>
 									</div>
 								<?php } else { ?>
@@ -128,52 +82,47 @@
 									<div class="dollar-submenu">
 										<ul>
 											<li><a href="<?= base_url('pesanan') ?>">Pesanan</a></li>
-											<li><a href="#">Chatting</a></li>
+											<!-- <li><a href="#">Chatting</a></li> -->
 										</ul>
 									</div>
 								<?php } ?>
 							</div>
+							<?php $keranjang = $this->cart->contents();
+							$jml_item = 0;
+							foreach ($keranjang as $key => $values) {
+								$jml_item = $jml_item + $values['qty'];
+							} ?>
 							<div class="header-cart">
 								<a href="#">
 									<div class="cart-icon">
-										<i class="ti-shopping-cart"></i>
+										<i class="ti-shopping-cart">[<?= $jml_item ?>]</i>
 									</div>
 								</a>
 								<div class="shopping-cart-content">
 									<ul>
-										<li class="single-shopping-cart">
-											<div class="shopping-cart-img">
-												<a href="#"><img alt="" src="<?= base_url() ?>frontend/assets/img/cart/cart-1.jpg"></a>
-											</div>
-											<div class="shopping-cart-title">
-												<h4><a href="#">Phantom Remote </a></h4>
-												<h6>Qty: 02</h6>
-												<span>$260.00</span>
-											</div>
-											<div class="shopping-cart-delete">
-												<a href="#"><i class="ion ion-close"></i></a>
-											</div>
-										</li>
-										<li class="single-shopping-cart">
-											<div class="shopping-cart-img">
-												<a href="#"><img alt="" src="<?= base_url() ?>frontend/assets/img/cart/cart-2.jpg"></a>
-											</div>
-											<div class="shopping-cart-title">
-												<h4><a href="#">Phantom Remote</a></h4>
-												<h6>Qty: 02</h6>
-												<span>$260.00</span>
-											</div>
-											<div class="shopping-cart-delete">
-												<a href="#"><i class="ion ion-close"></i></a>
-											</div>
-										</li>
+										<?php foreach ($keranjang as $key => $val) {
+											$produk = $this->m_master_produk->detailprod($val['id']); ?>
+											<li class="single-shopping-cart">
+												<div class="shopping-cart-img">
+													<a href="#"><img alt="" src="<?= base_url('assets/produk/' . $val['picture']) ?>" width="100px"></a>
+												</div>
+												<div class="shopping-cart-title">
+													<h4><a href="#"><?= $val['name'] ?> </a></h4>
+													<h6>Qty: <?= $val['qty'] ?></h6>
+													<span>Rp. <?= number_format($val['price']), 0 ?></span>
+												</div>
+												<div class="shopping-cart-delete">
+													<a href="<?= base_url('belanja/deletecart/' . $val['rowid']) ?>"><i class="ion ion-close"></i></a>
+												</div>
+											</li>
+										<?php } ?>
 									</ul>
 									<div class="shopping-cart-total">
-										<h4>Shipping : <span>$20.00</span></h4>
-										<h4>Total : <span class="shop-total">$260.00</span></h4>
+										<!-- <h4>Shipping : <span>$20.00</span></h4> -->
+										<h4>Total : <span class="shop-total">Rp. <?= $this->cart->format_number($this->cart->total()); ?></span></h4>
 									</div>
 									<div class="shopping-cart-btn">
-										<a href="cart-page.html">view cart</a>
+										<a href="<?= base_url('belanja') ?>">view cart</a>
 										<a href="checkout.html">checkout</a>
 									</div>
 								</div>
@@ -185,11 +134,11 @@
 					<div class="mobile-menu">
 						<nav id="mobile-menu-active">
 							<ul class="menu-overflow">
-								<li><a href="#">HOME</a>
-									<ul>
+								<li><a href="<?= base_url() ?>">HOME</a>
+									<!-- <ul>
 										<li><a href="index.html">home version 1</a></li>
 										<li><a href="index-2.html">home version 2</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li><a href="#">pages</a>
 									<ul>
