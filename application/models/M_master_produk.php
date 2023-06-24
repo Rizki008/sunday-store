@@ -26,6 +26,23 @@ class m_master_produk extends CI_Model
 		$this->db->where('id_kategori', $data['id_kategori']);
 		$this->db->delete('kategori', $data);
 	}
+	public function kategoridetail($id_kategori)
+	{
+		$this->db->select('*');
+		$this->db->from('kategori');
+		$this->db->where('id_kategori', $id_kategori);
+		$this->db->group_by('id_kategori');
+		return $this->db->get()->result();
+	}
+
+	public function produk_kategori($id_kategori)
+	{
+		$this->db->select('*');
+		$this->db->from('produk');
+		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
+		$this->db->where('produk.kategori', $id_kategori);
+		return $this->db->get()->result();
+	}
 
 	// PRODUK
 	public function produk()
