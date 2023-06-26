@@ -49,6 +49,16 @@ class Home extends CI_Controller
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
+
+	public function list_product()
+	{
+		$data = array(
+			'title' => 'List All Produk',
+			'produk' => $this->m_master_produk->produk_list_all(),
+			'isi' => 'frontend/produk/v_list'
+		);
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
+	}
 }
 
 /* End of file Home.php */
