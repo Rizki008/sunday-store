@@ -212,7 +212,7 @@ class Master_produk extends CI_Controller
 				$config['source_image'] = './assets/foto' . $upload_data['uploads']['file_name'];
 				$this->load->library('image_lib', $config);
 				$data = array(
-					'id_produk' => $id_produk,
+					'produk' => $id_produk,
 					'keterangan' => $this->input->post('keterangan'),
 					'gambar' => $upload_data['uploads']['file_name'],
 				);
