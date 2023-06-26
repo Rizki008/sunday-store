@@ -43,8 +43,13 @@
 										<td class="product-price-cart"><span class="amount">Rp. <?= number_format($value->ongkir), 0 ?></span></td>
 										<td class="product-subtotal">Rp. <?= number_format($value->total_bayar), 0 ?></td>
 										<td class="product-quantity">
-											<?php if ($value->status_order == 1) { ?>
-												<span class="badge badge-danger">Belum Bayar</span>
+											<?php if ($value->status_order == 1 && $value->metode_bayar == 2) { ?>
+												<span class="badge badge-danger">Belum Bayar</span> <br>
+												<span class="badge badge-warning">Pembayaran Transfer</span>
+											<?php } elseif ($value->status_order == 1 && $value->metode_bayar == 1) { ?>
+												<span class="badge badge-danger">Belum Bayar</span> <br>
+												<span class="badge badge-warning">Pembayaran COD</span>
+												<span class="badge badge-primary">Menungu Konfirmasi Pesanan</span>
 											<?php } elseif ($value->status_order == 2) { ?>
 												<span class="badge badge-warning">Konfirmasi Pembayaran</span>
 											<?php } elseif ($value->status_order == 3) { ?>
@@ -54,7 +59,7 @@
 											<?php } ?>
 										</td>
 										<td class="product-wishlist-cart">
-											<?php if ($value->status_order == 1) { ?>
+											<?php if ($value->status_order == 1 && $value->metode_bayar == 2) { ?>
 												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>"><i class="fa fa-dropbox"></i></a>
 												<a href="<?= base_url('pesanan/bayar/' . $value->id_pesanan) ?>"><i class="fa fa-dollar"></i></a>
 											<?php } elseif ($value->status_order == 3) { ?>

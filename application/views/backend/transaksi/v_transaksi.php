@@ -11,7 +11,7 @@
 				<div class="card-body">
 					<h4>Transaksi</h4>
 					<div class="row">
-						<div class="col-5 col-sm-3">
+						<div class="col-5 col-sm-2">
 							<div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
 								<a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home" role="tab" aria-controls="vert-tabs-home" aria-selected="true">Masuk</a>
 								<a class="nav-link" id="vert-tabs-profile-tab" data-toggle="pill" href="#vert-tabs-profile" role="tab" aria-controls="vert-tabs-profile" aria-selected="false">Proses</a>
@@ -45,8 +45,22 @@
 													<td>Rp. <?= number_format($value->total_harga), 0 ?></td>
 													<td>Rp. <?= number_format($value->ongkir), 0 ?></td>
 													<td>Rp. <?= number_format($value->total_bayar), 0 ?></td>
-													<td><span class="badge badge-danger">Belum Bayar</span></td>
-													<td><a href="<?= base_url('transaksi/detail/' . $value->id_pesanan) ?>" class="btn btn-primary btn-sm">Detail Pesanan</a></td>
+													<td>
+														<?php if ($value->metode_bayar == 1) { ?>
+															<span class="badge badge-danger">Belum Bayar</span>
+															<span class="badge badge-warning">Pembayaran COD</span>
+														<?php } else { ?>
+															<span class="badge badge-danger">Belum Bayar</span>
+															<span class="badge badge-warning">Pembayaran Transfer</span>
+														<?php } ?>
+													</td>
+													<td>
+														<?php if ($value->metode_bayar == 1) { ?>
+															<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmaai</a>
+														<?php } ?>
+														<br>
+														<a href="<?= base_url('transaksi/detail/' . $value->id_pesanan) ?>" class="btn btn-primary btn-sm">Detail Pesanan</a>
+													</td>
 												</tr>
 											<?php } ?>
 										</tbody>
