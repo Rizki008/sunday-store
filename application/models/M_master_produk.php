@@ -91,7 +91,7 @@ class m_master_produk extends CI_Model
 	{
 		$this->db->select('produk.*,COUNT(gambar.id_gambar) as jumlah_gambar');
 		$this->db->from('produk');
-		$this->db->join('gambar', 'gambar.id_produk=produk.id_produk', 'left');
+		$this->db->join('gambar', 'gambar.produk=produk.id_produk', 'left');
 		$this->db->group_by('produk.id_produk');
 		$this->db->order_by('produk.id_produk', 'desc');
 		return $this->db->get()->result();
@@ -107,7 +107,7 @@ class m_master_produk extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('gambar');
-		$this->db->where('id_produk', $id_produk);
+		$this->db->where('produk', $id_produk);
 		return $this->db->get()->result();
 	}
 	public function add_gambar($data)
@@ -125,17 +125,12 @@ class m_master_produk extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('gambar');
-		$this->db->where('id_produk', $id_produk);
+		$this->db->where('produk', $id_produk);
 		return $this->db->get()->result();
 	}
 	public function detailprod($id_produk)
 	{
-		$this->db->select('*');
-		$this->db->from('produk');
-		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
-		$this->db->join('gambar', 'gambar.id_produk = produk.id_produk', 'left');
-		$this->db->where('produk.id_produk', $id_produk);
-		return $this->db->get()->row();
+		return $this->db->query("SELECT * FROM `produk` LEFT JOIN kategori ON kategori.id_kategori=produk.kategori LEFT JOIN gambar ON gambar.produk=produk.id_produk WHERE id_produk='" . $id_produk . "'")->row();
 	}
 	public function produk_lain($id_produk)
 	{
