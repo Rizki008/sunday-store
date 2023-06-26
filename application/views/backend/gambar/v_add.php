@@ -57,7 +57,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<a href="<?= base_url('master_produk/delete_gambar/' . $value->id_produk . '/' . $value->id_gambar) ?>" class="btn btn-primary">Save</a>
+						<a href="<?= base_url('master_produk/delete_gambar/' . $value->produk . '/' . $value->id_gambar) ?>" class="btn btn-primary">Save</a>
 					</div>
 				</div>
 			</div>
