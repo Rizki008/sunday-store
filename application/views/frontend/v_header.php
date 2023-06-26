@@ -30,6 +30,7 @@
 												<?php } ?>
 											</ul>
 										</li>
+										<li class="top-hover"><a href="<?= base_url('home/list_product') ?>">List Produk</a>
 									</ul>
 								</nav>
 							</div>
