@@ -29,9 +29,6 @@
 				<div class="product-details-img">
 					<img class="zoompro" src="<?= base_url('assets/produk/' . $produk->foto) ?>" data-zoom-image="<?= base_url('assets/produk/' . $produk->foto) ?>" alt="zoom" />
 					<div id="gallery" class="mt-20 product-dec-slider owl-carousel">
-						<!-- <a data-image="<?= base_url('assets/produk/' . $produk->foto) ?>" data-zoom-image="<?= base_url('assets/produk/' . $produk->foto) ?>">
-							<img src="<?= base_url('assets/produk/' . $produk->foto) ?>" alt="">
-						</a> -->
 						<?php foreach ($gambar as $key => $img) { ?>
 							<a data-image="<?= base_url('assets/foto/' . $img->gambar) ?>" data-zoom-image="<?= base_url('assets/foto/' . $img->gambar) ?>">
 								<img src="<?= base_url('assets/foto/' . $img->gambar) ?>" width="200px" alt="">
@@ -74,12 +71,6 @@
 					</div>
 					<p><?= $produk->deskripsi ?></p>
 					<div class="pro-dec-feature">
-						<!-- <ul>
-							<li><input type="checkbox"> Protection Plan: <span> 2 year $4.99</span></li>
-							<li><input type="checkbox"> Remote Holder: <span> $9.99</span></li>
-							<li><input type="checkbox"> Koral Alexa Voice Remote Case: <span> Red $16.99</span></li>
-							<li><input type="checkbox"> Amazon Basics HD Antenna: <span>25 Mile $14.99</span></li>
-						</ul> -->
 					</div>
 					<div class="quality-add-to-cart">
 						<div class="quality">
@@ -87,9 +78,11 @@
 							<input class="cart-plus-minus-box" type="number" name="qty" value="1" min="1" max="<?= $produk->stok ?>">
 						</div>
 						<div class="shop-list-cart-wishlist">
-							<a title="Add To Cart" href="<?= base_url('belanja/add') ?>">
+							<button type="submit" class="btn btn-success">
+								<!-- <a title="Add To Cart" href="<?= base_url('belanja/add/' . $produk->id_produk) ?>"> -->
 								<i class="ti-bag"></i>
-							</a>
+							</button>
+							<!-- </a> -->
 							<!-- <a title="Wishlist" href="#">
 								<i class="icon-heart"></i>
 							</a> -->
