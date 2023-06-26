@@ -6,23 +6,6 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="footer-widget mb-40">
 						<div class="footer-title mb-25">
-							<h4>My Account</h4>
-						</div>
-						<div class="footer-content">
-							<ul>
-								<li><a href="my-account.html">My Account</a></li>
-								<li><a href="about-us.html">Order History</a></li>
-								<li><a href="wishlist.html">WishList</a></li>
-								<li><a href="#">Newsletter</a></li>
-								<li><a href="about-us.html">Order History</a></li>
-								<li><a href="#">International Orders</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="footer-widget mb-40">
-						<div class="footer-title mb-25">
 							<h4>Information</h4>
 						</div>
 						<div class="footer-content">
@@ -38,39 +21,22 @@
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="footer-widget mb-40">
-						<div class="footer-title mb-25">
-							<h4>Quick Links</h4>
-						</div>
-						<div class="footer-content">
-							<ul>
-								<li><a href="#">Support Center</a></li>
-								<li><a href="#">Term & Conditions</a></li>
-								<li><a href="#">Shipping</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Help</a></li>
-								<li><a href="#">FAQS</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="footer-widget footer-widget-red footer-black-color mb-40">
 						<div class="footer-title mb-25">
 							<h4>Contact Us</h4>
 						</div>
 						<div class="footer-about">
-							<p>Your current address goes to here,120 haka, angladesh</p>
+							<p>Kuningan, jawabarat</p>
 							<div class="footer-contact mt-20">
 								<ul>
-									<li>(+008) 254 254 254 25487</li>
-									<li>(+009) 358 587 657 6985</li>
+									<li>(+62) 811 102 762 123</li>
+									<li>(+62) 871 182 120 127</li>
 								</ul>
 							</div>
 							<div class="footer-contact mt-20">
 								<ul>
-									<li>yourmail@example.com</li>
-									<li>example@admin.com</li>
+									<li>sundaystore@gmail.com</li>
+									<li>sundaystore@yahoo.com</li>
 								</ul>
 							</div>
 						</div>
@@ -84,13 +50,13 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="copyright">
-						<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+						<p><a target="_blank" href="<?= base_url() ?>">Sunday Store</a></p>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="payment-img f-right">
 						<a href="#">
-							<img alt="" src="<?= base_url() ?>frontend/assets/img/icon-img/payment.png">
+							<!-- <img alt="" src="<?= base_url() ?>frontend/assets/img/icon-img/payment.png"> -->
 						</a>
 					</div>
 				</div>
@@ -100,85 +66,86 @@
 </footer>
 <!-- Footer style End -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-5 col-sm-5 col-xs-12">
-						<!-- Thumbnail Large Image start -->
-						<div class="tab-content">
-							<div id="pro-1" class="tab-pane fade show active">
-								<img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-l1.jpg" alt="">
-							</div>
-							<div id="pro-2" class="tab-pane fade">
-								<img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-l2.jpg" alt="">
-							</div>
-							<div id="pro-3" class="tab-pane fade">
-								<img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-l3.jpg" alt="">
-							</div>
-							<div id="pro-4" class="tab-pane fade">
-								<img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-l4.jpg" alt="">
-							</div>
-						</div>
-						<!-- Thumbnail Large Image End -->
-						<!-- Thumbnail Image End -->
-						<div class="product-thumbnail">
-							<div class="thumb-menu owl-carousel nav nav-style" role="tablist">
-								<a class="active" data-toggle="tab" href="#pro-1"><img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-s1.jpg" alt=""></a>
-								<a data-toggle="tab" href="#pro-2"><img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-s2.jpg" alt=""></a>
-								<a data-toggle="tab" href="#pro-3"><img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-s3.jpg" alt=""></a>
-								<a data-toggle="tab" href="#pro-4"><img src="<?= base_url() ?>frontend/assets/img/product-details/product-detalis-s4.jpg" alt=""></a>
-							</div>
-						</div>
-						<!-- Thumbnail image end -->
-					</div>
-					<div class="col-md-7 col-sm-7 col-xs-12">
-						<div class="modal-pro-content">
-							<h3>Dutchman's Breeches </h3>
-							<div class="product-price-wrapper">
-								<span class="product-price-old">£162.00 </span>
-								<span>£120.00</span>
-							</div>
-							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
-							<div class="quick-view-select">
-								<div class="select-option-part">
-									<label>Size*</label>
-									<select class="select">
-										<option value="">S</option>
-										<option value="">M</option>
-										<option value="">L</option>
-									</select>
+<?php
+$produk = $this->m_master_produk->produk_list();
+$gambar = $this->m_master_produk->gambar();
+?>
+<?php foreach ($produk as $key => $value) { ?>
+	<div class="modal fade" id="exampleModal<?= $value->id_produk ?>" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+				</div>
+				<?php echo form_open('belanja/add');
+				echo form_hidden('id', $value->id_produk);
+				echo form_hidden('name', $value->nama_produk);
+				echo form_hidden('stock', $value->stok);
+				echo form_hidden('netto', $value->berat);
+				echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
+				echo form_hidden('picture', $value->foto);
+				echo form_hidden('qty', 1);
+				echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+				?>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-12">
+							<!-- Thumbnail Large Image start -->
+							<div class="tab-content">
+								<div id="pro-1" class="tab-pane fade show active">
+									<img src="<?= base_url('assets/produk/' . $value->foto) ?>" alt="">
 								</div>
-								<div class="quickview-color-wrap">
-									<label>Color*</label>
-									<div class="quickview-color">
-										<ul>
-											<li class="blue">b</li>
-											<li class="red">r</li>
-											<li class="pink">p</li>
-										</ul>
+								<?php foreach ($gambar as $key => $img) { ?>
+									<div id="pro-2" class="tab-pane fade">
+										<img src="<?= base_url('assets/foto/' . $img->gambar) ?>" alt="">
 									</div>
+								<?php } ?>
+							</div>
+							<!-- Thumbnail Large Image End -->
+							<!-- Thumbnail Image End -->
+							<div class="product-thumbnail">
+								<div class="thumb-menu owl-carousel nav nav-style" role="tablist">
+									<a class="active" data-toggle="tab" href="#pro-1"><img src="<?= base_url('assets/produk/' . $value->foto) ?>" alt=""></a>
+									<?php foreach ($gambar as $key => $img) { ?>
+										<a data-toggle="tab" href="#pro-2"><img src="<?= base_url('assets/foto/' . $img->gambar) ?>" alt=""></a>
+									<?php } ?>
 								</div>
 							</div>
-							<div class="product-quantity">
-								<div class="cart-plus-minus">
-									<input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
+							<!-- Thumbnail image end -->
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-12">
+							<div class="modal-pro-content">
+								<h3><?= $value->nama_produk ?> </h3>
+								<div class="product-price-wrapper">
+									<?php if ($value->diskon > 1) { ?>
+										<span class="valueuct-price-old">Rp. <?= number_format($value->harga), 0 ?> </span>
+										<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)), 0 ?> -</span>
+									<?php } elseif ($value->diskon == 0) { ?>
+										<span>Rp. <?= number_format($value->harga), 0 ?> -</span>
+									<?php } ?>
 								</div>
-								<button>Add to cart</button>
+								<p><?= $value->deskripsi ?></p>
+								<div class="product-quantity">
+									<div class="cart-plus-minus">
+										<input class="cart-plus-minus-box" type="number" name="qty" value="1" min="1" max="<?= $value->stok ?>">
+									</div>
+									<button type="submit" class="btn btn-success">Add to cart</button>
+								</div>
+								<?php if ($value->stok  >= 1) { ?>
+									<span><i class="fa fa-check"></i>stock Kosong</span>
+								<?php } elseif ($value->stok <= 1) { ?>
+									<span><i class="fa fa-check"></i> In stock</span>
+								<?php } ?>
 							</div>
-							<span><i class="fa fa-check"></i> In stock</span>
 						</div>
 					</div>
 				</div>
+				<?php echo form_close() ?>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- Modal end -->
+	<!-- Modal end -->
+<?php } ?>
 
 
 <!-- all js here -->
