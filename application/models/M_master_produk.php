@@ -62,6 +62,22 @@ class m_master_produk extends CI_Model
 		$this->db->group_by('id_produk');
 		return $this->db->get()->result();
 	}
+	public function produk_list_all()
+	{
+		$this->db->select('*');
+		$this->db->from('produk');
+		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
+		$this->db->group_by('id_produk');
+		return $this->db->get()->result();
+	}
+	public function produk_diskon()
+	{
+		$this->db->select('*');
+		$this->db->from('produk');
+		$this->db->where('diskon>=10');
+		$this->db->limit(2);
+		return $this->db->get()->result();
+	}
 	public function detail_produk($id_produk)
 	{
 		$this->db->select('*');
