@@ -9,6 +9,7 @@ class Pesanan extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_mastertransaksi');
+		$this->load->model('m_master_produk');
 	}
 
 	public function index()
