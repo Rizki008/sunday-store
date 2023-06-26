@@ -105,7 +105,7 @@ class m_master_produk extends CI_Model
 	//GAMBAR PRODUK
 	public function gambar()
 	{
-		$this->db->select('produk.*,COUNT(gambar.id_gambar) as jumlah_gambar');
+		$this->db->select('produk.*,COUNT(gambar.id_gambar) as jumlah_gambar,gambar');
 		$this->db->from('produk');
 		$this->db->join('gambar', 'gambar.produk=produk.id_produk', 'left');
 		$this->db->group_by('produk.id_produk');
