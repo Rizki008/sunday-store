@@ -4,18 +4,18 @@
 		<div class="single-slider ptb-240 bg-img" style="background-image:url(<?= base_url() ?>frontend/assets/img/slider/slider-1.jpg);">
 			<div class="container">
 				<div class="slider-content slider-animated-1">
-					<h1 class="animated">Want to stay <span class="theme-color">healthy</span></h1>
-					<h1 class="animated">drink matcha.</h1>
-					<p>Lorem ipsum dolor sit amet, consectetu adipisicing elit sedeiu tempor inci ut labore et dolore magna aliqua.</p>
+					<h1 class="animated">Sunday <span class="theme-color">Store</span></h1>
+					<h1 class="animated">Toko Pakayan.</h1>
+					<p>Berbagai Macam Kebutuhan Gaya Anda Ada di toko kami</p>
 				</div>
 			</div>
 		</div>
 		<div class="single-slider ptb-240 bg-img" style="background-image:url(<?= base_url() ?>frontend/assets/img/slider/slider-1-1.jpg);">
 			<div class="container">
 				<div class="slider-content slider-animated-1">
-					<h1 class="animated">Want to stay <span class="theme-color">healthy</span></h1>
-					<h1 class="animated">drink matcha.</h1>
-					<p>Lorem ipsum dolor sit amet, consectetu adipisicing elit sedeiu tempor inci ut labore et dolore magna aliqua.</p>
+					<h1 class="animated">Sunday <span class="theme-color">Store</span></h1>
+					<h1 class="animated">Toko Pakayan.</h1>
+					<p>Berbagai Macam Kebutuhan Gaya Anda Ada di toko kami</p>
 				</div>
 			</div>
 		</div>
@@ -48,13 +48,7 @@
 								<span>-<?= $value->diskon ?>%</span>
 							<?php } ?>
 							<div class="product-action">
-								<!-- <a class="action-wishlist" href="#" title="Wishlist">
-									<i class="ion-android-favorite-outline"></i>
-								</a>
-								<a class="action-cart" href="#" title="Add To Cart">
-									<i class="ion-ios-shuffle-strong"></i>
-								</a> -->
-								<a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+								<a class="action-compare" href="#" data-target="#exampleModal<?= $value->id_produk ?>" data-toggle="modal" title="Quick View">
 									<i class="ion-ios-search-strong"></i>
 								</a>
 							</div>
@@ -99,7 +93,7 @@
 				<?php foreach ($diskon as $key => $disk) { ?>
 					<div class="col-lg-6 col-md-6">
 						<div class="single-banner img-zoom mb-30">
-							<a href="#">
+							<a href="<?= base_url('home/detail/' . $disk->id_produk) ?>">
 								<img src="<?= base_url("assets/produk/" . $disk->foto) ?>" alt="">
 							</a>
 							<div class="banner-content">
@@ -148,13 +142,7 @@
 											<span>-<?= $prod->diskon ?>%</span>
 										<?php } ?>
 										<div class="product-action">
-											<a class="action-wishlist" href="#" title="Wishlist">
-												<i class="ion-android-favorite-outline"></i>
-											</a>
-											<a class="action-cart" href="#" title="Add To Cart">
-												<i class="ion-ios-shuffle-strong"></i>
-											</a>
-											<a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+											<a class="action-compare" href="#" data-target="#exampleModal<?= $prod->id_produk ?>" data-toggle="modal" title="Quick View">
 												<i class="ion-ios-search-strong"></i>
 											</a>
 										</div>
