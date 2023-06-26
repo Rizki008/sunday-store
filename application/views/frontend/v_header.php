@@ -87,7 +87,7 @@
 									</div>
 									<div class="shopping-cart-btn">
 										<a href="<?= base_url('belanja') ?>">view cart</a>
-										<a href="checkout.html">checkout</a>
+										<a href="<?= base_url('belanja') ?>">checkout</a>
 									</div>
 								</div>
 							</div>
