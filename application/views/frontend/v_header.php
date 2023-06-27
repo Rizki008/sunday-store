@@ -47,7 +47,7 @@
 									<div class="dollar-submenu">
 										<ul>
 											<li><a href="<?= base_url('pesanan') ?>">Pesanan</a></li>
-											<!-- <li><a href="#">Chatting</a></li> -->
+											<li><a href="<?= base_url('pelanggan/logout') ?>">Logout</a></li>
 										</ul>
 									</div>
 								<?php } ?>
