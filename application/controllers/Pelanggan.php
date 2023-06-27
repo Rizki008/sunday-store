@@ -93,7 +93,7 @@ class Pelanggan extends CI_Controller
 	//Update one item
 	public function logout()
 	{
-		$this->pelanggan_login->logout();
+		$this->login_pelanggan->logout();
 	}
 }
 
