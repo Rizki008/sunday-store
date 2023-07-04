@@ -29,7 +29,11 @@ class login_user
 			$this->ci->session->set_userdata('password', $password);
 			$this->ci->session->set_userdata('level', $level);
 
-			redirect('admin');
+			if ($level == 1) {
+				redirect('admin');
+			} elseif ($level == 2) {
+				redirect('pimpinan');
+			}
 		} else {
 			$this->ci->session->set_flashdata('error', 'Username Atau Password Error');
 			redirect('admin/login');
