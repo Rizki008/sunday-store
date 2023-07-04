@@ -91,4 +91,11 @@ class Pesanan extends CI_Controller
 		$this->session->set_flashdata('pesan', 'Berhasil Dikonfirmasi');
 		redirect('pesanan');
 	}
+
+	public function review()
+	{
+		$data['insert'] = $this->m_mastertransaksi->insert_riview();
+		$this->session->set_flashdata('pesan', 'Berhasil Memberi Ulasan');
+		redirect('pesanan');
+	}
 }
