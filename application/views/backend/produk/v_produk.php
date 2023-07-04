@@ -68,7 +68,14 @@
 											</td>
 											<td>
 												<div class="progress">
-													<div class="progress-bar bg-success" role="progressbar" style="width: <?= $value->stok ?>%" aria-valuenow="<?= $value->stok ?>" aria-valuemin="0" aria-valuemax="100"></div>
+													<?php if ($value->stok == 50) { ?>
+														<div class="progress-bar bg-warning" role="progressbar" style="width: <?= $value->stok ?>%" aria-valuenow="<?= $value->stok ?>" aria-valuemin="0" aria-valuemax="100"></div>
+													<?php } elseif ($value->stok <= 49) { ?>
+														<div class="progress-bar bg-danger" role="progressbar" style="width: <?= $value->stok ?>%" aria-valuenow="<?= $value->stok ?>" aria-valuemin="0" aria-valuemax="100"></div>
+													<?php } elseif ($value->stok >= 51) { ?>
+														<div class="progress-bar bg-success" role="progressbar" style="width: <?= $value->stok ?>%" aria-valuenow="<?= $value->stok ?>" aria-valuemin="0" aria-valuemax="100"></div>
+													<?php } ?>
+
 												</div>
 											</td>
 											<td>
