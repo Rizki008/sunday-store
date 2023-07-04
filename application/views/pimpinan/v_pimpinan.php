@@ -1,7 +1,7 @@
 <div class="main-panel">
 	<div class="content-wrapper">
 		<div class="row">
-			<div class="col-12 col-xl-6 grid-margin stretch-card">
+			<!-- <div class="col-12 col-xl-6 grid-margin stretch-card">
 				<div class="row w-100 flex-grow">
 					<div class="col-md-12 grid-margin stretch-card">
 						<div class="card">
@@ -152,10 +152,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class="row">
-			<div class="col-lg-12 grid-margin stretch-card">
+			<!-- <div class="col-lg-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title">Financial management review</h4>
@@ -319,11 +319,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- row end -->
 		<div class="row">
-			<div class="col-md-4 grid-margin stretch-card">
+			<!-- <div class="col-md-4 grid-margin stretch-card">
 				<div class="card bg-facebook d-flex align-items-center">
 					<div class="card-body py-5">
 						<div class="d-flex flex-row align-items-center flex-wrap justify-content-md-center justify-content-xl-start py-1">
@@ -361,7 +361,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- row end -->
 	</div>
