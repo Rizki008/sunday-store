@@ -19,18 +19,10 @@
 					<span></span>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-						<i class="mdi mdi-barcode-scan menu-icon"></i>
+					<a class="nav-link" href="<?= base_url('laporan') ?>">
+						<i class="mdi mdi-book menu-icon"></i>
 						<span class="menu-title">Master Laporan</span>
-						<i class="menu-arrow"></i>
 					</a>
-					<div class="collapse" id="ui-basic">
-						<ul class="nav flex-column sub-menu">
-							<li class="nav-item"> <a class="nav-link" href="<?= base_url('master_produk/kategori') ?>">Kategori</a></li>
-							<li class="nav-item"> <a class="nav-link" href="<?= base_url('master_produk/produk') ?>">Produk</a></li>
-							<li class="nav-item"> <a class="nav-link" href="<?= base_url('master_produk/gambarproduk') ?>">Gambar</a></li>
-						</ul>
-					</div>
 				</li>
 				<li class="nav-item sidebar-category">
 					<p>Analisis</p>
