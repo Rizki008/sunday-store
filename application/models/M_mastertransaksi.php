@@ -108,4 +108,17 @@ class m_mastertransaksi extends CI_Model
 		$this->db->where('id_pesanan', $data['id_pesanan']);
 		$this->db->update('pesanan', $data);
 	}
+
+	public function insert_riview()
+	{
+		$data = array(
+			'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+			'id_produk' => $this->input->post('id_produk'),
+			// 'nama_pelanggan' => $this->session->userdata('nama_pelanggan'),
+			'tanggal_ulasan' => date('Y-m-d'),
+			'ulasan' => $this->input->post('ulasan'),
+			'status_ulasan' => 1,
+		);
+		$this->db->insert('ulasan', $data);
+	}
 }
