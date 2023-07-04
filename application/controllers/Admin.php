@@ -51,4 +51,33 @@ class Admin extends CI_Controller
 		);
 		$this->load->view('backend/v_wrapper', $data, FALSE);
 	}
+
+	// setting lokasi toko
+	public function setting()
+	{
+		$this->form_validation->set_rules('nama_toko', 'Nama Pembeli', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
+		$this->form_validation->set_rules('kota', 'Kota Pembeli', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
+		$this->form_validation->set_rules('alamat', 'Alamat Pembeli', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
+		$this->form_validation->set_rules('no_telpon', 'Nomer Pembeli', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
+
+		if ($this->form_validation->run() == FALSE) {
+			$data = array(
+				'title' => 'Setting Lokasi Toko',
+				'setting' => $this->m_admin->data_setting(),
+				'isi' => 'backend/setting/v_setting'
+			);
+			$this->load->view('backend/v_wrapper', $data, FALSE);
+		} else {
+			$data = array(
+				'id' => 1,
+				'lokasi' => $this->input->post('kota'),
+				'nama_toko' => $this->input->post('nama_toko'),
+				'alamat' => $this->input->post('alamat'),
+				'no_telpon' => $this->input->post('no_telpon'),
+			);
+			$this->m_admin->edit($data);
+			$this->session->set_flashdata('pesan', 'Setting Berhasil Diedit!!!');
+			redirect('admin/setting');
+		}
+	}
 }
