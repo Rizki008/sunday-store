@@ -9,6 +9,7 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_master_produk');
+		$this->load->model('m_ulasan');
 	}
 
 	// List all your items
@@ -33,7 +34,7 @@ class Home extends CI_Controller
 			'produk' => $this->m_master_produk->detailprod($id_produk),
 			'gambar' => $this->m_master_produk->gambarprod($id_produk),
 			'produklain' => $this->m_master_produk->produk_lain($id_produk),
-			// 'ulasan' => $this->m_ulasan->ulasan($id_produk),
+			'ulasan' => $this->m_ulasan->ulasan($id_produk),
 			'isi' => 'frontend/detail/v_detail'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
