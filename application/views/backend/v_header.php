@@ -58,16 +58,16 @@
 						<span class="menu-title">Analisis K-Means</span>
 					</a>
 				</li>
-				<!-- <li class="nav-item sidebar-category">
-					<p>Apps</p>
+				<li class="nav-item sidebar-category">
+					<p>Logout</p>
 					<span></span>
-				</li> -->
-				<!-- <li class="nav-item">
-					<a class="nav-link" href="docs/documentation.html">
-						<i class="mdi mdi-file-document-box-outline menu-icon"></i>
-						<span class="menu-title">Documentation</span>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('admin/logout') ?>">
+						<i class="mdi mdi-arrow-left-bold-box menu-icon"></i>
+						<span class="menu-title">Logout</span>
 					</a>
-				</li> -->
+				</li>
 				<!-- <li class="nav-item">
 					<a class="nav-link" href="http://www.bootstrapdash.com/demo/spica/template/">
 						<button class="btn bg-danger btn-sm menu-title">Upgrade to pro</button>
