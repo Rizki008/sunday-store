@@ -67,6 +67,7 @@
 												<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>"><i class="fa fa-send"></i></a>
 											<?php } else { ?>
 												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>"><i class="fa fa-dropbox"></i></a>
+												<!-- <a href="<?= base_url('pesanan/review/' . $value->id_pesanan) ?>"><i class="fa fa-comment"></i></a> -->
 											<?php } ?>
 										</td>
 
