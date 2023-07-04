@@ -16,6 +16,14 @@
 							<div class="main-menu">
 								<nav>
 									<ul>
+										<li>
+											<form action="<?= base_url('pencarian') ?>" method="get" class="subscribe-form">
+												<div class="form-group d-flex">
+													<input type="text" class="form-control" name="keyword" placeholder="Masukan Produk yang Anda Cari...">
+													<input type="submit" value="cari" class="submit px-3">
+												</div>
+											</form>
+										</li>
 										<li class="top-hover"><a href="<?= base_url() ?>">home</a>
 										</li>
 										<?php $kategori = $this->m_master_produk->kategori(); ?>
