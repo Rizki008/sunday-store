@@ -7,7 +7,7 @@
 					<div class="col-lg-3 col-md-4 col-6">
 						<div class="logo">
 							<a href="<?= base_url() ?>">
-								<img alt="" src="<?= base_url() ?>frontend/assets/img/logo/logo.png">
+								<img alt="" src="<?= base_url() ?>frontend/assets/img/logo/logos.jpg">
 							</a>
 						</div>
 					</div>
