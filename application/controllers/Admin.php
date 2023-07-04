@@ -37,6 +37,11 @@ class Admin extends CI_Controller
 		$this->load->view('backend/admin/v_login', $data, FALSE);
 	}
 
+	public function logout()
+	{
+		$this->login_user->logout();
+	}
+
 	public function user()
 	{
 		$data = array(
