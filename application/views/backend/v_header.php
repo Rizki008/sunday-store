@@ -58,6 +58,12 @@
 						<span class="menu-title">Analisis K-Means</span>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('admin/setting') ?>">
+						<i class="mdi mdi-location menu-icon"></i>
+						<span class="menu-title">Setting Lokasi</span>
+					</a>
+				</li>
 				<li class="nav-item sidebar-category">
 					<p>Logout</p>
 					<span></span>
