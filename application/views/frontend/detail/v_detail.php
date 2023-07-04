@@ -53,10 +53,10 @@
 							<i class="ion-android-star-outline"></i>
 						</div>
 						<div class="pro-dec-review">
-							<ul>
+							<!-- <ul>
 								<li>32 Reviews </li>
 								<li> Add Your Reviews</li>
-							</ul>
+							</ul> -->
 						</div>
 					</div>
 					<span>Rp. <?= number_format($produk->harga - ($produk->diskon / 100 * $produk->harga)), 0 ?></span>
@@ -113,79 +113,28 @@
 			</div>
 			<div class="tab-content description-review-bottom">
 				<div id="des-details3" class="tab-pane active">
-					<div class="rattings-wrapper">
-						<div class="sin-rattings">
-							<div class="star-author-all">
-								<div class="ratting-star f-left">
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<span>(5)</span>
+					<?php foreach ($ulasan as $key => $ulas) { ?>
+						<div class="rattings-wrapper">
+							<div class="sin-rattings">
+								<div class="star-author-all">
+									<!-- <div class="ratting-star f-left">
+										<i class="ion-star theme-color"></i>
+										<i class="ion-star theme-color"></i>
+										<i class="ion-star theme-color"></i>
+										<i class="ion-star theme-color"></i>
+										<i class="ion-star theme-color"></i>
+										<span>(5)</span>
+									</div> -->
+									<div class="ratting-author f-right">
+										<h3><?= $ulas->nama_pelanggan ?></h3>
+										<!-- <span>12:24</span> -->
+										<span><?= $ulas->tanggal_ulasan ?></span>
+									</div>
 								</div>
-								<div class="ratting-author f-right">
-									<h3>Potanu Leos</h3>
-									<span>12:24</span>
-									<span>9 March 2018</span>
-								</div>
+								<p><?= $ulas->ulasan ?></p>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
 						</div>
-						<div class="sin-rattings">
-							<div class="star-author-all">
-								<div class="ratting-star f-left">
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<i class="ion-star theme-color"></i>
-									<span>(5)</span>
-								</div>
-								<div class="ratting-author f-right">
-									<h3>Kahipo Khila</h3>
-									<span>12:24</span>
-									<span>9 March 2018</span>
-								</div>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
-						</div>
-					</div>
-					<div class="ratting-form-wrapper">
-						<h3>Add your Comments :</h3>
-						<div class="ratting-form">
-							<form action="#">
-								<div class="star-box">
-									<h2>Rating:</h2>
-									<div class="ratting-star">
-										<i class="ion-star theme-color"></i>
-										<i class="ion-star theme-color"></i>
-										<i class="ion-star theme-color"></i>
-										<i class="ion-star theme-color"></i>
-										<i class="ion-star"></i>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="rating-form-style mb-20">
-											<input placeholder="Name" type="text">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="rating-form-style mb-20">
-											<input placeholder="Email" type="text">
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="rating-form-style form-submit">
-											<textarea name="message" placeholder="Message"></textarea>
-											<input type="submit" value="add review">
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
