@@ -18,7 +18,7 @@
 
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
-				<form action="#">
+				<form action="<?= base_url('pesanan/review') ?>" method="POST">
 					<div class="table-content table-responsive wishlist">
 						<table>
 							<thead>
@@ -47,6 +47,21 @@
 							</tbody>
 						</table>
 					</div>
+					<h5 class="mtext-108 cl2 p-b-7">
+						Menambahkan ulasan
+					</h5>
+
+					<div class="row p-b-25">
+						<div class="col-12 p-b-5">
+							<input name="id_produk" class="form-control" cols="30" rows="10" placeholder="isi Produk" value="<?= $value->id_produk ?>" required hidden></input>
+							<label class="stext-102 cl3" for="review">Ulasan Anda</label>
+							<textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="ulasan" name="ulasan"></textarea>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-success">
+						Ulasan
+					</button>
 				</form>
 			</div>
 		</div>
