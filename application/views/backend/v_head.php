@@ -18,6 +18,6 @@
 	<link rel="shortcut icon" href="<?= base_url() ?>spica/images/favicon.png" />
 
 	<!-- grafik  -->
-	<script src="<?= base_url() ?>spica/chart/dist/Chart.min.js"></script>
-	<script src="<?= base_url() ?>spica/chart/samples/utils.js"></script>
+	<script src="<?= base_url() ?>chart/dist/Chart.min.js"></script>
+	<script src="<?= base_url() ?>chart/samples/utils.js"></script>
 </head>
