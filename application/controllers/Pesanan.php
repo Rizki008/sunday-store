@@ -10,6 +10,7 @@ class Pesanan extends CI_Controller
 		parent::__construct();
 		$this->load->model('m_mastertransaksi');
 		$this->load->model('m_master_produk');
+		$this->load->model('m_analisis');
 	}
 
 	public function index()
@@ -83,6 +84,64 @@ class Pesanan extends CI_Controller
 
 	public function selesai($id_pesanan)
 	{
+		//analisis produk
+		$var_recency = array();
+		$var_frequency = array();
+		$var_monetary = array();
+		$date_in = date('Y-m-d');
+		$variabel = $this->m_analisis->variabel($date_in);
+		foreach ($variabel['all'] as $key => $value) {
+			$var_recency[] = $value->recency;
+			$var_frequency[] = $value->frequency;
+			$var_monetary[] = $value->monetary;
+			// echo '<br>Recency: ' . $value->recency;
+			// echo '<br>Frequency: ' . $value->frequency;
+			// echo '<br>Monetary: ' . $value->monetary;
+		}
+
+		// echo '<br>';
+		$max_recency = max($var_recency);
+		$max_frequency = max($var_frequency);
+		$max_monetary = max($var_monetary);
+		// echo $max_recency . '<br>';
+		// echo $max_frequency . '<br>';
+		// echo $max_monetary . '<br>';
+
+
+		//menentukan rumus euclidean Distance
+		$e_recency = array();
+		$e_frequecy = array();
+		$e_monetary = array();
+		foreach ($variabel['limit'] as $key => $value) {
+			$e_recency[] = $value->recency;
+			$e_frequecy[] = $value->frequency;
+			$e_monetary[] = $value->monetary;
+		}
+
+		$centroid1 = round(sqrt((pow(($e_recency[1] - $e_recency[0]), 2)) + (pow($e_frequecy[1] - $e_frequecy[0], 2)) + (pow($e_monetary[1] - $e_monetary[0], 2))), 3);
+		$centroid2 = round(sqrt((pow(($e_recency[0] - $e_recency[1]), 2)) + (pow($e_frequecy[0] - $e_frequecy[1], 2)) + (pow($e_monetary[0] - $e_monetary[1], 2))), 3);
+		// echo '<br>' . $centroid1;
+		// echo '<br>' . $centroid2;
+
+
+		foreach ($variabel['all'] as $key => $value) {
+			$centroid_next1 = round(sqrt((pow(($value->recency - $e_recency[0]), 2)) + (pow($value->frequency - $e_frequecy[0], 2)) + (pow($value->monetary - $e_monetary[0], 2))), 3);
+			$centroid_next2 = round(sqrt((pow(($value->recency - $e_recency[1]), 2)) + (pow($value->frequency - $e_frequecy[1], 2)) + (pow($value->monetary - $e_monetary[1], 2))), 3);
+
+			if ($centroid1 >= $centroid_next1) {
+				$status = 1;
+			}
+			if ($centroid2 >= $centroid_next2) {
+				$status = 2;
+			}
+
+			$status_produk = array(
+				'status' => $status
+			);
+			$this->db->where('id_produk', $value->id_produk);
+			$this->db->update('produk', $status_produk);
+		}
+
 		$data = array(
 			'id_pesanan' => $id_pesanan,
 			'status_order' => 4
