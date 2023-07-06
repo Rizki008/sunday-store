@@ -29,7 +29,7 @@
 					<span></span>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url('analisis') ?>">
+					<a class="nav-link" href="<?= base_url('analisis/pimpinan') ?>">
 						<i class="mdi mdi-chart-pie menu-icon"></i>
 						<span class="menu-title">Analisis K-Means</span>
 					</a>
