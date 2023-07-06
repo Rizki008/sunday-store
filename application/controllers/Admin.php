@@ -80,4 +80,37 @@ class Admin extends CI_Controller
 			redirect('admin/setting');
 		}
 	}
+
+	public function add()
+	{
+		$data = array(
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'level' => $this->input->post('level'),
+		);
+		$this->m_admin->add($data);
+		$this->session->set_flashdata('pesan', 'Tambah User berhasil');
+		redirect('admin/user');
+	}
+	public function update($id_user)
+	{
+		$data = array(
+			'id_user' => $id_user,
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'level' => $this->input->post('level'),
+		);
+		$this->m_admin->update($data);
+		$this->session->set_flashdata('pesan', 'Update User berhasil');
+		redirect('admin/user');
+	}
+	public function delete($id_user)
+	{
+		$data = array(
+			'id_user' => $id_user,
+		);
+		$this->m_admin->delete($data);
+		$this->session->set_flashdata('pesan', 'User Berhasil dihapus');
+		redirect('admin/user');
+	}
 }
