@@ -4,37 +4,32 @@
 		<div class="header-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-2 col-md-3 col-3">
+					<div class="col-lg-3 col-md-4 col-6">
 						<div class="logo">
 							<a href="<?= base_url() ?>">
 								<img alt="" src="<?= base_url() ?>frontend/assets/img/logo/logos.jpg">
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-3 col-4">
-						<div class="footer-newsletter">
-							<div id="mc_embed_signup" class="subscribe-form">
-								<form action="<?= base_url('pencarian') ?>" method="get" class="validate">
-									<!-- <div class="form-group d-flex"> -->
-									<div id="mc_embed_signup_scroll" class="mc-form">
-										<input type="text" class="form-control" name="keyword" placeholder="Masukan Produk yang Anda Cari...">
-										<!-- <input type="submit" value="cari" class="submit px-3"> -->
-										<div class="submit-button">
-											<input type="submit" value="Cari" id="mc-embedded-subscribe" class="button">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-7 col-md-6 col-5">
+
+					<div class="col-lg-9 col-md-8 col-6">
 						<div class="header-bottom-right">
 							<div class="main-menu">
 								<nav>
 									<ul>
-										<!-- <li>
-											
-										</li> -->
+										<li>
+											<div id="mc_embed_signup" class="subscribe-form">
+												<form action="<?= base_url('pencarian') ?>" method="get" class="validate">
+													<div class="input-group d-flex flex-row">
+														<input type="text" class="form-control" name="keyword" placeholder="Masukan Produk yang Anda Cari...">
+														<div class="submit-button">
+															<button type="submit" value="cari" class="btn btn-warning"><i class="fa fa-search"></i>Cari</button>
+															<!-- <input type="submit" value="Cari" id="mc-embedded-subscribe" class="button"> -->
+														</div>
+													</div>
+												</form>
+											</div>
+										</li>
 										<li class="top-hover"><a href="<?= base_url() ?>">home</a>
 										</li>
 										<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -106,8 +101,8 @@
 										<h4>Total : <span class="shop-total">Rp. <?= $this->cart->format_number($this->cart->total()); ?></span></h4>
 									</div>
 									<div class="shopping-cart-btn">
-										<a href="<?= base_url('belanja') ?>">view cart</a>
-										<a href="<?= base_url('belanja') ?>">checkout</a>
+										<a href="<?= base_url('belanja') ?>">Lihat Keranjang</a>
+										<a href="<?= base_url('belanja') ?>">Order</a>
 									</div>
 								</div>
 							</div>
