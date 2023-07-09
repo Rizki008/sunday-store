@@ -145,7 +145,7 @@
 						<input type="number" name="stok" class="form-control" placeholder="Stok Produk">
 					</div>
 					<div class="form-group">
-						<label>Nama Produk</label>
+						<label>Deskripsi</label>
 						<textarea name="deskripsi" class="form-control" cols="30" rows="10"></textarea>
 					</div>
 					<div class="form-group">
@@ -207,7 +207,7 @@
 								<input type="number" name="stok" value="<?= $value->stok ?>" class="form-control" placeholder="Stok Produk">
 							</div>
 							<div class="form-group">
-								<label>Nama Produk</label>
+								<label>Deskripsi</label>
 								<textarea name="deskripsi" class="form-control" cols="30" rows="10"><?= $value->deskripsi ?></textarea>
 							</div>
 							<div class="form-group">
