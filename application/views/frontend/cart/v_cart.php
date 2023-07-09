@@ -304,6 +304,15 @@
 					</form>
 					<form action="<?= base_url('belanja/cekout') ?>" method="POST">
 						<?php $id_pesanan = date('Ymd') . strtoupper(random_string('alnum', 8)); ?>
+						<?php
+						$i = 1;
+						$j = 1;
+						foreach ($this->cart->contents() as $items) {
+							$id_detail = random_string('alnum', 5);
+							echo form_hidden('qty' . $i++, $items['qty']);
+							echo form_hidden('id_detail' . $j++, $id_detail);
+						}
+						?>
 						<div class="row">
 							<div class="col-lg-6 col-md-6">
 								<div class="cart-tax">
