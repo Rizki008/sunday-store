@@ -63,6 +63,10 @@ class m_mastertransaksi extends CI_Model
 	{
 		$this->db->insert('detail_pesanan', $data);
 	}
+	public function penilaian($data)
+	{
+		$this->db->insert('ulasan', $data);
+	}
 
 	//PESANAN PELANGGAN VIEW
 	public function pesanan()
@@ -71,6 +75,7 @@ class m_mastertransaksi extends CI_Model
 		$this->db->from('pesanan');
 		$this->db->join('pembayaran', 'pembayaran.id_pesanan = pesanan.id_pesanan', 'left');
 		$this->db->join('detail_pesanan', 'detail_pesanan.id_pesanan = pesanan.id_pesanan', 'left');
+		$this->db->join('ulasan', 'ulasan.id_detail = detail_pesanan.id_detail', 'left');
 		$this->db->join('produk', 'produk.id_produk = detail_pesanan.id_produk', 'left');
 		$this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
 		$this->db->group_by('detail_pesanan.id_pesanan');
@@ -83,6 +88,7 @@ class m_mastertransaksi extends CI_Model
 		$this->db->from('pesanan');
 		$this->db->join('pembayaran', 'pembayaran.id_pesanan = pesanan.id_pesanan', 'left');
 		$this->db->join('detail_pesanan', 'detail_pesanan.id_pesanan = pesanan.id_pesanan', 'left');
+		$this->db->join('ulasan', 'ulasan.id_detail = detail_pesanan.id_detail', 'left');
 		$this->db->join('produk', 'produk.id_produk = detail_pesanan.id_produk', 'left');
 		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
 		$this->db->where('pesanan.id_pesanan', $id_pesanan);
