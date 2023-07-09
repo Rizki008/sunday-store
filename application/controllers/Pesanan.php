@@ -151,10 +151,25 @@ class Pesanan extends CI_Controller
 		redirect('pesanan');
 	}
 
+	// public function review()
+	// {
+	// 	$data['insert'] = $this->m_mastertransaksi->insert_riview();
+	// 	$this->session->set_flashdata('pesan', 'Berhasil Memberi Ulasan');
+	// 	redirect('pesanan');
+	// }
+
 	public function review()
 	{
-		$data['insert'] = $this->m_mastertransaksi->insert_riview();
-		$this->session->set_flashdata('pesan', 'Berhasil Memberi Ulasan');
+		$data = array(
+			'id_ulasan' => $this->input->post('id_ulasan'),
+			// 'nama_pelanggan' => $this->session->userdata('nama_pelanggan'),
+			'tanggal_ulasan' => date('Y-m-d H:i:s'),
+			'ulasan' => $this->input->post('ulasan'),
+			'status_ulasan' => 1,
+		);
+		$this->db->where('id_ulasan', $data['id_ulasan']);
+		$this->db->update('ulasan', $data);
+		// redirect('pesanan/detail/' . $id_pesanan);
 		redirect('pesanan');
 	}
 }
