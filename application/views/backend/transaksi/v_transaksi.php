@@ -101,7 +101,13 @@
 															<td>Rp. <?= number_format($values->ongkir), 0 ?></td>
 															<td>Rp. <?= number_format($values->total_bayar), 0 ?></td>
 															<td><span class="badge badge-warning">Sudah Bayar</span></td>
-															<td><a href="<?= base_url('transaksi/konfirmasi/' . $values->id_pesanan) ?>" class="btn btn-success">Konfirmaai</a></td>
+															<td>
+																<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $values->id_pesanan ?>">
+																	Bukti Bayar
+																</button>
+																<br><br>
+																<a href="<?= base_url('transaksi/konfirmasi/' . $values->id_pesanan) ?>" class="btn btn-success">Konfirmasi</a>
+															</td>
 														</tr>
 													<?php } ?>
 												</tbody>
@@ -175,3 +181,40 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal edit -->
+	<?php foreach ($proses as $key => $value) { ?>
+		<div class="modal fade" id="edit<?= $value->id_pesanan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle"><?= $value->id_pesanan ?></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" enctype="multipart/form-data" accept-charset="utf-8" method="POST">
+						<div class="modal-body">
+							<table class="table">
+								<tr>
+									<th>Atas Nama</th>
+									<th>:</th>
+									<td><?= $value->atas_nama ?></td>
+								</tr>
+								<tr>
+									<th>Total Bayar</th>
+									<th>:</th>
+									<td><?= number_format($value->total_bayar, 0) ?></td>
+								</tr>
+							</table>
+							<img class="img-fluid pad" src="<?= base_url('assets/transaksi/' . $value->bukti_bayar) ?>" alt="">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<!-- <button type="submit" class="btn btn-primary">Save</button> -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
