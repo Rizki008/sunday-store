@@ -24,10 +24,10 @@
 							<thead>
 								<tr>
 									<th></th>
-									<th>Product Name</th>
-									<th>Until Price</th>
+									<th>Nama Produk</th>
+									<th>Harga Satuan</th>
 									<th>Qty</th>
-									<th>Subtotal</th>
+									<th>Total Harga</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -47,21 +47,23 @@
 							</tbody>
 						</table>
 					</div>
-					<h5 class="mtext-108 cl2 p-b-7">
-						Menambahkan ulasan
-					</h5>
+					<?php if ($value->status_order == 4) { ?>
+						<h5 class="mtext-108 cl2 p-b-7">
+							Menambahkan ulasan
+						</h5>
 
-					<div class="row p-b-25">
-						<div class="col-12 p-b-5">
-							<input name="id_produk" class="form-control" cols="30" rows="10" placeholder="isi Produk" value="<?= $value->id_produk ?>" required hidden></input>
-							<label class="stext-102 cl3" for="review">Ulasan Anda</label>
-							<textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="ulasan" name="ulasan"></textarea>
+						<div class="row p-b-25">
+							<div class="col-12 p-b-5">
+								<input name="id_produk" class="form-control" cols="30" rows="10" placeholder="isi Produk" value="<?= $value->id_produk ?>" required hidden></input>
+								<label class="stext-102 cl3" for="review">Ulasan Anda</label>
+								<textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="ulasan" name="ulasan"></textarea>
+							</div>
 						</div>
-					</div>
 
-					<button type="submit" class="btn btn-success">
-						Ulasan
-					</button>
+						<button type="submit" class="btn btn-success">
+							Ulasan
+						</button>
+					<?php } ?>
 				</form>
 			</div>
 		</div>
