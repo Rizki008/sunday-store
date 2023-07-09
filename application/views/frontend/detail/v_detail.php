@@ -45,13 +45,13 @@
 				<div class="product-details-content">
 					<h4><?= $produk->nama_produk ?></h4>
 					<div class="rating-review">
-						<div class="pro-dec-rating">
+						<!-- <div class="pro-dec-rating">
 							<i class="ion-android-star-outline theme-star"></i>
 							<i class="ion-android-star-outline theme-star"></i>
 							<i class="ion-android-star-outline theme-star"></i>
 							<i class="ion-android-star-outline theme-star"></i>
 							<i class="ion-android-star-outline"></i>
-						</div>
+						</div> -->
 						<div class="pro-dec-review">
 							<!-- <ul>
 								<li>32 Reviews </li>
@@ -69,7 +69,12 @@
 							<?php } ?>
 						</p>
 					</div>
-					<p><?= $produk->deskripsi ?></p>
+					<div class="pro-dec-categories">
+						<ul>
+							<li class="categories-title">Categories:</li>
+							<li><a href="#"><?= $produk->nama_kategori ?>,</a></li>
+						</ul>
+					</div>
 					<div class="pro-dec-feature">
 					</div>
 					<div class="quality-add-to-cart">
@@ -80,7 +85,7 @@
 						<div class="shop-list-cart-wishlist">
 							<button type="submit" class="btn btn-success">
 								<!-- <a title="Add To Cart" href="<?= base_url('belanja/add/' . $produk->id_produk) ?>"> -->
-								<i class="ti-bag"></i>
+								<i class="ti-bag"></i>Add To Cart
 							</button>
 							<!-- </a> -->
 							<!-- <a title="Wishlist" href="#">
@@ -88,12 +93,7 @@
 							</a> -->
 						</div>
 					</div>
-					<div class="pro-dec-categories">
-						<ul>
-							<li class="categories-title">Categories:</li>
-							<li><a href="#"><?= $produk->nama_kategori ?>,</a></li>
-						</ul>
-					</div>
+					<p><?= $produk->deskripsi ?></p>
 					<div class="pro-dec-categories">
 					</div>
 					<div class="pro-dec-social">
