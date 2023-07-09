@@ -115,7 +115,7 @@ class m_mastertransaksi extends CI_Model
 			'id_pelanggan' => $this->session->userdata('id_pelanggan'),
 			'id_produk' => $this->input->post('id_produk'),
 			// 'nama_pelanggan' => $this->session->userdata('nama_pelanggan'),
-			'tanggal_ulasan' => date('Y-m-d'),
+			'tanggal_ulasan' => date('Y-m-d H:i:s'),
 			'ulasan' => $this->input->post('ulasan'),
 			'status_ulasan' => 1,
 		);
