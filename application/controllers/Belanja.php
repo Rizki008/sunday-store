@@ -119,9 +119,11 @@ class Belanja extends CI_Controller
 
 			// SIMPAN KE TABEL DETAIL PESANAN
 			$i = 1;
+			$j = 1;
 			foreach ($this->cart->contents() as $item) {
 				$rinci = array(
 					'id_pesanan' => $this->input->post('id_pesanan'),
+					'id_detail' => $this->input->post('id_detail' . $j++),
 					'id_produk' => $item['id'],
 					'qty' => $this->input->post('qty' . $i++),
 				);
@@ -129,18 +131,18 @@ class Belanja extends CI_Controller
 			}
 
 			// SIMPAN KE TABEL ULASAN
-			// $j = 1;
-			// foreach ($this->cart->contents() as $value) {
-			// 	$penilaian = array(
-			// 		'id_detail' => $this->input->post('id_detail' . $j++),
-			// 		'ulasan' => '0',
-			// 		'id_produk' => $value['id'],
-			// 		'tanggal_ulasan' => '0',
-			// 		// 'rating' => '0',
-			// 		'status_ulasan' => '0'
-			// 	);
-			// 	$this->m_pemesanan->penilaian($penilaian);
-			// }
+			$j = 1;
+			foreach ($this->cart->contents() as $value) {
+				$penilaian = array(
+					'id_detail' => $this->input->post('id_detail' . $j++),
+					'ulasan' => '0',
+					'id_produk' => $value['id'],
+					'tanggal_ulasan' => '0',
+					// 'rating' => '0',
+					'status_ulasan' => '0'
+				);
+				$this->m_mastertransaksi->penilaian($penilaian);
+			}
 
 			$this->cart->destroy();
 			redirect('pesanan');
