@@ -13,7 +13,7 @@
 	<!-- plugin css for this page -->
 	<!-- End plugin css for this page -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="<?= base_url() ?>spica/css/style.css">
+	<link rel="stylesheet" href="<?= base_url() ?>spica/css/style1.css">
 	<!-- endinject -->
 	<link rel="shortcut icon" href="<?= base_url() ?>spica/images/favicon.png" />
 
