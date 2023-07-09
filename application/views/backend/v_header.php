@@ -60,7 +60,7 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('admin/setting') ?>">
-						<i class="mdi mdi-location menu-icon"></i>
+						<i class="mdi mdi-account-location menu-icon"></i>
 						<span class="menu-title">Setting Lokasi</span>
 					</a>
 				</li>
