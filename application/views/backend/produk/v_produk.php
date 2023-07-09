@@ -58,16 +58,17 @@
 												<?= $value->nama_kategori ?>
 											</td>
 											<td>
-												<?= number_format($value->harga), 0 ?>
+												Rp. <?= number_format($value->harga) ?>
 											</td>
 											<td>
-												<?= $value->diskon ?>
+												<?= $value->diskon ?> %
 											</td>
 											<td>
-												<?= $value->berat ?>
+												<?= $value->berat ?> G
 											</td>
 											<td>
-												<div class="progress">
+												<?= $value->stok ?>
+												<!-- <div class="progress">
 													<?php if ($value->stok == 50) { ?>
 														<div class="progress-bar bg-warning" role="progressbar" style="width: <?= $value->stok ?>%" aria-valuenow="<?= $value->stok ?>" aria-valuemin="0" aria-valuemax="100"></div>
 													<?php } elseif ($value->stok <= 49) { ?>
@@ -75,8 +76,7 @@
 													<?php } elseif ($value->stok >= 51) { ?>
 														<div class="progress-bar bg-success" role="progressbar" style="width: <?= $value->stok ?>%" aria-valuenow="<?= $value->stok ?>" aria-valuemin="0" aria-valuemax="100"></div>
 													<?php } ?>
-
-												</div>
+												</div> -->
 											</td>
 											<td>
 												<?= $value->deskripsi ?>
