@@ -4,26 +4,37 @@
 		<div class="header-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-4 col-6">
+					<div class="col-lg-2 col-md-3 col-3">
 						<div class="logo">
 							<a href="<?= base_url() ?>">
 								<img alt="" src="<?= base_url() ?>frontend/assets/img/logo/logos.jpg">
 							</a>
 						</div>
 					</div>
-					<div class="col-lg-9 col-md-8 col-6">
+					<div class="col-lg-3 col-md-3 col-4">
+						<div class="footer-newsletter">
+							<div id="mc_embed_signup" class="subscribe-form">
+								<form action="<?= base_url('pencarian') ?>" method="get" class="validate">
+									<!-- <div class="form-group d-flex"> -->
+									<div id="mc_embed_signup_scroll" class="mc-form">
+										<input type="text" class="form-control" name="keyword" placeholder="Masukan Produk yang Anda Cari...">
+										<!-- <input type="submit" value="cari" class="submit px-3"> -->
+										<div class="submit-button">
+											<input type="submit" value="Cari" id="mc-embedded-subscribe" class="button">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-7 col-md-6 col-5">
 						<div class="header-bottom-right">
 							<div class="main-menu">
 								<nav>
 									<ul>
-										<li>
-											<form action="<?= base_url('pencarian') ?>" method="get" class="subscribe-form">
-												<div class="form-group d-flex">
-													<input type="text" class="form-control" name="keyword" placeholder="Masukan Produk yang Anda Cari...">
-													<input type="submit" value="cari" class="submit px-3">
-												</div>
-											</form>
-										</li>
+										<!-- <li>
+											
+										</li> -->
 										<li class="top-hover"><a href="<?= base_url() ?>">home</a>
 										</li>
 										<?php $kategori = $this->m_master_produk->kategori(); ?>
