@@ -10,12 +10,12 @@
 						</div>
 						<div class="footer-content">
 							<ul>
-								<li><a href="about-us.html">About Us</a></li>
-								<li><a href="#">Delivery Information</a></li>
+								<li><a href="about-us.html">Kuningan Jawabarat</a></li>
+								<!-- <li><a href="#">Delivery Information</a></li>
 								<li><a href="#">Privacy Policy</a></li>
 								<li><a href="#">Terms & Conditions</a></li>
 								<li><a href="#">Customer Service</a></li>
-								<li><a href="#">Return Policy</a></li>
+								<li><a href="#">Return Policy</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -29,14 +29,14 @@
 							<p>Kuningan, jawabarat</p>
 							<div class="footer-contact mt-20">
 								<ul>
-									<li>(+62) 811 102 762 123</li>
-									<li>(+62) 871 182 120 127</li>
+									<li>WA: (+62) 857 1234 21931</li>
+									<!-- <li>(+62) 871 182 120 127</li> -->
 								</ul>
 							</div>
 							<div class="footer-contact mt-20">
 								<ul>
-									<li>sundaystore@gmail.com</li>
-									<li>sundaystore@yahoo.com</li>
+									<li>IG : sundaystore</li>
+									<li>Email : sundaystore@yahoo.com</li>
 								</ul>
 							</div>
 						</div>
