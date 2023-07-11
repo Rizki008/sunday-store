@@ -4,8 +4,7 @@
 		<div class="breadcrumb-content text-center">
 			<h3><?= $title ?></h3>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><?= $title ?> </li>
+				
 			</ul>
 		</div>
 	</div>
@@ -22,12 +21,12 @@
 						<table>
 							<thead>
 								<tr>
-									<th>#</th>
+									<th>No</th>
 									<th>No Pesanan</th>
 									<th>Harga Satuan</th>
-									<th>Harga Ongkir</th>
+									<th>Biaya Ongkir</th>
 									<th>Total Harga</th>
-									<th>Status Produk</th>
+									<th>Status Pesanan</th>
 									<th>Detail</th>
 								</tr>
 							</thead>
@@ -60,13 +59,13 @@
 										</td>
 										<td class="product-wishlist-cart">
 											<?php if ($value->status_order == 1 && $value->metode_bayar == 2) { ?>
-												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>"><i class="fa fa-dropbox"></i>Detail </a><br><br><br>
-												<a href="<?= base_url('pesanan/bayar/' . $value->id_pesanan) ?>"><i class="fa fa-dollar"></i>Pembayaran</a>
+												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>">Detail </a><br><br><br>
+												<a href="<?= base_url('pesanan/bayar/' . $value->id_pesanan) ?>">Pembayaran</a>
 											<?php } elseif ($value->status_order == 3) { ?>
-												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>"><i class="fa fa-dropbox"></i>Detail </a><br><br><br>
-												<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>"><i class="fa fa-send"></i>DiTerima</a>
+												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>">Detail </a><br><br><br>
+												<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>">Diterima</a>
 											<?php } elseif ($value->status_order == 4 and $value->status_ulasan == 0) { ?>
-												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>"><i class="fa fa-comment"></i>Ulasan</a>
+												<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>">Ulasan</a>
 												<!-- <a href="<?= base_url('pesanan/review/' . $value->id_pesanan) ?>"><i class="fa fa-comment"></i></a> -->
 											<?php } ?>
 										</td>

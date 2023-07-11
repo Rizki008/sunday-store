@@ -5,9 +5,9 @@
 			<div class="col-md-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">Default form</h4>
+						<h4 class="card-title">Setting Lokasi Toko</h4>
 						<p class="card-description">
-							Basic form layout
+							
 						</p>
 						<?php
 
@@ -39,11 +39,11 @@
 								<input type="text" name="no_telpon" class="form-control" value="<?= $setting->no_telpon ?>" require>
 							</div>
 							<div class="form-group">
-								<label for="exampleInputConfirmPassword1">Nomor Telepon</label>
+								<label for="exampleInputConfirmPassword1">Alamat Toko</label>
 								<input type="text" name="alamat" class="form-control" value="<?= $setting->alamat ?>" require>
 							</div>
-							<button type="submit" class="btn btn-primary mr-2">Submit</button>
-							<a href="<?= base_url('admin') ?>" class="btn btn-warning btn-sm">Kembali</a>
+							<button type="submit" class="btn btn-primary mr-2">Simpan</button>
+							<a href="<?= base_url('admin') ?>" class="btn btn-warning btn-sm">Batal</a>
 						</form>
 					</div>
 				</div>

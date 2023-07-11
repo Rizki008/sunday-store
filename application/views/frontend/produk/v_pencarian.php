@@ -40,47 +40,49 @@
 									echo form_hidden('qty', 1);
 									echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 									?>
-									<!-- <div class="product-width col-xl-4 "> -->
-									<div class="product-wrapper">
-										<div class="product-img">
-											<a href="<?= base_url('home/detail/' . $value->id_produk) ?>">
-												<img alt="" src="<?= base_url('assets/produk/' . $value->foto) ?>">
-											</a>
-											<?php if ($value->diskon == 0) { ?>
-											<?php } elseif ($value->diskon > 1) { ?>
-												<span>-<?= $value->diskon ?>%</span>
-											<?php } ?>
-											<div class="product-action">
-												<a class="action-compare" href="#" data-target="#exampleModal<?= $value->id_produk ?>" data-toggle="modal" title="Quick View">
-													<i class="ion-ios-search-strong"></i>
+									<div class="product-width col-xl-12 ">
+										<div class="product-wrapper">
+											<div class="product-img">
+												<a href="<?= base_url('home/detail/' . $value->id_produk) ?>">
+													<img alt="" src="<?= base_url('assets/produk/' . $value->foto) ?>" width="250px" height="200px">
 												</a>
-											</div>
-										</div>
-										<div class="product-content text-left">
-											<div class="product-hover-style">
-												<div class="product-title">
-													<h4>
-														<a href="<?= base_url('home/detail/' . $value->id_produk) ?>"><?= $value->nama_produk ?></a>
-													</h4>
-												</div>
-												<div class="cart-hover">
-													<h4>
-														<button type="submit" class="btn btn-success">+ Add to cart</button>
-														<!-- <a href="<?= base_url('belanja/add/' . $value->id_produk) ?>">+ Add to cart</a> -->
-													</h4>
-												</div>
-											</div>
-											<div class="product-price-wrapper">
 												<?php if ($value->diskon == 0) { ?>
-													<span>Rp. <?= number_format($value->harga), 0 ?> -</span>
 												<?php } elseif ($value->diskon > 1) { ?>
-													<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)), 0 ?> -</span>
-													<span class="product-price-old">Rp. <?= number_format($value->harga), 0 ?> </span>
+													<span>-<?= $value->diskon ?>%</span>
 												<?php } ?>
+												<div class="product-action">
+													<a class="action-compare" href="#" data-target="#exampleModal<?= $value->id_produk ?>" data-toggle="modal" title="Quick View">
+														<i class="ion-ios-search-strong"></i>
+													</a>
+												</div>
+											</div>
+											<div class="product-content text-left">
+												<div class="product-hover-style">
+													<div class="product-title">
+														<h4>
+															<a href="<?= base_url('home/detail/' . $value->id_produk) ?>"><?= $value->nama_produk ?></a>
+														</h4>
+													</div>
+													<div class="cart-hover">
+														<h4>
+															<button type="submit" class="btn btn-success">+ Add to cart</button>
+															<!-- <a href="<?= base_url('belanja/add/' . $value->id_produk) ?>">+ Add to cart</a> -->
+														</h4>
+													</div>
+												</div>
+												<div class="product-price-wrapper">
+													<?php if ($value->diskon == 0) { ?>
+														<span>Rp. <?= number_format($value->harga), 0 ?> -</span>
+													<?php } elseif ($value->diskon > 1) { ?>
+														<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)), 0 ?> -</span>
+														<span class="product-price-old">Rp. <?= number_format($value->harga), 0 ?> </span>
+													<?php } ?>
+												</div>
+												<br>
+												<br>
 											</div>
 										</div>
 									</div>
-									<!-- </div> -->
 									<?php echo form_close() ?>
 								<?php endforeach; ?>
 							<?php else : ?>

@@ -27,7 +27,7 @@
 											Level
 										</th>
 										<th>
-											Action
+											Aksi
 										</th>
 									</tr>
 								</thead>
@@ -168,7 +168,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h5>Apakah Anda Yakin Akan hapus User</h5>
+						<h5>Apakah Anda Yakin Akan Hapus User</h5>
 						<h3><?= $value->username ?> ???</h3>
 					</div>
 					<div class="modal-footer">

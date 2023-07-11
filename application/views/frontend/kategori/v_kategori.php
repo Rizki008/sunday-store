@@ -2,10 +2,9 @@
 <div class="breadcrumb-area bg-image-3 ptb-150">
 	<div class="container">
 		<div class="breadcrumb-content text-center">
-			<h3><?= $title ?></h3>
+			<h3>Kategori</h3>
 			<ul>
-				<li><a href="<?= base_url() ?>">Home</a></li>
-				<li class="active"><?= $title ?></li>
+
 			</ul>
 		</div>
 	</div>
@@ -38,48 +37,51 @@
 									echo form_hidden('qty', 1);
 									echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 									?>
-									<!-- <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"> -->
-									<div class="product-wrapper">
-										<div class="product-img">
-											<a href="<?= base_url('home/detail/' . $value->id_produk) ?>">
-												<img alt="" src="<?= base_url('assets/produk/' . $value->foto) ?>">
-											</a>
-											<?php if ($value->diskon == 0) { ?>
-											<?php } elseif ($value->diskon > 1) { ?>
-												<span>-<?= $value->diskon ?>%</span>
-											<?php } ?>
-											<div class="product-action">
-												<a class="action-wishlist" href="#" title="Wishlist">
-													<i class="ion-android-favorite-outline"></i>
+									<div class="product-width col-xl-12">
+										<div class="product-wrapper">
+											<div class="product-img">
+												<a href="<?= base_url('home/detail/' . $value->id_produk) ?>">
+													<img alt="" src="<?= base_url('assets/produk/' . $value->foto) ?>" width="250px" height="200px">
 												</a>
-												<a class="action-cart" href="#" title="Add To Cart">
-													<i class="ion-ios-shuffle-strong"></i>
-												</a>
-												<a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
-													<i class="ion-ios-search-strong"></i>
-												</a>
-											</div>
-										</div>
-										<div class="product-content text-left">
-											<div class="product-hover-style">
-												<div class="product-title">
-													<h4>
-														<a href="<?= base_url('home/detail/' . $value->id_produk) ?>"><?= $value->nama_produk ?></a>
-													</h4>
-												</div>
-												<div class="cart-hover">
-													<button type="submit" class="btn btn-success">+ Add to cart</button>
-													<!-- <h4><a href="product-details.html">+ Add to cart</a></h4> -->
-												</div>
-											</div>
-											<div class="product-price-wrapper">
 												<?php if ($value->diskon == 0) { ?>
-													<span>Rp. <?= number_format($value->harga), 0 ?> -</span>
 												<?php } elseif ($value->diskon > 1) { ?>
-													<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)), 0 ?> -</span>
-													<span class="product-price-old">Rp. <?= number_format($value->harga), 0 ?> </span>
+													<span>-<?= $value->diskon ?>%</span>
 												<?php } ?>
+												<div class="product-action">
+													<a class="action-wishlist" href="#" title="Wishlist">
+														<i class="ion-android-favorite-outline"></i>
+													</a>
+													<a class="action-cart" href="#" title="Add To Cart">
+														<i class="ion-ios-shuffle-strong"></i>
+													</a>
+													<a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+														<i class="ion-ios-search-strong"></i>
+													</a>
+												</div>
 											</div>
+											<div class="product-content text-left">
+												<div class="product-hover-style">
+													<div class="product-title">
+														<h4>
+															<a href="<?= base_url('home/detail/' . $value->id_produk) ?>"><?= $value->nama_produk ?></a>
+														</h4>
+													</div>
+													<div class="cart-hover">
+														<button type="submit" class="btn btn-success">+ Add to cart</button>
+														<!-- <h4><a href="product-details.html">+ Add to cart</a></h4> -->
+													</div>
+												</div>
+												<div class="product-price-wrapper">
+													<?php if ($value->diskon == 0) { ?>
+														<span>Rp. <?= number_format($value->harga), 0 ?> -</span>
+													<?php } elseif ($value->diskon > 1) { ?>
+														<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)), 0 ?> -</span>
+														<span class="product-price-old">Rp. <?= number_format($value->harga), 0 ?> </span>
+													<?php } ?>
+												</div>
+											</div>
+											<br>
+											<br>
 										</div>
 									</div>
 									<?php echo form_close() ?>

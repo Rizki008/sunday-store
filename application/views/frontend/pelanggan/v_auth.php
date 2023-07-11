@@ -4,8 +4,7 @@
 		<div class="breadcrumb-content text-center">
 			<h3>LOGIN/REGISTER</h3>
 			<ul>
-				<li><a href="<?= base_url() ?>">Home</a></li>
-				<li class="active"><?= $title ?></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -51,13 +50,13 @@
 							<div class="login-form-container">
 								<div class="login-register-form">
 									<form action="<?= base_url('pelanggan/register') ?>" method="post">
-										<input type="text" name="nama_pelanggan" placeholder="Nama lengkap">
+										<input type="text" name="nama_pelanggan" placeholder="Nama Lengkap">
 										<input type="text" name="nohp_pelanggan" placeholder="No Hp">
 										<input type="text" name="jenis_kelamin" placeholder="Jenis Kelamin">
 										<input type="email" name="email_pelanggan" placeholder="Email">
 										<input type="password" name="password_pelanggan" placeholder="Password">
 										<input type="password" name="ulangi_password_pelanggan" placeholder="Ulangi Password">
-										<input type="text" name="alamat_pelanggan" placeholder="Alamat lengkap">
+										<input type="text" name="alamat_pelanggan" placeholder="Alamat Lengkap">
 										<div class="button-box">
 											<button type="submit"><span>Register</span></button>
 										</div>

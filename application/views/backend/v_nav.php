@@ -14,7 +14,7 @@
 					<!-- <img src="images/logo-mini.svg" alt="logo" /> -->
 				</a>
 			</div>
-			<h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, <?= $this->session->userdata('username'); ?></h4>
+			<h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Selamat Datang, <?= $this->session->userdata('username'); ?></h4>
 			<ul class="navbar-nav navbar-nav-right">
 				<li class="nav-item">
 					<h4 class="mb-0 font-weight-bold d-none d-xl-block">

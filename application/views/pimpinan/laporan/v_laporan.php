@@ -7,7 +7,7 @@
 					<div class="card-body">
 						<h4 class="card-title">Laporan Perhari</h4>
 						<p class="card-description">
-							Laporan Perhari
+							
 						</p>
 						<form action="<?= base_url('Laporanfpdf/hari') ?>" method="POST" class="forms-sample">
 							<div class="form-group">
@@ -46,7 +46,7 @@
 									?>
 								</select>
 							</div>
-							<button type="submit" class="btn btn-primary mr-2">Submit</button>
+							<button type="submit" class="btn btn-primary mr-2">Cetak</button>
 						</form>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 					<div class="card-body">
 						<h4 class="card-title">Laporan Perbulan</h4>
 						<p class="card-description">
-							Laporan Perbulan
+							
 						</p>
 						<form class="forms-sample" action="<?= base_url('Laporanfpdf/bulan') ?>" method="POST">
 							<div class="form-group row">
@@ -83,7 +83,7 @@
 									?>
 								</select>
 							</div>
-							<button type="submit" class="btn btn-primary mr-2">Submit</button>
+							<button type="submit" class="btn btn-primary mr-2">Cetak</button>
 						</form>
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 					<div class="card-body">
 						<h4 class="card-title">Laporan Pertahun</h4>
 						<p class="card-description">
-							Laporan Pertahun
+							
 						</p>
 						<form class="forms-sample" action="<?= base_url('Laporanfpdf') ?>" method="POST">
 							<div class="form-group row">
@@ -108,7 +108,7 @@
 									?>
 								</select>
 							</div>
-							<button type="submit" class="btn btn-primary mr-2">Submit</button>
+							<button type="submit" class="btn btn-primary mr-2">Cetak</button>
 						</form>
 					</div>
 				</div>

@@ -227,10 +227,9 @@
 	<div class="breadcrumb-area bg-image-3 ptb-150">
 		<div class="container">
 			<div class="breadcrumb-content text-center">
-				<h3>CART PAGE</h3>
+				<h3>Keranjang Belanja</h3>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li class="active">Cart page</li>
+					
 				</ul>
 			</div>
 		</div>
@@ -239,7 +238,7 @@
 	<!-- shopping-cart-area start -->
 	<div class="cart-main-area ptb-100">
 		<div class="container">
-			<h3 class="page-title">Your cart items</h3>
+			<h3 class="page-title">Produk di Keranjang Belanja Anda</h3>
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 					<form action="<?= base_url('belanja/update') ?>" method="POST">
@@ -247,13 +246,13 @@
 							<table>
 								<thead>
 									<tr>
-										<th>Image</th>
-										<th>Product Name</th>
-										<th>Until Price</th>
+										<th>Gambar</th>
+										<th>Nama Produk</th>
+										<th>Harga</th>
 										<th>Qty</th>
 										<th>Berat</th>
 										<th>Subtotal</th>
-										<th>Delete</th>
+										<th>Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -295,7 +294,7 @@
 										<a href="<?= base_url() ?>">Belanja Lagi</a>
 									</div>
 									<div class="cart-clear">
-										<button type="submit">Update Shopping Cart</button>
+										<button type="submit">Update Pesanan</button>
 										<!-- <a href="#">Clear Shopping Cart</a> -->
 									</div>
 								</div>
@@ -317,10 +316,10 @@
 							<div class="col-lg-6 col-md-6">
 								<div class="cart-tax">
 									<div class="title-wrap">
-										<h4 class="cart-bottom-title section-bg-gray">Estimate Shipping And Tax</h4>
+										<h4 class="cart-bottom-title section-bg-gray">Perkiraan Pengiriman dan Biaya</h4>
 									</div>
 									<div class="tax-wrapper">
-										<p>Enter your destination to get a shipping estimate.</p>
+										<p>Pastikan Mengisi Data Dengan Benar</p>
 										<div class="tax-select-wrapper">
 											<div class="row">
 												<div class="col-md-6">
@@ -437,18 +436,18 @@
 							<div class="col-lg-6 col-md-6">
 								<div class="grand-totall">
 									<div class="title-wrap">
-										<h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
+										<h4 class="cart-bottom-title section-bg-gary-cart">Total Pesanan</h4>
 									</div>
-									<h5>Total products <span>Rp. <?php echo $this->cart->format_number($this->cart->total()); ?></span></h5>
+									<h5>Harga Produk <span>Rp. <?php echo $this->cart->format_number($this->cart->total()); ?></span></h5>
 									<div class="total-shipping">
-										<h5>Total shipping</h5>
+										<h5>Biaya Ongkir</h5>
 										<ul>
 											<li><span><label id="ongkir"></label></span></li>
 										</ul>
 									</div>
 									<h4 class="grand-totall-title">Grand Total <span><label id="total_bayar"></label></span></h4>
 									<!-- <a href="#">Proceed to Checkout</a> -->
-									<button class="cart-btn-2" type="submit">Proceed to Checkout</button>
+									<button class="cart-btn-2" type="submit">Checkout</button>
 								</div>
 							</div>
 						</div>

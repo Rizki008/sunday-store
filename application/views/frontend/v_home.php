@@ -1,22 +1,16 @@
 <!-- Slider Start -->
 <div class="slider-area">
 	<div class="slider-active owl-dot-style owl-carousel">
-		<div class="single-slider ptb-240 bg-img" style="background-image:url(<?= base_url() ?>frontend/assets/img/slider/slider-1.jpg);">
+		<div class="single-slider ptb-240 bg-img" style="background-image:url(<?= base_url() ?>frontend/assets/img/slider/slider-2.jpg);">
 			<div class="container">
 				<div class="slider-content slider-animated-1">
-					<h1 class="animated">Sunday <span class="theme-color">Store</span></h1>
-					<h1 class="animated">Toko Pakayan.</h1>
-					<p>Berbagai Macam Kebutuhan Gaya Anda Ada di toko kami</p>
+					<h1 class="animated">Selamat Datang di Website</h1>
+					<h1 class="animated"><span class="theme-color">Toko Sunday Store</span></h1>
+					<p>Berbagai Macam Kebutuhan Gaya Anda Ada di Toko Kami</p>
 				</div>
 			</div>
 		</div>
-		<div class="single-slider ptb-240 bg-img" style="background-image:url(<?= base_url() ?>frontend/assets/img/slider/slider-1-1.jpg);">
-			<div class="container">
-				<div class="slider-content slider-animated-1">
-					<h1 class="animated">Sunday <span class="theme-color">Store</span></h1>
-					<h1 class="animated">Toko Pakayan.</h1>
-					<p>Berbagai Macam Kebutuhan Gaya Anda Ada di toko kami</p>
-				</div>
+		
 			</div>
 		</div>
 	</div>
@@ -183,18 +177,8 @@
 </div>
 <!-- New Products End -->
 <!-- Testimonial Area Start -->
-<div class="testimonials-area bg-img pt-100 pb-100">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-12">
-				<div class="testimonial-active owl-carousel">
-					<div class="single-testimonial text-center">
-						<div class="testimonial-img">
-							<img alt="" src="<?= base_url() ?>frontend/assets/img/icon-img/testi.png">
-						</div>
-						<p>Sunday Store</p>
-						<h4>Gregory Perkins</h4>
-						<h5>Customer</h5>
+
+						
 					</div>
 				</div>
 			</div>

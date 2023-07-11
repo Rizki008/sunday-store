@@ -4,8 +4,7 @@
 		<div class="breadcrumb-content text-center">
 			<h3><?= $title ?></h3>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><?= $title ?> </li>
+				
 			</ul>
 		</div>
 	</div>
@@ -23,7 +22,7 @@
 					<table>
 						<thead>
 							<tr>
-								<th></th>
+								<th>Gambar</th>
 								<th>Nama Produk</th>
 								<th>Harga Satuan</th>
 								<th>Qty</th>

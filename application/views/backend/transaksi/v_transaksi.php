@@ -35,14 +35,14 @@
 											<table class="table table-striped">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
+														<th>No</th>
+														<th>No Pesanan</th>
 														<th>Qty</th>
-														<th>Harga Pembelian</th>
+														<th>Harga Produk</th>
 														<th>Biaya Pengiriman</th>
 														<th>Total Bayar</th>
-														<th>Status Pesanan</th>
-														<th>Action</th>
+														<th>Status Bayar/Metode</th>
+														<th>Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -66,7 +66,7 @@
 															</td>
 															<td>
 																<?php if ($value->metode_bayar == 1) { ?>
-																	<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmaai</a>
+																	<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmasi</a><p></p>
 																<?php } ?>
 																<br>
 																<a href="<?= base_url('transaksi/detail/' . $value->id_pesanan) ?>" class="btn btn-primary btn-sm">Detail Pesanan</a>
@@ -80,14 +80,14 @@
 											<table class="table table-striped">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
-														<th>Harga Tiket</th>
+														<th>No</th>
+														<th>No Pesanan</th>
 														<th>Qty</th>
-														<th>Tanggal Booking</th>
-														<th>Metode Bayar</th>
-														<th>Status Bayar/Pemesanan</th>
-														<th>Setting</th>
+														<th>Harga Produk</th>
+														<th>Biaya Pengiriman</th>
+														<th>Total Bayar</th>
+														<th>Status Bayar</th>
+														<th>Opsi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -117,13 +117,13 @@
 											<table class="table table-striped">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
-														<th>Harga Tiket</th>
+														<th>No</th>
+														<th>No Pesanan</th>
 														<th>Qty</th>
-														<th>Tanggal Booking</th>
-														<th>Metode Bayar</th>
-														<th>Status Bayar/Pemesanan</th>
+														<th>Harga Produk</th>
+														<th>Biaya Ongkir</th>
+														<th>Total Bayar</th>
+														<th>Status Pesanan</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -146,13 +146,13 @@
 											<table class="table table-striped">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
-														<th>Harga Tiket</th>
+														<th>No</th>
+														<th>No Pesanan</th>
 														<th>Qty</th>
-														<th>Tanggal Booking</th>
-														<th>Metode Bayar</th>
-														<th>Status Bayar/Pemesanan</th>
+														<th>Harga Produk</th>
+														<th>Biaya Pengiriman</th>
+														<th>Total Bayar</th>
+														<th>Status Pesanan</th>
 													</tr>
 												</thead>
 												<tbody>

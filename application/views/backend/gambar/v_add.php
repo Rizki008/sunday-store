@@ -8,17 +8,17 @@
 						<p class="card-description">
 							<?= $title ?>
 						</p>
-						<form class="forms-sample" action="<?= base_url('master_produk/add_gambar/' . $produk->id_produk) ?>" method="POST" enctype="multipart/form-data">
+						<form class="forms-sample" action="<?= base_url('master/add_gambar/' . $produk->id_produk) ?>" method="POST" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="exampleInputName1">Keterangan</label>
 								<input type="text" name="keterangan" class="form-control" id="exampleInputName1" placeholder="Name">
 							</div>
 							<div class="form-group">
-								<label>File upload gambar</label>
+								<label>File Upload Gambar</label>
 								<input type="file" name="gambar" class="form-control" id="">
 							</div>
-							<button type="submit" class="btn btn-primary mr-2">Submit</button>
-							<a href="<?= base_url('master_produk/gambarproduk') ?>" class="btn btn-warning">Kembali</a>
+							<button type="submit" class="btn btn-primary mr-2">Simpan</button>
+							<a href="<?= base_url('master/gambar') ?>" class="btn btn-warning">Batal</a>
 						</form>
 					</div>
 					<hr>
@@ -52,12 +52,12 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h5>Apakah Anda Yakin Akan hapus Kategori</h5>
+						<h5>Apakah Anda Yakin Akan Hapus Gambar</h5>
 						<h3><?= $value->keterangan ?> ???</h3>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<a href="<?= base_url('master_produk/delete_gambar/' . $value->produk . '/' . $value->id_gambar) ?>" class="btn btn-primary">Save</a>
+						<a href="<?= base_url('master/delete_gambar/' . $value->produk . '/' . $value->id_gambar) ?>" class="btn btn-primary">Hapus</a>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</div>
 			</div>

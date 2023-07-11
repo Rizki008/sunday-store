@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Master_produk extends CI_Controller
+class Master extends CI_Controller
 {
 
 	public function __construct()
@@ -29,7 +29,7 @@ class Master_produk extends CI_Controller
 		);
 		$this->m_master_produk->add_kategori($data);
 		$this->session->set_flashdata('pesan', 'Tambah kategori berhasil');
-		redirect('master_produk/kategori');
+		redirect('master/kategori');
 	}
 	public function update($id_kategori)
 	{
@@ -39,7 +39,7 @@ class Master_produk extends CI_Controller
 		);
 		$this->m_master_produk->update_kategori($data);
 		$this->session->set_flashdata('pesan', 'Update Kategori berhasil');
-		redirect('master_produk/kategori');
+		redirect('master/kategori');
 	}
 	public function delete($id_kategori)
 	{
@@ -48,7 +48,7 @@ class Master_produk extends CI_Controller
 		);
 		$this->m_master_produk->delete_kategori($data);
 		$this->session->set_flashdata('pesan', 'Kategori Berhasil dihapus');
-		redirect('master_produk/kategori');
+		redirect('master/kategori');
 	}
 
 
@@ -96,7 +96,7 @@ class Master_produk extends CI_Controller
 				);
 				$this->m_master_produk->add_produk($data);
 				$this->session->set_flashdata('pesan', 'Data Berhasil Ditambahkan !!!');
-				redirect('master_produk/produk');
+				redirect('master/produk');
 			}
 		}
 	}
@@ -158,7 +158,7 @@ class Master_produk extends CI_Controller
 			);
 			$this->m_master_produk->update_produk($data);
 			$this->session->set_flashdata('pesan', 'Data Berhasil Ditambahkan !!!');
-			redirect('master_produk/produk');
+			redirect('master/produk');
 		}
 	}
 
@@ -175,10 +175,10 @@ class Master_produk extends CI_Controller
 		);
 		$this->m_master_produk->delete_produk($data);
 		$this->session->set_flashdata('pesan', 'Produk berhasil di hapus');
-		redirect('master_produk/produk');
+		redirect('master/produk');
 	}
 
-	public function gambarproduk()
+	public function gambar()
 	{
 		$data = array(
 			'title' => 'Data Gambar Produk',
@@ -218,7 +218,7 @@ class Master_produk extends CI_Controller
 				);
 				$this->m_master_produk->add_gambar($data);
 				$this->session->set_flashdata('pesan', 'Data Berhasil Ditambahkan !!!');
-				redirect('master_produk/add_gambar/' . $id_produk);
+				redirect('master/add_gambar/' . $id_produk);
 			}
 		}
 		$data = array(
@@ -242,6 +242,6 @@ class Master_produk extends CI_Controller
 		);
 		$this->m_master_produk->delete_gambar($data);
 		$this->session->set_flashdata('pesan', 'Produk berhasil di hapus');
-		redirect('master_produk/add_gambar/' . $id_produk);
+		redirect('master/add_gambar/' . $id_produk);
 	}
 }

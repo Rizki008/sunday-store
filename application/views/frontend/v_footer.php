@@ -6,11 +6,12 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="footer-widget mb-40">
 						<div class="footer-title mb-25">
-							<h4>Information</h4>
+							<h4>Informasi</h4>
 						</div>
 						<div class="footer-content">
 							<ul>
-								<li><a href="about-us.html">Kuningan Jawabarat</a></li>
+								<li>Alamat Toko : Jalan Raya Sidaraja, Desa Sidaraja, Kecamatan Ciawigebang, Kabupaten Kuningan, Jawa Barat</li>
+								<li>Nomor Rekening Sunday Store Bank BCA. Atas Nama : Suryo</li>
 								<!-- <li><a href="#">Delivery Information</a></li>
 								<li><a href="#">Privacy Policy</a></li>
 								<li><a href="#">Terms & Conditions</a></li>
@@ -23,19 +24,16 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="footer-widget footer-widget-red footer-black-color mb-40">
 						<div class="footer-title mb-25">
-							<h4>Contact Us</h4>
+							<h4>Kontak</h4>
 						</div>
 						<div class="footer-about">
-							<p>Kuningan, jawabarat</p>
+							
 							<div class="footer-contact mt-20">
 								<ul>
-									<li>WA: (+62) 857 1234 21931</li>
-									<!-- <li>(+62) 871 182 120 127</li> -->
-								</ul>
-							</div>
-							<div class="footer-contact mt-20">
+									
 								<ul>
-									<li>IG : sundaystore</li>
+									<li>WhatssApp : 087723346534</li>
+									<li>Instagram : sundaystore</li>
 									<li>Email : sundaystore@yahoo.com</li>
 								</ul>
 							</div>

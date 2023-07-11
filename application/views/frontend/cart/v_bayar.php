@@ -4,8 +4,7 @@
 		<div class="breadcrumb-content text-center">
 			<h3>PEMBAYARAN</h3>
 			<ul>
-				<li><a href="<?= base_url() ?>">Home</a></li>
-				<li class="active"><?= $title ?></li>
+				
 			</ul>
 		</div>
 	</div>
