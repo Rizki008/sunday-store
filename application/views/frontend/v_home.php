@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- Navbar Start -->
 <div class="container-fluid mb-5">
 	<div class="row border-top px-xl-5">
@@ -13,21 +12,9 @@
 					<?php foreach ($kategori as $key => $kategoris) { ?>
 						<a href="<?= base_url('home/kategori/' . $kategoris->id_kategori) ?>" class="nav-item nav-link"><?= $kategoris->nama_kategori ?></a>
 					<?php } ?>
-=======
-<!-- Slider Start -->
-<div class="slider-area">
-	<div class="slider-active owl-dot-style owl-carousel">
-		<div class="single-slider ptb-240 bg-img" style="background-image:url(<?= base_url() ?>frontend/assets/img/slider/slider-2.jpg);">
-			<div class="container">
-				<div class="slider-content slider-animated-1">
-					<h1 class="animated">Selamat Datang di Website</h1>
-					<h1 class="animated"><span class="theme-color">Toko Sunday Store</span></h1>
-					<p>Berbagai Macam Kebutuhan Gaya Anda Ada di Toko Kami</p>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 				</div>
 			</nav>
 		</div>
-<<<<<<< HEAD
 		<div class="col-lg-9">
 			<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
 				<a href="" class="text-decoration-none d-block d-lg-none">
@@ -47,65 +34,6 @@
 								<?php if ($this->session->userdata('email_pelanggan') == "") { ?>
 								<?php } else { ?>
 									<a href="<?= base_url('pesanan') ?>" class="dropdown-item">Pesanan</a>
-=======
-		
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Slider End -->
-<!-- Product Area Start -->
-<div class="product-area bg-image-1 pt-100 pb-95">
-	<div class="container">
-		<div class="featured-product-active hot-flower owl-carousel product-nav">
-			<?php if (count($produk) > 0) : ?>
-				<?php foreach ($produk as $value) : ?>
-					<?php echo form_open('belanja/add');
-					echo form_hidden('id', $value->id_produk);
-					echo form_hidden('name', $value->nama_produk);
-					echo form_hidden('stock', $value->stok);
-					echo form_hidden('netto', $value->berat);
-					echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
-					echo form_hidden('picture', $value->foto);
-					echo form_hidden('qty', 1);
-					echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
-					?>
-					<div class="product-wrapper">
-						<div class="product-img">
-							<a href="<?= base_url('home/detail/' . $value->id_produk) ?>">
-								<img alt="" src="<?= base_url('assets/produk/' . $value->foto) ?>">
-							</a>
-							<?php if ($value->diskon == 0) { ?>
-							<?php } elseif ($value->diskon > 1) { ?>
-								<span>-<?= $value->diskon ?>%</span>
-							<?php } ?>
-							<div class="product-action">
-								<a class="action-compare" href="#" data-target="#exampleModal<?= $value->id_produk ?>" data-toggle="modal" title="Quick View">
-									<i class="ion-ios-search-strong"></i>
-								</a>
-							</div>
-						</div>
-						<div class="product-content text-left">
-							<div class="product-hover-style">
-								<div class="product-title">
-									<h4>
-										<a href="<?= base_url('home/detail/' . $value->id_produk) ?>"><?= $value->nama_produk ?></a>
-									</h4>
-								</div>
-								<div class="cart-hover">
-									<h4>
-										<button type="submit" class="btn btn-success">+ Add to cart</button>
-										<!-- <a href="<?= base_url('belanja/add/' . $value->id_produk) ?>">+ Add to cart</a> -->
-									</h4>
-								</div>
-							</div>
-							<div class="product-price-wrapper">
-								<?php if ($value->diskon == 0) { ?>
-									<span>Rp. <?= number_format($value->harga), 0 ?> -</span>
-								<?php } elseif ($value->diskon > 1) { ?>
-									<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)), 0 ?> -</span>
-									<span class="product-price-old">Rp. <?= number_format($value->harga), 0 ?> </span>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 								<?php } ?>
 							</div>
 						</div>
@@ -141,23 +69,7 @@
 								<h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
 								<a href="<?= base_url('home/list_product') ?>" class="btn btn-light py-2 px-3">Shop Now</a>
 							</div>
-<<<<<<< HEAD
 						</div>
-=======
-							<?php echo form_close() ?>
-						<?php endforeach; ?>
-					<?php else : ?>
-					<?php endif; ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- New Products End -->
-<!-- Testimonial Area Start -->
-
-						
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#header-carousel" data-slide="prev">

@@ -36,11 +36,7 @@
 												<thead>
 													<tr>
 														<th>No</th>
-<<<<<<< HEAD
 														<th>Kode Pesanan</th>
-=======
-														<th>No Pesanan</th>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 														<th>Qty</th>
 														<th>Harga Produk</th>
 														<th>Biaya Pengiriman</th>
@@ -70,12 +66,9 @@
 															</td>
 															<td>
 																<?php if ($value->metode_bayar == 1) { ?>
-<<<<<<< HEAD
+
 																	<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmasi</a>
 																	<p></p>
-=======
-																	<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmasi</a><p></p>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 																<?php } ?>
 																<br>
 																<a href="<?= base_url('transaksi/detail/' . $value->id_pesanan) ?>" class="btn btn-primary btn-sm">Detail Pesanan</a>
@@ -90,11 +83,7 @@
 												<thead>
 													<tr>
 														<th>No</th>
-<<<<<<< HEAD
 														<th>Kode Pesanan</th>
-=======
-														<th>No Pesanan</th>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 														<th>Qty</th>
 														<th>Harga Produk</th>
 														<th>Biaya Pengiriman</th>
@@ -131,11 +120,7 @@
 												<thead>
 													<tr>
 														<th>No</th>
-<<<<<<< HEAD
 														<th>Kode Pesanan</th>
-=======
-														<th>No Pesanan</th>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 														<th>Qty</th>
 														<th>Harga Produk</th>
 														<th>Biaya Ongkir</th>
@@ -164,11 +149,7 @@
 												<thead>
 													<tr>
 														<th>No</th>
-<<<<<<< HEAD
 														<th>Kode Pesanan</th>
-=======
-														<th>No Pesanan</th>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 														<th>Qty</th>
 														<th>Harga Produk</th>
 														<th>Biaya Pengiriman</th>
