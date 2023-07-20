@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Navbar Start -->
 <div class="container-fluid">
 	<div class="row border-top px-xl-5">
@@ -11,6 +12,47 @@
 				<div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
 					<?php foreach ($kategori as $key => $kategoris) { ?>
 						<a href="<?= base_url('home/kategori/' . $kategoris->id_kategori) ?>" class="nav-item nav-link"><?= $kategoris->nama_kategori ?></a>
+=======
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb-area bg-image-3 ptb-150">
+	<div class="container">
+		<div class="breadcrumb-content text-center">
+			<h3> PRODUK</h3>
+			<ul>
+				<?= $title ?>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- Breadcrumb Area End -->
+<!-- Product Deatils Area Start -->
+<div class="product-details pt-100 pb-95">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<?php echo form_open('belanja/add');
+				echo form_hidden('id', $produk->id_produk);
+				echo form_hidden('name', $produk->nama_produk);
+				echo form_hidden('stock', $produk->stok);
+				echo form_hidden('netto', $produk->berat);
+				echo form_hidden('price', $produk->harga - ($produk->diskon / 100 * $produk->harga));
+				echo form_hidden('picture', $produk->foto);
+				echo form_hidden('qty', 1);
+				echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
+				?>
+				<div class="product-details-img">
+					<img class="zoompro" src="<?= base_url('assets/produk/' . $produk->foto) ?>" data-zoom-image="<?= base_url('assets/produk/' . $produk->foto) ?>" alt="zoom" />
+					<div id="gallery" class="mt-20 product-dec-slider owl-carousel">
+						<?php foreach ($gambar as $key => $img) { ?>
+							<a data-image="<?= base_url('assets/foto/' . $img->gambar) ?>" data-zoom-image="<?= base_url('assets/foto/' . $img->gambar) ?>">
+								<img src="<?= base_url('assets/foto/' . $img->gambar) ?>" width="200px" alt="">
+							</a>
+						<?php } ?>
+					</div>
+					<?php if ($produk->diskon == 0) { ?>
+					<?php } elseif ($produk->diskon > 0) { ?>
+						<span>-<?= $produk->diskon ?>%</span>
+>>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 					<?php } ?>
 				</div>
 			</nav>

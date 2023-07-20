@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Navbar Start -->
 <div class="container-fluid">
 	<div class="row border-top px-xl-5">
@@ -14,6 +15,16 @@
 					<?php } ?>
 				</div>
 			</nav>
+=======
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb-area bg-image-3 ptb-150">
+	<div class="container">
+		<div class="breadcrumb-content text-center">
+			<h3>PEMBAYARAN</h3>
+			<ul>
+				
+			</ul>
+>>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 		</div>
 		<div class="col-lg-9">
 			<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">

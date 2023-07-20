@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Navbar Start -->
 <div class="container-fluid">
 	<div class="row border-top px-xl-5">
@@ -49,6 +50,16 @@
 					</div>
 				</div>
 			</nav>
+=======
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb-area bg-image-3 ptb-150">
+	<div class="container">
+		<div class="breadcrumb-content text-center">
+			<h3>LOGIN/REGISTER</h3>
+			<ul>
+				
+			</ul>
+>>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 		</div>
 	</div>
 </div>
@@ -85,9 +96,53 @@
 						<input type="email" name="email_pelanggan" value="<?= set_value('email_pelanggan') ?>" placeholder="Email" class="form-control" />
 						<p class="help-block text-danger"></p>
 					</div>
+<<<<<<< HEAD
 					<div class="control-group">
 						<input type="password" name="password_pelanggan" value="<?= set_value('password_pelanggan') ?>" placeholder="Password" class="form-control" />
 						<p class="help-block text-danger"></p>
+=======
+					<div class="tab-content">
+						<div id="lg1" class="tab-pane active">
+							<div class="login-form-container">
+								<div class="login-register-form">
+									<?php if ($this->session->userdata('success')) { ?><div class="alert alert-success" role="alert"><?= $this->session->userdata('success') ?></div>
+									<?php } ?>
+									<?php if ($this->session->userdata('error')) { ?><div class="alert alert-danger" role="alert"><?= $this->session->userdata('error') ?></div>
+									<?php } ?>
+									<form action="<?= base_url('pelanggan/login') ?>" method="post">
+										<input type="email" name="email_pelanggan" value="<?= set_value('email_pelanggan') ?>" placeholder="Email">
+										<input type="password" name="password_pelanggan" value="<?= set_value('password_pelanggan') ?>" placeholder="Password">
+										<div class="button-box">
+											<!-- <div class="login-toggle-btn">
+												<input type="checkbox">
+												<label>Remember me</label>
+												<a href="#">Forgot Password?</a>
+											</div> -->
+											<button type="submit"><span>Login</span></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div id="lg2" class="tab-pane">
+							<div class="login-form-container">
+								<div class="login-register-form">
+									<form action="<?= base_url('pelanggan/register') ?>" method="post">
+										<input type="text" name="nama_pelanggan" placeholder="Nama Lengkap">
+										<input type="text" name="nohp_pelanggan" placeholder="No Hp">
+										<input type="text" name="jenis_kelamin" placeholder="Jenis Kelamin">
+										<input type="email" name="email_pelanggan" placeholder="Email">
+										<input type="password" name="password_pelanggan" placeholder="Password">
+										<input type="password" name="ulangi_password_pelanggan" placeholder="Ulangi Password">
+										<input type="text" name="alamat_pelanggan" placeholder="Alamat Lengkap">
+										<div class="button-box">
+											<button type="submit"><span>Register</span></button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+>>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 					</div>
 					<div>
 						<button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">

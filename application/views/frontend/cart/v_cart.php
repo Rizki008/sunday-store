@@ -48,6 +48,7 @@
 						<?php } ?>
 					</div>
 				</div>
+<<<<<<< HEAD
 			</nav>
 		</div>
 	</div>
@@ -125,6 +126,239 @@
 						<div class="d-flex justify-content-between mb-3 pt-1">
 							<h6 class="font-weight-medium">Subtotal</h6>
 							<h6 class="font-weight-medium"><?= number_format($this->cart->total(), 0) ?></h6>
+=======
+			</div>
+		</div>
+	</header>
+	<!-- header end -->
+	<!-- Breadcrumb Area Start -->
+	<div class="breadcrumb-area bg-image-3 ptb-150">
+		<div class="container">
+			<div class="breadcrumb-content text-center">
+				<h3>Keranjang Belanja</h3>
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcrumb Area End -->
+	<!-- shopping-cart-area start -->
+	<div class="cart-main-area ptb-100">
+		<div class="container">
+			<h3 class="page-title">Produk di Keranjang Belanja Anda</h3>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+					<form action="<?= base_url('belanja/update') ?>" method="POST">
+						<div class="table-content table-responsive">
+							<table>
+								<thead>
+									<tr>
+										<th>Gambar</th>
+										<th>Nama Produk</th>
+										<th>Harga</th>
+										<th>Qty</th>
+										<th>Berat</th>
+										<th>Subtotal</th>
+										<th>Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $i = 1 ?>
+									<?php $total_berat = 0;
+									$total = 0;
+									foreach ($this->cart->contents() as $items) {
+										$produk = $this->m_master_produk->detailprod($items['id']);
+										$berat = $items['qty'] * $produk->berat;
+										$total_berat = $total_berat + $berat; ?>
+
+										<tr>
+											<td class="product-thumbnail">
+												<a href="#"><img src="<?= base_url('assets/produk/' . $items['picture']) ?>" alt="" width="100px"></a>
+											</td>
+											<td class="product-name"><a href="#"><?= $items['name'] ?> </a></td>
+											<td class="product-price-cart"><span class="amount">Rp. <?= number_format($items['price']), 0 ?></span></td>
+											<td class="product-quantity">
+												<div class="pro-dec-cart">
+													<input class="cart-plus-minus-box" type="number" value="<?= $items['qty'] ?>" min="1" max="stok" name="<?= $i . '[qty]' ?>">
+												</div>
+											</td>
+											<td class="product-subtotal"><?= $berat ?> Kg</td>
+											<td class="product-subtotal">Rp. <?= number_format($items['subtotal']), 0 ?></td>
+											<td class="product-remove">
+												<button type="submit" class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+												<a href="<?= base_url('belanja/delete/' . $items['rowid']) ?>" class="btn btn-danger"><i class="fa fa-times"></i></a>
+											</td>
+										</tr>
+										<?php $i++ ?>
+									<?php } ?>
+								</tbody>
+							</table>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="cart-shiping-update-wrapper">
+									<div class="cart-shiping-update">
+										<a href="<?= base_url() ?>">Belanja Lagi</a>
+									</div>
+									<div class="cart-clear">
+										<button type="submit">Update Pesanan</button>
+										<!-- <a href="#">Clear Shopping Cart</a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<form action="<?= base_url('belanja/cekout') ?>" method="POST">
+						<?php $id_pesanan = date('Ymd') . strtoupper(random_string('alnum', 8)); ?>
+						<?php
+						$i = 1;
+						$j = 1;
+						foreach ($this->cart->contents() as $items) {
+							$id_detail = random_string('alnum', 5);
+							echo form_hidden('qty' . $i++, $items['qty']);
+							echo form_hidden('id_detail' . $j++, $id_detail);
+						}
+						?>
+						<div class="row">
+							<div class="col-lg-6 col-md-6">
+								<div class="cart-tax">
+									<div class="title-wrap">
+										<h4 class="cart-bottom-title section-bg-gray">Perkiraan Pengiriman dan Biaya</h4>
+									</div>
+									<div class="tax-wrapper">
+										<p>Pastikan Mengisi Data Dengan Benar</p>
+										<div class="tax-select-wrapper">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="tax-select">
+															<label>
+																* Provinsi
+															</label>
+															<select class="form-control" name="provinsi">
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="tax-select">
+															<label>
+																* Kota
+															</label>
+															<select class="form-control" name="kota">
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="tax-select">
+															<label>
+																* Expedisi
+															</label>
+															<select class="form-control" name="expedisi">
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="tax-select">
+															<label>
+																* Paket
+															</label>
+															<select class="form-control" name="paket">
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="tax-select">
+															<label>
+																* Zip/Postal Code
+															</label>
+															<input type="text" class="form-control" name="kode_post">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="tax-select">
+															<label>
+																* No Hp
+															</label>
+															<input type="text" class="form-control" name="nohp_penerima">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tax-select">
+												<label>
+													* Metode Bayar
+												</label>
+												<select class="form-control" name="metode_bayar">
+													<option>---Metode Pembayaran---</option>
+													<option value="1">COD</option>
+													<option value="2">Transfer</option>
+												</select>
+											</div>
+											<div class="tax-select">
+												<label>
+													* Detail Alamat
+												</label>
+												<textarea name="alamat_penerima" class="form-control"></textarea>
+											</div>
+											<!-- <button class="cart-btn-2" type="submit">Get A Quote</button> -->
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<input type="hidden" name="id_pesanan" value="<?= $id_pesanan ?>">
+							<input type="hidden" name="estimasi">
+							<input type="hidden" name="ongkir">
+							<input type="hidden" name="berat" value="<?= $total_berat ?>">
+							<input type="hidden" name="total_harga" value="<?= $this->cart->total() ?>">
+							<input type="hidden" name="total_bayar">
+
+							<?php $i = 1;
+							foreach ($this->cart->contents() as $items) {
+								echo form_hidden('qty' . $i++, $items['qty']);
+							} ?>
+
+							<?php $i = 1 ?>
+							<?php $total_berat = 0;
+							$total = 0;
+							foreach ($this->cart->contents() as $items) {
+								$produk = $this->m_master_produk->detailprod($items['id']);
+								$berat = $items['qty'] * $produk->berat;
+								$total_berat = $total_berat + $berat; ?>
+							<?php } ?>
+							<div class="col-lg-6 col-md-6">
+								<div class="grand-totall">
+									<div class="title-wrap">
+										<h4 class="cart-bottom-title section-bg-gary-cart">Total Pesanan</h4>
+									</div>
+									<h5>Harga Produk <span>Rp. <?php echo $this->cart->format_number($this->cart->total()); ?></span></h5>
+									<div class="total-shipping">
+										<h5>Biaya Ongkir</h5>
+										<ul>
+											<li><span><label id="ongkir"></label></span></li>
+										</ul>
+									</div>
+									<h4 class="grand-totall-title">Grand Total <span><label id="total_bayar"></label></span></h4>
+									<!-- <a href="#">Proceed to Checkout</a> -->
+									<button class="cart-btn-2" type="submit">Checkout</button>
+								</div>
+							</div>
+>>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 						</div>
 						<div class="d-flex justify-content-between">
 							<h6 class="font-weight-medium">Total Berat</h6>

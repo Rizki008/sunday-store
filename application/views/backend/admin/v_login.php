@@ -26,7 +26,11 @@
 					<div class="col-lg-4 mx-auto">
 						<div class="auth-form-light text-left py-5 px-4 px-sm-5">
 							<h4>Halo!</h4>
+<<<<<<< HEAD
 							<h6 class="font-weight-light">Login Untuk Masuk Ke Halaman Selanjutnya</h6>
+=======
+							<h6 class="font-weight-light">Login Untuk Masuk Ke Halaman Selanjutnya.</h6>
+>>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
 							<?php if ($this->session->userdata('success')) { ?><div class="alert alert-success" role="alert"><?= $this->session->userdata('success') ?></div>
 							<?php } ?>
 							<?php if ($this->session->userdata('error')) { ?><div class="alert alert-danger" role="alert"><?= $this->session->userdata('error') ?></div>
