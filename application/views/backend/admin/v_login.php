@@ -25,11 +25,8 @@
 				<div class="row w-100 mx-0">
 					<div class="col-lg-4 mx-auto">
 						<div class="auth-form-light text-left py-5 px-4 px-sm-5">
-							<div class="brand-logo">
-								<img src="<?= base_url() ?>spica/images/logo.svg" alt="logo">
-							</div>
-							<h4>Hello! let's get started</h4>
-							<h6 class="font-weight-light">Sign in to continue.</h6>
+							<h4>Halo!</h4>
+							<h6 class="font-weight-light">Login Untuk Masuk Ke Halaman Selanjutnya</h6>
 							<?php if ($this->session->userdata('success')) { ?><div class="alert alert-success" role="alert"><?= $this->session->userdata('success') ?></div>
 							<?php } ?>
 							<?php if ($this->session->userdata('error')) { ?><div class="alert alert-danger" role="alert"><?= $this->session->userdata('error') ?></div>
@@ -42,7 +39,7 @@
 									<input type="password" name="password" value="<?= set_value('password') ?>" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
 								</div>
 								<div class="mt-3">
-									<button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+									<button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
 								</div>
 								<!-- <div class="my-2 d-flex justify-content-between align-items-center">
 									<div class="form-check">

@@ -32,17 +32,17 @@
 								<div class="card-body">
 									<div class="tab-content" id="custom-tabs-one-tabContent">
 										<div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
-											<table class="table table-striped">
+											<table id="example" class="table table-striped table-bordered" style="width:100%">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
+														<th>No</th>
+														<th>Kode Pesanan</th>
 														<th>Qty</th>
-														<th>Harga Pembelian</th>
+														<th>Harga Produk</th>
 														<th>Biaya Pengiriman</th>
 														<th>Total Bayar</th>
-														<th>Status Pesanan</th>
-														<th>Action</th>
+														<th>Status Bayar/Metode</th>
+														<th>Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -66,7 +66,8 @@
 															</td>
 															<td>
 																<?php if ($value->metode_bayar == 1) { ?>
-																	<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmaai</a>
+																	<a href="<?= base_url('transaksi/konfirmasi/' . $value->id_pesanan) ?>" class="btn btn-success">Konfirmasi</a>
+																	<p></p>
 																<?php } ?>
 																<br>
 																<a href="<?= base_url('transaksi/detail/' . $value->id_pesanan) ?>" class="btn btn-primary btn-sm">Detail Pesanan</a>
@@ -77,17 +78,17 @@
 											</table>
 										</div>
 										<div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
-											<table class="table table-striped">
+											<table id="example" class="table table-striped table-bordered" style="width:100%">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
-														<th>Harga Tiket</th>
+														<th>No</th>
+														<th>Kode Pesanan</th>
 														<th>Qty</th>
-														<th>Tanggal Booking</th>
-														<th>Metode Bayar</th>
-														<th>Status Bayar/Pemesanan</th>
-														<th>Setting</th>
+														<th>Harga Produk</th>
+														<th>Biaya Pengiriman</th>
+														<th>Total Bayar</th>
+														<th>Status Bayar</th>
+														<th>Opsi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -114,16 +115,16 @@
 											</table>
 										</div>
 										<div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
-											<table class="table table-striped">
+											<table id="example" class="table table-striped table-bordered" style="width:100%">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
-														<th>Harga Tiket</th>
+														<th>No</th>
+														<th>Kode Pesanan</th>
 														<th>Qty</th>
-														<th>Tanggal Booking</th>
-														<th>Metode Bayar</th>
-														<th>Status Bayar/Pemesanan</th>
+														<th>Harga Produk</th>
+														<th>Biaya Ongkir</th>
+														<th>Total Bayar</th>
+														<th>Status Pesanan</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -143,16 +144,16 @@
 											</table>
 										</div>
 										<div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel" aria-labelledby="custom-tabs-one-settings-tab">
-											<table class="table table-striped">
+											<table id="example" class="table table-striped table-bordered" style="width:100%">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>No Pemesanan</th>
-														<th>Harga Tiket</th>
+														<th>No</th>
+														<th>Kode Pesanan</th>
 														<th>Qty</th>
-														<th>Tanggal Booking</th>
-														<th>Metode Bayar</th>
-														<th>Status Bayar/Pemesanan</th>
+														<th>Harga Produk</th>
+														<th>Biaya Pengiriman</th>
+														<th>Total Bayar</th>
+														<th>Status Pesanan</th>
 													</tr>
 												</thead>
 												<tbody>

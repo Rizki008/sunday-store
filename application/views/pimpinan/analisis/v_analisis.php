@@ -140,7 +140,7 @@
 								<tbody>
 									<?php $no = 1;
 									foreach ($grafik as $key => $value) { ?>
-										<?php if ($value->status == 1) { ?>
+										<?php if ($value->qty >= 10) { ?>
 											<tr class="table-success">
 												<td class="py-1">
 													<?= $no++ ?>
@@ -155,7 +155,7 @@
 													<?= $value->hasils ?>
 												</td>
 											</tr>
-										<?php } elseif ($value->status == 2) { ?>
+										<?php } elseif ($value->qty <= 9) { ?>
 											<tr class="table-danger">
 												<td class="py-1">
 													<?= $no++ ?>

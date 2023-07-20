@@ -1,28 +1,26 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title><?= $title ?></title>
-	<meta name="description" content="">
-	<meta name="robots" content="noindex, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="<?= base_url('frontend/') ?>assets/img/favicon.png">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Free HTML Templates" name="keywords">
+	<meta content="Free HTML Templates" name="description">
 
-	<!-- all css here -->
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/animate.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/slick.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/chosen.min.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/themify-icons.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/ionicons.min.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/jquery-ui.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/meanmenu.min.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/style.css">
-	<link rel="stylesheet" href="<?= base_url('frontend/') ?>assets/css/responsive.css">
-	<script src="<?= base_url('frontend/') ?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
+	<!-- Favicon -->
+	<link href="<?= base_url() ?>front/img/favicon.ico" rel="icon">
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+	<!-- Libraries Stylesheet -->
+	<link href="<?= base_url() ?>front/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="<?= base_url() ?>front/css/style.css" rel="stylesheet">
 </head>

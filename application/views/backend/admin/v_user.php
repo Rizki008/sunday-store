@@ -27,7 +27,7 @@
 											Level
 										</th>
 										<th>
-											Action
+											Aksi
 										</th>
 									</tr>
 								</thead>
@@ -49,7 +49,7 @@
 												<?php if ($value->level == 1) { ?>
 													<span class="badge badge-primary">Admin</span>
 												<?php } elseif ($value->level == 2) { ?>
-													<span class="badge badge-warning">Pimpinan</span>
+													<span class="badge badge-warning">Pemilik</span>
 												<?php }  ?>
 											</td>
 											<td>
@@ -96,7 +96,7 @@
 							<label>Level User</label>
 							<select name="level" id="level" class="form-control">
 								<option value="1">Admin</option>
-								<option value="2">Pimpinan</option>
+								<option value="2">Pemilik</option>
 							</select>
 						</div>
 					</div>
@@ -141,7 +141,7 @@
 										<?php } ?>
 									</option>
 									<option value="1">Admin</option>
-									<option value="2">Pimpinan</option>
+									<option value="2">Pemilik</option>
 								</select>
 							</div>
 
@@ -168,7 +168,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h5>Apakah Anda Yakin Akan hapus User</h5>
+						<h5>Apakah Anda Yakin Akan Hapus User</h5>
 						<h3><?= $value->username ?> ???</h3>
 					</div>
 					<div class="modal-footer">

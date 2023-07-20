@@ -10,12 +10,14 @@ class Admin extends CI_Controller
 		parent::__construct();
 		$this->load->model('m_auth');
 		$this->load->model('m_admin');
+		$this->load->model('m_analisis');
 	}
 
 	public function index()
 	{
 		$data = array(
 			'title' => 'Admin',
+			'grafik' => $this->m_analisis->grafik(),
 			'isi' => 'backend/v_admin'
 		);
 		$this->load->view('backend/v_wrapper', $data, FALSE);

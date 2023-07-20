@@ -12,11 +12,11 @@
 							</button> -->
 						</p>
 						<div class="table-responsive">
-							<table class="table table-striped">
+							<table id="example" class="table table-striped table-bordered" style="width:100%">
 								<thead>
 									<tr>
 										<th>
-											#
+											No
 										</th>
 										<th>
 											Gambar Utama
@@ -49,7 +49,7 @@
 												<?= $value->jumlah_gambar ?>
 											</td>
 											<td>
-												<a href="<?= base_url('master_produk/add_gambar/' . $value->id_produk) ?>" class="btn btn-warning">Tambah Gambar</a>
+												<a href="<?= base_url('gambar/add_gambar/' . $value->id_produk) ?>" class="btn btn-warning">Tambah Gambar</a>
 											</td>
 										</tr>
 									<?php } ?>

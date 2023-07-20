@@ -18,10 +18,10 @@ class Belanja extends CI_Controller
 			redirect('home');
 		}
 		$data = array(
-			'title' => 'Produk',
-			// 'isi' => 'frontend/cart/v_cart'
+			'title' => 'Keranjang Belanja',
+			'isi' => 'frontend/cart/v_cart'
 		);
-		$this->load->view('frontend/cart/v_cart', $data, FALSE);
+		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
 
 	public function add()
@@ -84,7 +84,7 @@ class Belanja extends CI_Controller
 		$this->form_validation->set_rules('paket', 'Paket', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('frontend/cart/v_cart');
+			$this->load->view('frontend/cart/v_cekout');
 		} else {
 			//tabel transaksi
 			$data = array(

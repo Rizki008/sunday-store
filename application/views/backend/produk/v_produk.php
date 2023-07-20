@@ -8,15 +8,15 @@
 						<p class="card-description">
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-								Add
+								Tambahkan
 							</button>
 						</p>
 						<div class="table-responsive">
-							<table class="table table-striped">
+							<table id="example" class="table table-striped table-bordered" style="width:100%">
 								<thead>
 									<tr>
 										<th>
-											#
+											Image
 										</th>
 										<th>
 											Nama Produk
@@ -37,7 +37,7 @@
 											Stok
 										</th>
 										<th>
-											Deskrpsi
+											Deskripsi Produk
 										</th>
 										<th>
 											Aksi
@@ -64,7 +64,7 @@
 												<?= $value->diskon ?> %
 											</td>
 											<td>
-												<?= $value->berat ?> G
+												<?= $value->berat ?> kg
 											</td>
 											<td>
 												<?= $value->stok ?>
@@ -85,6 +85,7 @@
 												<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $value->id_produk ?>">
 													Edit
 												</button>
+												<p></p>
 												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapus<?= $value->id_produk ?>">
 													Hapus
 												</button>
@@ -112,8 +113,8 @@
 					</button>
 				</div>
 				<?php $kategori = $this->m_master_produk->kategori(); ?>
-				<?php echo form_open_multipart('master_produk/add_produk') ?>
-				<!-- <form action="<?= base_url('master_produk/add_produk') ?>" method="POST"> -->
+				<?php echo form_open_multipart('produk/add_produk') ?>
+				<!-- <form action="<?= base_url('produk/add_produk') ?>" method="POST"> -->
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Nama Produk</label>
@@ -154,8 +155,8 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="submit" class="btn btn-primary">Simpan</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 				</div>
 				<!-- </form> -->
 				<?php echo form_close() ?>
@@ -174,7 +175,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form action="<?= base_url('master_produk/update_produk/' . $value->id_produk) ?>" enctype="multipart/form-data" accept-charset="utf-8" method="POST">
+					<form action="<?= base_url('produk/update_produk/' . $value->id_produk) ?>" enctype="multipart/form-data" accept-charset="utf-8" method="POST">
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Nama Produk</label>
@@ -216,8 +217,8 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Save</button>
+							<button type="submit" class="btn btn-primary">Simpan</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 						</div>
 					</form>
 				</div>
@@ -227,7 +228,7 @@
 
 	<!-- Modal Hapus-->
 	<?php foreach ($produk as $key => $valueas) { ?>
-		<div class="modal fade" id="hapus<?= $value->id_produk ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal fade" id="hapus<?= $valueas->id_produk ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -237,12 +238,12 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h5>Apakah Anda Yakin Akan hapus Produk</h5>
+						<h5>Apakah Anda Yakin Akan Hapus Produk</h5>
 						<h3><?= $valueas->nama_produk ?> ???</h3>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<a href="<?= base_url('master_produk/delete_produk/' . $value->id_produk) ?>" class="btn btn-primary">Save</a>
+						<a href="<?= base_url('produk/delete_produk/' . $valueas->id_produk) ?>" class="btn btn-primary">Hapus</a>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</div>
 			</div>

@@ -10,6 +10,7 @@ class m_master_produk extends CI_Model
 		$this->db->select('*');
 		$this->db->from('kategori');
 		$this->db->group_by('id_kategori');
+		$this->db->order_by('id_kategori', 'desc');
 		return $this->db->get()->result();
 	}
 	public function add_kategori($data)
@@ -51,6 +52,7 @@ class m_master_produk extends CI_Model
 		$this->db->from('produk');
 		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
 		$this->db->group_by('id_produk');
+		$this->db->order_by('id_produk', 'desc');
 		return $this->db->get()->result();
 	}
 	public function produk_list()
@@ -58,8 +60,9 @@ class m_master_produk extends CI_Model
 		$this->db->select('*');
 		$this->db->from('produk');
 		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
-		$this->db->limit('4');
+		$this->db->limit('8');
 		$this->db->group_by('id_produk');
+		$this->db->order_by('id_produk', 'desc');
 		return $this->db->get()->result();
 	}
 	public function produk_list_all()
@@ -68,6 +71,7 @@ class m_master_produk extends CI_Model
 		$this->db->from('produk');
 		$this->db->join('kategori', 'kategori.id_kategori = produk.kategori', 'left');
 		$this->db->group_by('id_produk');
+		$this->db->order_by('id_produk', 'desc');
 		return $this->db->get()->result();
 	}
 	public function produk_diskon()
@@ -75,7 +79,7 @@ class m_master_produk extends CI_Model
 		$this->db->select('*');
 		$this->db->from('produk');
 		$this->db->where('diskon>=10');
-		$this->db->limit(2);
+		$this->db->limit(8);
 		return $this->db->get()->result();
 	}
 	public function detail_produk($id_produk)

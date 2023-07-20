@@ -8,7 +8,7 @@
 						<p class="card-description">
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-								Add
+								Tambahkan
 							</button>
 						</p>
 						<div class="table-responsive pt-3">
@@ -16,7 +16,7 @@
 								<thead>
 									<tr>
 										<th>
-											#
+											No
 										</th>
 										<th>
 											Nama Kategori
@@ -66,13 +66,13 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="<?= base_url('master_produk/add') ?>" method="POST">
+				<form action="<?= base_url('master/add') ?>" method="POST">
 					<div class="modal-body">
 						<input type="text" name="nama_kategori" class="form-control" placeholder="Nama Kategori">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Save</button>
+						<button type="submit" class="btn btn-primary">Simpan</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</form>
 			</div>
@@ -90,13 +90,13 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<form action="<?= base_url('master_produk/update/' . $value->id_kategori) ?>" method="POST">
+					<form action="<?= base_url('master/update/' . $value->id_kategori) ?>" method="POST">
 						<div class="modal-body">
 							<input type="text" name="nama_kategori" value="<?= $value->nama_kategori ?>" class="form-control" placeholder="Nama Kategori">
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Save</button>
+							<button type="submit" class="btn btn-primary">Simpan</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 						</div>
 					</form>
 				</div>
@@ -116,12 +116,12 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h5>Apakah Anda Yakin Akan hapus Kategori</h5>
+						<h5>Apakah Anda Yakin Akan Hapus Kategori</h5>
 						<h3><?= $value->nama_kategori ?> ???</h3>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<a href="<?= base_url('master_produk/delete/' . $value->id_kategori) ?>" class="btn btn-primary">Save</a>
+						<a href="<?= base_url('master/delete/' . $value->id_kategori) ?>" class="btn btn-primary">Hapus</a>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</div>
 			</div>

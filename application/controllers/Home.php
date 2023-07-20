@@ -18,6 +18,7 @@ class Home extends CI_Controller
 		$data = array(
 			'title' => 'Home',
 			'produk' => $this->m_master_produk->produk_list(),
+			'kategori' => $this->m_master_produk->kategori(),
 			'produk_all' => $this->m_master_produk->produk_list_all(),
 			'diskon' => $this->m_master_produk->produk_diskon(),
 			'isi' => 'frontend/v_home'

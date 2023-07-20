@@ -12,16 +12,7 @@ class M_analisis extends CI_Model
 
 	public function grafik()
 	{
-		return $this->db->query("SELECT nama_produk,status,qty,
-								CASE
-									WHEN status = 1 THEN 'Laku'
-									WHEN status = 2 THEN 'Tidak Laku'
-									ELSE 'Kurang laku'
-								END AS hasils
-								FROM produk
-								LEFT JOIN detail_pesanan ON detail_pesanan.id_produk=produk.id_produk
-								GROUP BY detail_pesanan.id_produk
-								ORDER BY status=1 DESC")->result();
+		return $this->db->query("SELECT nama_produk,status,qty, CASE WHEN status = 1 AND qty >= 10 THEN 'Laku' WHEN status = 2 AND qty <= 9 THEN 'Tidak Laku' ELSE 'Kurang laku' END AS hasils FROM produk LEFT JOIN detail_pesanan ON detail_pesanan.id_produk=produk.id_produk GROUP BY detail_pesanan.id_produk ORDER BY hasils='laku' DESC")->result();
 	}
 }
 

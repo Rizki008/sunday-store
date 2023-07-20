@@ -25,11 +25,11 @@ class Pelanggan extends CI_Controller
 	}
 	public function register()
 	{
-		$this->form_validation->set_rules('nama_pelanggan', 'Nama', 'required|is_unique[tabel_pelanggan.nama_pelanggan]', array(
+		$this->form_validation->set_rules('nama_pelanggan', 'Nama', 'required|is_unique[pelanggan.nama_pelanggan]', array(
 			'required' => '%s Mohon untuk diisi!!!',
 			'is_unique' => '%s Sudah Terdaftar!!!'
 		));
-		$this->form_validation->set_rules('email_pelanggan', 'Email', 'required|is_unique[tabel_pelanggan.email_pelanggan]', array(
+		$this->form_validation->set_rules('email_pelanggan', 'Email', 'required|is_unique[pelanggan.email_pelanggan]', array(
 			'required' => '%s Mohon untuk diisi!!!',
 			'is_unique' => '%s email_pelanggan Sudah Terdaptar'
 		));
@@ -51,25 +51,25 @@ class Pelanggan extends CI_Controller
 		$this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required', array('required' => '%s Mohon untuk diisi!!!'));
 		$this->form_validation->set_rules('alamat_pelanggan', 'Alamat', 'required', array('required' => '%s Mohon untuk diisi!!!'));
 
-		// if ($this->form_validation->run() ==  FALSE) {
-		// 	$data = array(
-		// 		'title' => 'Register Pelanggan',
-		// 		'isi'  => 'frontend/pelanggan/v_auth'
-		// 	);
-		// 	$this->load->view('frontend/v_wrapper', $data, FALSE);
-		// } else {
-		$data = array(
-			'nama_pelanggan' => $this->input->post('nama_pelanggan'),
-			'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-			'email_pelanggan' => $this->input->post('email_pelanggan'),
-			'password_pelanggan' => $this->input->post('password_pelanggan'),
-			'nohp_pelanggan' => $this->input->post('nohp_pelanggan'),
-			'alamat_pelanggan' => $this->input->post('alamat_pelanggan'),
-		);
-		$this->m_auth->register($data);
-		$this->session->set_flashdata('pesan', 'Register Berhasi, Silahkan Untuk Login');
-		redirect('pelanggan');
-		// }
+		if ($this->form_validation->run() ==  FALSE) {
+			$data = array(
+				'title' => 'Register Pelanggan',
+				'isi'  => 'frontend/pelanggan/v_registrasi'
+			);
+			$this->load->view('frontend/v_wrapper', $data, FALSE);
+		} else {
+			$data = array(
+				'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+				'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+				'email_pelanggan' => $this->input->post('email_pelanggan'),
+				'password_pelanggan' => $this->input->post('password_pelanggan'),
+				'nohp_pelanggan' => $this->input->post('nohp_pelanggan'),
+				'alamat_pelanggan' => $this->input->post('alamat_pelanggan'),
+			);
+			$this->m_auth->register($data);
+			$this->session->set_flashdata('pesan', 'Register Berhasi, Silahkan Untuk Login');
+			redirect('pelanggan');
+		}
 	}
 
 	// Add a new item
