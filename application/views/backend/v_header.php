@@ -67,6 +67,12 @@
 					</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url('master/ulasan') ?>">
+						<i class="mdi mdi-chart-pie menu-icon"></i>
+						<span class="menu-title">Ulasan</span>
+					</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link <?php if (
 											$this->uri->segment(1) == 'admin' and $this->uri->segment(2) == "setting"
 										) {
