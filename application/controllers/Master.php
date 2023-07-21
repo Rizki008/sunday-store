@@ -9,6 +9,7 @@ class Master extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_master_produk');
+		$this->load->model('m_ulasan');
 	}
 
 
@@ -243,5 +244,15 @@ class Master extends CI_Controller
 		$this->m_master_produk->delete_gambar($data);
 		$this->session->set_flashdata('pesan', 'Produk berhasil di hapus');
 		redirect('master/add_gambar/' . $id_produk);
+	}
+
+	public function ulasan()
+	{
+		$data = array(
+			'title' => 'Data Ulasan Pelanggan',
+			'ulasan' => $this->m_ulasan->data_ulasan(),
+			'isi' => 'backend/ulasan/v_ulasan'
+		);
+		$this->load->view('backend/v_wrapper', $data, FALSE);
 	}
 }
