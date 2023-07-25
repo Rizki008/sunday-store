@@ -35,6 +35,11 @@ class M_ulasan extends CI_Model
 		$this->db->join('produk', 'produk.id_produk = ulasan.id_produk', 'left');
 		return $this->db->get()->result();
 	}
+
+	public function jml_ulasan($id_produk)
+	{
+		return $this->db->query("SELECT COUNT(status_ulasan) as jml FROM `ulasan` LEFT JOIN produk ON produk.id_produk=ulasan.id_produk WHERE status_ulasan=1 AND `ulasan`.id_produk='" . $id_produk . "'")->result();
+	}
 }
 
 /* End of file M_ulasan.php */

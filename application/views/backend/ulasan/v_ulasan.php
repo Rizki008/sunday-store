@@ -28,20 +28,23 @@
 								<tbody>
 									<?php $no = 1;
 									foreach ($ulasan as $key => $value) { ?>
-										<tr>
-											<td class="py-1">
-												<?= $value->nama_pelanggan ?>
-											</td>
-											<td>
-												<?= $value->nama_produk ?>
-											</td>
-											<td>
-												<?= $value->ulasan ?>
-											</td>
-											<td>
-												<?= $value->tanggal_ulasan ?>
-											</td>
-										</tr>
+										<?php if ($value->status_ulasan == 1) { ?>
+											<tr>
+												<td class="py-1">
+													<?= $value->nama_pelanggan ?>
+												</td>
+												<td>
+													<?= $value->nama_produk ?>
+												</td>
+												<td>
+													<?= $value->ulasan ?>
+												</td>
+												<td>
+													<?= $value->tanggal_ulasan ?>
+												</td>
+											</tr>
+										<?php } elseif ($value->status_ulasan == 0) { ?>
+										<?php } ?>
 									<?php } ?>
 								</tbody>
 							</table>

@@ -99,13 +99,7 @@ class Pesanan extends CI_Controller
 			// echo '<br>Monetary: ' . $value->monetary;
 		}
 
-		// echo '<br>';
-		$max_recency = max($var_recency);
-		$max_frequency = max($var_frequency);
-		$max_monetary = max($var_monetary);
-		// echo $max_recency . '<br>';
-		// echo $max_frequency . '<br>';
-		// echo $max_monetary . '<br>';
+
 
 
 		//menentukan rumus euclidean Distance
@@ -118,22 +112,38 @@ class Pesanan extends CI_Controller
 			$e_monetary[] = $value->monetary;
 		}
 
-		$centroid1 = round(sqrt((pow(($e_recency[1] - $e_recency[0]), 2)) + (pow($e_frequecy[1] - $e_frequecy[0], 2)) + (pow($e_monetary[1] - $e_monetary[0], 2))), 3);
-		$centroid2 = round(sqrt((pow(($e_recency[0] - $e_recency[1]), 2)) + (pow($e_frequecy[0] - $e_frequecy[1], 2)) + (pow($e_monetary[0] - $e_monetary[1], 2))), 3);
-		// echo '<br>' . $centroid1;
-		// echo '<br>' . $centroid2;
+		$centroid1 = sqrt((pow(($e_recency[1] - $e_recency[0]), 2)) + (pow($e_frequecy[1] - $e_frequecy[0], 2)) + (pow($e_monetary[1] - $e_monetary[0], 2)));
+		$centroid2 = sqrt((pow(($e_recency[0] - $e_recency[1]), 2)) + (pow($e_frequecy[0] - $e_frequecy[1], 2)) + (pow($e_monetary[0] - $e_monetary[1], 2)));
 
+		// echo '<br>' . $e_recency[0];
+		// echo '<br>' . $e_recency[1];
+		// echo '<br>' . $e_frequecy[0];
+		// echo '<br>' . $e_frequecy[1];
+		// echo '<br>' . $e_monetary[0];
+		// echo '<br>' . $e_monetary[1];
+		// echo '<br>Centroid 1:' . $centroid1;
+		// echo '<br>Centroid 2:' . $centroid2;
+		// echo '<br>' . pow($value->monetary - $e_monetary[0], 2);
 
+		echo '<br>-----------------------------<br>';
 		foreach ($variabel['all'] as $key => $value) {
-			$centroid_next1 = round(sqrt((pow(($value->recency - $e_recency[0]), 2)) + (pow($value->frequency - $e_frequecy[0], 2)) + (pow($value->monetary - $e_monetary[0], 2))), 3);
-			$centroid_next2 = round(sqrt((pow(($value->recency - $e_recency[1]), 2)) + (pow($value->frequency - $e_frequecy[1], 2)) + (pow($value->monetary - $e_monetary[1], 2))), 3);
+			$centroid_next1 = sqrt((pow(($value->recency - $e_recency[0]), 2)) + (pow($value->frequency - $e_frequecy[0], 2)) + (pow($value->monetary - $e_monetary[0], 2)));
+			$centroid_next2 = sqrt((pow(($value->recency - $e_recency[1]), 2)) + (pow($value->frequency - $e_frequecy[1], 2)) + (pow($value->monetary - $e_monetary[1], 2)));
 
-			if ($centroid1 >= $centroid_next1) {
-				$status = 1;
+			// echo '<br>' . $centroid_next1;
+			// echo '<br>' . $centroid_next2;
+			if ($value->frequency == NULL) {
+				$status = 3; // tidak laku
+			} else {
+				if ($centroid1 >= $centroid_next1) {
+					$status = 1; // kurang laku
+				}
+				if ($centroid2 >= $centroid_next2) {
+					$status = 2; // laku
+				}
 			}
-			if ($centroid2 >= $centroid_next2) {
-				$status = 2;
-			}
+
+			// echo '<br>' . $value->id_produk . '| ' . $status;
 
 			$status_produk = array(
 				'status' => $status

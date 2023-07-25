@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">All Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -41,7 +41,7 @@
 					<div class="navbar-nav ml-auto py-0">
 						<?php if ($this->session->userdata('email_pelanggan') == "") { ?>
 							<a href="<?= base_url('pelanggan') ?>" class="nav-item nav-link">Login</a>
-							<a href="" class="nav-item nav-link">Register</a>
+							<a href="<?= base_url('pelanggan/register') ?>" class="nav-item nav-link">Register</a>
 						<?php } else { ?>
 							<a href="#" class="nav-item nav-link"><?= $this->session->userdata('nama_pelanggan') ?></a>
 							<a href="<?= base_url('pelanggan/logout') ?>" class="nav-item nav-link">Logout</a>
@@ -120,20 +120,20 @@
 
 
 <!-- Categories Start -->
-<div class="container-fluid pt-5">
+<!-- <div class="container-fluid pt-5">
 	<div class="row px-xl-5 pb-3">
 		<?php foreach ($kategori as $key => $gories) { ?>
 			<div class="col-lg-4 col-md-6 pb-1">
-				<div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-					<!-- <a href="" class="cat-img position-relative overflow-hidden mb-3">
+				<div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;"> -->
+<!-- <a href="" class="cat-img position-relative overflow-hidden mb-3">
 						<img class="img-fluid" src="img/cat-1.jpg" alt="">
 					</a> -->
-					<h5 class="font-weight-semi-bold m-0"><?= $gories->nama_kategori ?></h5>
+<!-- <h5 class="font-weight-semi-bold m-0"><?= $gories->nama_kategori ?></h5>
 				</div>
 			</div>
 		<?php } ?>
 	</div>
-</div>
+</div> -->
 <!-- Categories End -->
 
 <!-- Products Start -->

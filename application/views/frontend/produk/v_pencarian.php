@@ -13,7 +13,7 @@
 						<a href="<?= base_url('home/kategori/' . $kategoris->id_kategori) ?>" class="nav-item nav-link"><?= $kategoris->nama_kategori ?></a>
 					<?php } ?>
 				</div>
-				<<<<<<< HEAD </nav>
+			</nav>
 		</div>
 		<div class="col-lg-9">
 			<nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
@@ -41,7 +41,7 @@
 					<div class="navbar-nav ml-auto py-0">
 						<?php if ($this->session->userdata('email_pelanggan') == "") { ?>
 							<a href="<?= base_url('pelanggan') ?>" class="nav-item nav-link">Login</a>
-							<a href="" class="nav-item nav-link">Register</a>
+							<a href="<?= base_url('pelanggan/register') ?>" class="nav-item nav-link">Register</a>
 						<?php } else { ?>
 							<a href="#" class="nav-item nav-link"><?= $this->session->userdata('nama_pelanggan') ?></a>
 							<a href="<?= base_url('pelanggan/logout') ?>" class="nav-item nav-link">Logout</a>

@@ -68,7 +68,7 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('master/ulasan') ?>">
-						<i class="mdi mdi-chart-pie menu-icon"></i>
+						<i class="mdi mdi-message-alert-outline menu-icon"></i>
 						<span class="menu-title">Ulasan</span>
 					</a>
 				</li>

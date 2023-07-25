@@ -102,7 +102,7 @@
 						<div class="navbar-nav ml-auto py-0">
 							<?php if ($this->session->userdata('email_pelanggan') == "") { ?>
 								<a href="<?= base_url('pelanggan') ?>" class="nav-item nav-link">Login</a>
-								<a href="" class="nav-item nav-link">Register</a>
+								<a href="<?= base_url('pelanggan/register') ?>" class="nav-item nav-link">Register</a>
 							<?php } else { ?>
 								<a href="#" class="nav-item nav-link"><?= $this->session->userdata('nama_pelanggan') ?></a>
 								<a href="<?= base_url('pelanggan/logout') ?>" class="nav-item nav-link">Logout</a>
