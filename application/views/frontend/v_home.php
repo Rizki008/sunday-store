@@ -165,8 +165,8 @@
 							<?php if ($value->diskon == 0) { ?>
 								<h6>Rp. <?= number_format($value->harga) ?> -</h6>
 							<?php } elseif ($value->diskon > 1) { ?>
-								<h6>Rp. <?= number_format($value->harga) ?> -</h6>
-								<h6 class="text-muted ml-2"><del>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)) ?> -</del></h6>
+								<h6>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)) ?> -</h6>
+								<h6 class="text-muted ml-2"><del>Rp. <?= number_format($value->harga) ?> -</del></h6>
 							<?php } ?>
 						</div>
 					</div>
@@ -235,8 +235,8 @@
 							<?php if ($disk->diskon == 0) { ?>
 								<h6>Rp. <?= number_format($disk->harga) ?> -</h6>
 							<?php } elseif ($disk->diskon > 1) { ?>
-								<h6>Rp. <?= number_format($disk->harga) ?> -</h6>
-								<h6 class="text-muted ml-2"><del>Rp. <?= number_format($disk->harga - ($disk->diskon / 100 * $disk->harga)) ?> -</del></h6>
+								<h6>Rp. <?= number_format($disk->harga - ($disk->diskon / 100 * $disk->harga)) ?> -</h6>
+								<h6 class="text-muted ml-2"><del>Rp. <?= number_format($disk->harga) ?> -</del></h6>
 							<?php } ?>
 						</div>
 					</div>

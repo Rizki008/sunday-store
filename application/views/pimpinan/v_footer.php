@@ -34,6 +34,13 @@
 <!-- Custom js for this page-->
 <script src="<?= base_url() ?>spica/js/dashboard.js"></script>
 <!-- End custom js for this page-->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+	new DataTable('#example');
+</script>
 </body>
 
 </html>

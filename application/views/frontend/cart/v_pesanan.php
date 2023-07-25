@@ -90,9 +90,9 @@
 						<tr>
 							<td class="align-middle"><?= $no++ ?></td>
 							<td class="align-middle"><?= $value->id_pesanan ?></td>
-							<td class="align-middle">Rp. <?= number_format($value->total_harga), 0 ?></td>
-							<td class="align-middle">Rp. <?= number_format($value->ongkir), 0 ?></td>
-							<td class="align-middle">Rp. <?= number_format($value->total_bayar), 0 ?></td>
+							<td class="align-middle">Rp. <?= number_format($value->total_harga, 0) ?></td>
+							<td class="align-middle">Rp. <?= number_format($value->ongkir, 0) ?></td>
+							<td class="align-middle">Rp. <?= number_format($value->total_bayar, 0) ?></td>
 							<td class="align-middle">
 								<?php if ($value->status_order == 1 && $value->metode_bayar == 2) { ?>
 									<span class="badge badge-danger">Belum Bayar</span> <br>
@@ -111,13 +111,13 @@
 							</td>
 							<td class="align-middle">
 								<?php if ($value->status_order == 1 && $value->metode_bayar == 2) { ?>
-									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>">Detail </a><br><br><br>
-									<a href="<?= base_url('pesanan/bayar/' . $value->id_pesanan) ?>">Pembayaran</a>
+									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-primary">Detail </a><br>
+									<a href="<?= base_url('pesanan/bayar/' . $value->id_pesanan) ?>" class="btn btn-success">Pembayaran</a>
 								<?php } elseif ($value->status_order == 3) { ?>
-									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>">Detail </a><br><br><br>
-									<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>">Diterima</a>
+									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-primary">Detail </a><br>
+									<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>" class="btn btn-success">Diterima</a>
 								<?php } elseif ($value->status_order == 4 and $value->status_ulasan == 0) { ?>
-									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>">Ulasan</a>
+									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-warning">Ulasan</a>
 									<!-- <a href="<?= base_url('pesanan/review/' . $value->id_pesanan) ?>"><i class="fa fa-comment"></i></a> -->
 								<?php } ?>
 							</td>

@@ -109,10 +109,10 @@
 									<h6 class="text-truncate mb-3"><?= $value->nama_produk ?></h6>
 									<div class="d-flex justify-content-center">
 										<?php if ($value->diskon == 0) { ?>
-											<span>Rp. <?= number_format($value->harga) ?> -</span>
+											<h6>Rp. <?= number_format($value->harga) ?> -</h6>
 										<?php } elseif ($value->diskon > 1) { ?>
-											<span>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)) ?> -</span>
-											<span class="product-price-old">Rp. <?= number_format($value->harga) ?> </span>
+											<h6>Rp. <?= number_format($value->harga - ($value->diskon / 100 * $value->harga)) ?> -</h6>
+											<h6 class="text-muted ml-2"><del>Rp. <?= number_format($value->harga) ?> -</del></h6>
 										<?php } ?>
 									</div>
 								</div>

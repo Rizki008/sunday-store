@@ -56,7 +56,7 @@
 						<span class="menu-title">User</span>
 					</a>
 				</li>
-				<li class="nav-item sidebar-category">
+				<!-- <li class="nav-item sidebar-category">
 					<p>Analisis</p>
 					<span></span>
 				</li>
@@ -65,7 +65,7 @@
 						<i class="mdi mdi-chart-pie menu-icon"></i>
 						<span class="menu-title">Analisis K-Means</span>
 					</a>
-				</li>
+				</li> -->
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url('master/ulasan') ?>">
 						<i class="mdi mdi-message-alert-outline menu-icon"></i>

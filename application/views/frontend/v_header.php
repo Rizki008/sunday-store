@@ -1,6 +1,23 @@
 <body>
 	<!-- Topbar Start -->
 	<div class="container-fluid">
+		<div class="row bg-secondary py-2 px-xl-5">
+			<div class="col-lg-6 d-none d-lg-block">
+			</div>
+			<div class="col-lg-6 text-center text-lg-right">
+				<div class="d-inline-flex align-items-center">
+					<a class="text-dark px-2" href="">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a class="text-dark px-2" href="https://api.whatsapp.com/send?phone=6285731639595&text=Halo%20Admin%20Saya%20Mau%20Order">
+						<i class="fab fa-whatsapp"></i>
+					</a>
+					<a class="text-dark px-2" href="">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
+			</div>
+		</div>
 		<div class="row align-items-center py-3 px-xl-5">
 			<div class="col-lg-3 d-none d-lg-block">
 				<a href="" class="text-decoration-none">

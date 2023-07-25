@@ -104,6 +104,9 @@
 
 		<div class="col-lg-7 pb-5">
 			<h3 class="font-weight-semi-bold"><?= $produk->nama_produk ?></h3>
+			<div class="d-flex mb-3">
+				<small class="pt-1">Stock : <?= $produk->stok ?></small>
+			</div>
 			<h3 class="font-weight-semi-bold mb-4">Rp. <?= number_format($produk->harga - ($produk->diskon / 100 * $produk->harga)) ?></h3>
 			<p class="mb-4"><?= $produk->deskripsi ?></p>
 			<div class="d-flex align-items-center mb-4 pt-2">
@@ -127,19 +130,18 @@
 	</div>
 	<div class="row px-xl-5">
 		<div class="col">
+			<?php foreach ($jml_ulasan as $key => $jml) { ?>
+			<?php } ?>
 			<div class="nav nav-tabs justify-content-center border-secondary mb-4">
-				<a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+				<a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-3">Reviews (<?= $jml->jml ?>)</a>
 			</div>
 			<div class="tab-content">
 				<div class="tab-pane fade show active" id="tab-pane-3">
 					<div class="row">
 						<div class="col-md-6">
 							<?php foreach ($ulasan as $key => $ulas) { ?>
-								<?php if ($ulas->status_ulasan == 0) { ?>
-									<p>Belum ada Ulasan</p>
-								<?php } elseif ($ulas->status_ulasan == 1) { ?>
-									<?php foreach ($jml_ulasan as $key => $jml) { ?>
-									<?php } ?>
+								<?php if ($ulas->status_ulasan == 1) { ?>
+
 									<h4 class="mb-4"><?= $jml->jml ?> Ulasan Pada Produk</h4>
 									<div class="media mb-4">
 										<div class="media-body">
@@ -180,8 +182,8 @@
 									<?php if ($product->diskon == 0) { ?>
 										<h6>Rp. <?= number_format($product->harga) ?> -</h6>
 									<?php } elseif ($product->diskon > 1) { ?>
-										<h6>Rp. <?= number_format($product->harga) ?> -</h6>
-										<h6 class="text-muted ml-2"><del>Rp. <?= number_format($product->harga - ($product->diskon / 100 * $product->harga)) ?> -</del></h6>
+										<h6>Rp. <?= number_format($product->harga - ($product->diskon / 100 * $product->harga)) ?> -</h6>
+										<h6 class="text-muted ml-2"><del>Rp. <?= number_format($product->harga) ?> -</del></h6>
 									<?php } ?>
 								</div>
 							</div>
