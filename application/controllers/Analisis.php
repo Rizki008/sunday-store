@@ -19,6 +19,7 @@ class Analisis extends CI_Controller
 		$data = array(
 			'title' => 'Analisis K-Means',
 			'grafik' => $this->m_analisis->grafik(),
+			'laporan_penjualan' => $this->m_analisis->laporan_penjualan(),
 			'isi' => 'backend/analisis/v_analisis'
 		);
 		$this->load->view('backend/v_wrapper', $data, FALSE);
