@@ -8,7 +8,7 @@
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
 			<nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
-				<div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+				<div class="navbar-nav w-100 overflow-hidden" style="height: 300px">
 					<?php foreach ($kategori as $key => $kategoris) { ?>
 						<a href="<?= base_url('home/kategori/' . $kategoris->id_kategori) ?>" class="nav-item nav-link"><?= $kategoris->nama_kategori ?></a>
 					<?php } ?>
