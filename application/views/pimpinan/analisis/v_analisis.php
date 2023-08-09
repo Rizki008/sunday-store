@@ -268,10 +268,13 @@
 								<thead>
 									<tr>
 										<th>
-											#
+											No
 										</th>
 										<th>
 											Nama Produk
+										</th>
+										<th>
+											Jumalh Produk Terjual
 										</th>
 										<th>
 											Status
@@ -289,7 +292,9 @@
 												<td>
 													<?= $value->nama_produk ?>
 												</td>
-
+												<td>
+													<?= $value->qty ?>
+												</td>
 												<td>
 													Cukup Laku
 												</td>
@@ -303,6 +308,9 @@
 													<?= $value->nama_produk ?>
 												</td>
 												<td>
+													<?= $value->qty ?>
+												</td>
+												<td>
 													Laku
 												</td>
 											</tr>
@@ -313,6 +321,9 @@
 												</td>
 												<td>
 													<?= $value->nama_produk ?>
+												</td>
+												<td>
+													<?= $value->qty ?>
 												</td>
 												<td>
 													Kurang Laku

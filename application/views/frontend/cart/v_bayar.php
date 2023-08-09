@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">List Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -71,7 +71,7 @@
 <!-- Contact Start -->
 <div class="container-fluid pt-5">
 	<div class="text-center mb-4">
-		<h2 class="section-title px-5"><span class="px-2">Uplaod Bukti Pembayaran</span></h2>
+		<h2 class="section-title px-5"><span class="px-2">Upload Bukti Pembayaran</span></h2>
 	</div>
 	<div class="row px-xl-5">
 		<div class="col-lg-7 mb-5">
@@ -88,7 +88,7 @@
 					</div>
 					<div>
 						<button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">
-							Uplaod Bukti Pembayaran</button>
+							Upload Bukti Pembayaran</button>
 					</div>
 				</form>
 			</div>

@@ -5,8 +5,8 @@
 			<a href="" class="text-decoration-none">
 				<h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">Sunday</span>Store</h1>
 			</a>
-			<p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Alamat Toko : Jalan Raya Sidaraja, Desa Sidaraja, Kecamatan Ciawigebang, Kabupaten Kuningan, Jawa Barat</p>
-			<p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>sundaystore@yahoo.com</p>
+			<p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jalan Raya Sidaraja, Desa Sidaraja, Kecamatan Ciawigebang, Kabupaten Kuningan, Jawa Barat</p>
+			<p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>sundaystore@gmail.com</p>
 			<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>087723346534</p>
 		</div>
 	</div>

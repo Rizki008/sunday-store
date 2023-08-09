@@ -9,6 +9,7 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_master_produk');
+		$this->load->model('m_mastertransaksi');
 		$this->load->model('m_ulasan');
 	}
 
@@ -20,6 +21,7 @@ class Home extends CI_Controller
 			'produk' => $this->m_master_produk->produk_list(),
 			'kategori' => $this->m_master_produk->kategori(),
 			'produk_all' => $this->m_master_produk->produk_list_all(),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'diskon' => $this->m_master_produk->produk_diskon(),
 			'isi' => 'frontend/v_home'
 		);
@@ -37,6 +39,7 @@ class Home extends CI_Controller
 			'produklain' => $this->m_master_produk->produk_lain($id_produk),
 			'ulasan' => $this->m_ulasan->ulasan($id_produk),
 			'jml_ulasan' => $this->m_ulasan->jml_ulasan($id_produk),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'isi' => 'frontend/detail/v_detail'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
@@ -47,6 +50,7 @@ class Home extends CI_Controller
 		$kategori = $this->m_master_produk->kategoridetail($id_kategori);
 		$data = array(
 			'title' => 'Data Kategori',
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'produk' => $this->m_master_produk->produk_kategori($id_kategori),
 			'isi' => 'frontend/kategori/v_kategori'
 		);
@@ -57,6 +61,7 @@ class Home extends CI_Controller
 	{
 		$data = array(
 			'title' => 'List All Produk',
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'produk' => $this->m_master_produk->produk_list_all(),
 			'isi' => 'frontend/produk/v_list'
 		);

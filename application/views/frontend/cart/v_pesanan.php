@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">All Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -111,11 +111,11 @@
 							</td>
 							<td class="align-middle">
 								<?php if ($value->status_order == 1 && $value->metode_bayar == 2) { ?>
-									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-primary">Detail </a><br>
+									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-primary">Detail </a><br><p></p>
 									<a href="<?= base_url('pesanan/bayar/' . $value->id_pesanan) ?>" class="btn btn-success">Pembayaran</a>
 								<?php } elseif ($value->status_order == 3) { ?>
-									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-primary">Detail </a><br>
-									<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>" class="btn btn-success">Diterima</a>
+									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-primary">Detail </a><br><p></p>
+									<a href="<?= base_url('pesanan/selesai/' . $value->id_pesanan) ?>" class="btn btn-success">Diterima</a><p></p>
 								<?php } elseif ($value->status_order == 4 and $value->status_ulasan == 0) { ?>
 									<a href="<?= base_url('pesanan/detail/' . $value->id_pesanan) ?>" class="btn btn-warning">Ulasan</a>
 									<!-- <a href="<?= base_url('pesanan/review/' . $value->id_pesanan) ?>"><i class="fa fa-comment"></i></a> -->

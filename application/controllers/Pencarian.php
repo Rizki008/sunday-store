@@ -9,6 +9,7 @@ class Pencarian extends CI_Controller
 		parent::__construct();
 		$this->load->model('m_pencarian');
 		$this->load->model('m_master_produk');
+		$this->load->model('m_mastertransaksi');
 	}
 
 	public function index()
@@ -19,6 +20,7 @@ class Pencarian extends CI_Controller
 			'title' => 'Hasil Pencarian',
 			'keyword'    => $keyword,
 			'pencarian' => $this->m_pencarian->ambil_data($keyword),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'isi'        => 'frontend/produk/v_pencarian'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);

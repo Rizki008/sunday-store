@@ -56,7 +56,7 @@
 	</div>
 
 
-	<!-- Modal -->
+	<!-- Tambah Kategori -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -79,13 +79,13 @@
 		</div>
 	</div>
 
-	<!-- Modal edit -->
+	<!-- Edit -->
 	<?php foreach ($kategori as $key => $value) { ?>
 		<div class="modal fade" id="edit<?= $value->id_kategori ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Tambah Kategori</h5>
+						<h5 class="modal-title" id="exampleModalLongTitle">Edit Kategori</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -104,13 +104,13 @@
 		</div>
 	<?php } ?>
 
-	<!-- Modal Hapus-->
+	<!-- Hapus-->
 	<?php foreach ($kategori as $key => $value) { ?>
 		<div class="modal fade" id="hapus<?= $value->id_kategori ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Tambah Kategori</h5>
+						<h5 class="modal-title" id="exampleModalLongTitle">Hapus Kategori</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>

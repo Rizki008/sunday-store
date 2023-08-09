@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">List Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -90,20 +90,14 @@
 				</div>
 				<?php if (count($produk) > 0) : ?>
 					<?php foreach ($produk as $value) : ?>
-						<div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+						<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
 							<?php echo form_open('belanja/add');
-							echo form_hidden('id', $value->id_produk);
-							echo form_hidden('name', $value->nama_produk);
-							echo form_hidden('stock', $value->stok);
-							echo form_hidden('netto', $value->berat);
-							echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
-							echo form_hidden('picture', $value->foto);
+							echo form_hidden('id_produk', $value->id_produk);
 							echo form_hidden('qty', 1);
-							echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 							?>
 							<div class="card product-item border-0 mb-4">
 								<div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-									<img class="img-fluid w-100" src="<?= base_url('assets/produk/' . $value->foto) ?>" alt="">
+									<img class="img-fluid w-100" src="<?= base_url('assets/produk/' . $value->foto) ?>" width="100px" alt="">
 								</div>
 								<div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
 									<h6 class="text-truncate mb-3"><?= $value->nama_produk ?></h6>

@@ -18,6 +18,7 @@ class Pesanan extends CI_Controller
 		$data = array(
 			'title' => 'Pesanan',
 			'pesanan' => $this->m_mastertransaksi->pesanan(),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'isi' => 'frontend/cart/v_pesanan'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
@@ -28,6 +29,7 @@ class Pesanan extends CI_Controller
 		$data = array(
 			'title' => 'Detail Pesanan',
 			'detail' => $this->m_mastertransaksi->detailpesanan($id_pesanan),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'isi' => 'frontend/cart/v_detail'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
@@ -47,6 +49,7 @@ class Pesanan extends CI_Controller
 				$data = array(
 					'title' => 'Pembayaran',
 					'detail' => $this->m_mastertransaksi->detailpesananbayar($id_pesanan),
+					'cart' => $this->m_mastertransaksi->selectCart(),
 					'error_upload' => $this->upload->display_errors(),
 					'isi' => 'frontend/cart/v_bayar'
 				);
@@ -77,6 +80,7 @@ class Pesanan extends CI_Controller
 		$data = array(
 			'title' => 'Pembayaran',
 			'detail' => $this->m_mastertransaksi->detailpesananbayar($id_pesanan),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'isi' => 'frontend/cart/v_bayar'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);

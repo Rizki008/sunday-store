@@ -49,10 +49,10 @@
 												<?= $value->nama_kategori ?>
 											</td>
 											<td>
-												<?= number_format($value->harga), 0 ?>
+												Rp. <?= number_format($value->harga, 0) ?>
 											</td>
 											<td>
-												<?= $value->diskon ?>
+												<?= $value->diskon ?> %
 											</td>
 											<td>
 												<?= $value->berat ?>

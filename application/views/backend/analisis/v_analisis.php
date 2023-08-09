@@ -268,7 +268,7 @@
 								<thead>
 									<tr>
 										<th>
-											#
+											No
 										</th>
 										<th>
 											Nama Produk

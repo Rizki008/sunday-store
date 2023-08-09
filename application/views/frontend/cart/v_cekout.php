@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Cekout Belanja</title>
+	<title>Checkout</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="Free HTML Templates" name="keywords">
 	<meta content="Free HTML Templates" name="description">
@@ -31,13 +31,13 @@
 		<div class="row align-items-center py-3 px-xl-5">
 			<div class="col-lg-3 d-none d-lg-block">
 				<a href="" class="text-decoration-none">
-					<h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">S</span>Store</h1>
+					<h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Sunday</span>Store</h1>
 				</a>
 			</div>
 			<div class="col-lg-6 col-6 text-left">
 				<form action="<?= base_url('pencarian') ?>" method="get">
 					<div class="input-group">
-						<input type="text" class="form-control" name="keyword" placeholder="Search for products">
+						<input type="text" class="form-control" name="keyword" placeholder="Produk Apa Yang Anda Cari?">
 						<div class="input-group-append">
 							<button type="submit" class="input-group-text bg-transparent text-primary"><i class="fa fa-search"></i></button>
 						</div>
@@ -64,7 +64,7 @@
 		<div class="row border-top px-xl-5">
 			<div class="col-lg-3 d-none d-lg-block">
 				<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-					<h6 class="m-0">Categories</h6>
+					<h6 class="m-0">Kategori</h6>
 					<i class="fa fa-angle-down text-dark"></i>
 				</a>
 				<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -87,7 +87,7 @@
 					<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 						<div class="navbar-nav mr-auto py-0">
 							<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-							<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+							<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">List Produk</a>
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 								<div class="dropdown-menu rounded-0 m-0">
@@ -130,14 +130,21 @@
 	<!-- Page Header End -->
 
 	<form action="<?= base_url('belanja/cekout') ?>" method="POST">
-		<?php $id_pesanan = date('Ymd') . strtoupper(random_string('alnum', 8)); ?>
 		<?php
 		$i = 1;
 		$j = 1;
-		foreach ($this->cart->contents() as $items) {
+		$subtotal = 0;
+		$total = 0;
+		$total_berat = 0;
+		$berat = 0;
+		foreach ($cart['cart'] as $key => $items) {
 			$id_detail = random_string('alnum', 5);
-			echo form_hidden('qty' . $i++, $items['qty']);
+			$id_pesanan = date('Ymd') . strtoupper(random_string('alnum', 8));
 			echo form_hidden('id_detail' . $j++, $id_detail);
+			$subtotal = $items->qty_cart * ($items->harga - ($items->diskon / 100 * $items->harga));
+			$total += $subtotal;
+			$berat = $items->qty_cart * $items->berat;
+			$total_berat = $total_berat + $berat;
 		}
 		?>
 		<!-- Checkout Start -->
@@ -145,39 +152,39 @@
 			<div class="row px-xl-5">
 				<div class="col-lg-8">
 					<div class="mb-4">
-						<h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+						<h4 class="font-weight-semi-bold mb-4">Alamat Penerima</h4>
 						<div class="row">
 							<div class="col-md-6 form-group">
-								<label>Atas Nama</label>
+								<label>Nama</label>
 								<input class="form-control" type="text" value="<?= $this->session->userdata('nama_pelanggan'); ?>" readonly>
 							</div>
 							<div class="col-md-6 form-group">
-								<label>E-mail</label>
+								<label>Email</label>
 								<input class="form-control" type="text" value="<?= $this->session->userdata('email_pelanggan'); ?>" readonly>
 							</div>
 							<div class="col-md-6 form-group">
-								<label>Mobile No</label>
-								<input class="form-control" type="text" name="nohp_penerima" placeholder="+62 8761 0928 1201">
+								<label>No Handphone</label>
+								<input class="form-control" type="text" name="nohp_penerima" placeholder="Masukan No Hp">
 							</div>
 							<div class="col-md-6 form-group">
-								<label>ZIP Code</label>
-								<input class="form-control" type="text" name="kode_post" placeholder="123">
+								<label>Kode Pos</label>
+								<input class="form-control" type="text" name="kode_post" placeholder="Masukan Kode Pos">
 							</div>
 							<div class="col-md-12 form-group">
-								<label>City</label>
+								<label>Alamat</label>
 								<textarea name="alamat_penerima" class="form-control"></textarea>
 							</div>
 
 							<div class="col-md-12 form-group">
 								<div class="custom-control custom-checkbox">
 									<input type="checkbox" class="custom-control-input" id="shipto">
-									<label class="custom-control-label" for="shipto" data-toggle="collapse" data-target="#shipping-address">Ship to different address</label>
+									<label class="custom-control-label" for="shipto" data-toggle="collapse" data-target="#shipping-address">Kirim Ke Alamat Yang Berbeda</label>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="collapse mb-4" id="shipping-address">
-						<h4 class="font-weight-semi-bold mb-4">Shipping Address</h4>
+						<h4 class="font-weight-semi-bold mb-4">Alamat Pengiriman</h4>
 						<div class="row">
 							<div class="col-md-6 form-group">
 								<label>Provinsi</label>
@@ -203,27 +210,11 @@
 						</div>
 					</div>
 				</div>
-
-
-
-				<?php $i = 1;
-				foreach ($this->cart->contents() as $items) {
-					echo form_hidden('qty' . $i++, $items['qty']);
-				} ?>
-
-				<?php $i = 1 ?>
-				<?php $total_berat = 0;
-				$total = 0;
-				foreach ($this->cart->contents() as $items) {
-					$produk = $this->m_master_produk->detailprod($items['id']);
-					$berat = $items['qty'] * $produk->berat;
-					$total_berat = $total_berat + $berat; ?>
-				<?php } ?>
 				<input type="hidden" name="id_pesanan" value="<?= $id_pesanan ?>">
 				<input type="hidden" name="estimasi">
 				<input type="hidden" name="ongkir">
 				<input type="hidden" name="berat" value="<?= $total_berat ?>">
-				<input type="hidden" name="total_harga" value="<?= $this->cart->total() ?>">
+				<input type="hidden" name="total_harga" value="<?= number_format($total, 0) ?>">
 				<input type="hidden" name="total_bayar">
 
 				<div class="col-lg-4">
@@ -235,24 +226,24 @@
 
 							<hr class="mt-0">
 							<div class="d-flex justify-content-between mb-3 pt-1">
-								<h6 class="font-weight-medium">Subtotal</h6>
-								<h6 class="font-weight-medium">Rp. <?php echo $this->cart->format_number($this->cart->total()); ?></h6>
+								<h6 class="font-weight-medium">Total</h6>
+								<h6 class="font-weight-medium">Rp. <?= number_format($total, 0) ?></h6>
 							</div>
 							<div class="d-flex justify-content-between">
-								<h6 class="font-weight-medium">Shipping</h6>
+								<h6 class="font-weight-medium">Ongkos Kirim</h6>
 								<h6 class="font-weight-medium"><label id="ongkir"></h6>
 							</div>
 						</div>
 						<div class="card-footer border-secondary bg-transparent">
 							<div class="d-flex justify-content-between mt-2">
-								<h5 class="font-weight-bold">Total</h5>
+								<h5 class="font-weight-bold">Grand Total</h5>
 								<h5 class="font-weight-bold"><span id="total_bayar"></span></h5>
 							</div>
 						</div>
 					</div>
 					<div class="card border-secondary mb-5">
 						<div class="card-header bg-secondary border-0">
-							<h4 class="font-weight-semi-bold m-0">Payment</h4>
+							<h4 class="font-weight-semi-bold m-0">Pembayaran</h4>
 						</div>
 						<div class="card-body">
 							<div class="form-group">
@@ -269,7 +260,7 @@
 							</div>
 						</div>
 						<div class="card-footer border-secondary bg-transparent">
-							<button type="submit" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+							<button type="submit" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Pesan Sekarang</button>
 						</div>
 					</div>
 				</div>
@@ -283,65 +274,18 @@
 		<div class="row px-xl-5 pt-5">
 			<div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
 				<a href="" class="text-decoration-none">
-					<h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Shopper</h1>
+					<h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">Sunday</span>Store</h1>
 				</a>
-				<p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-				<p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-				<p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-				<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-			</div>
-			<div class="col-lg-8 col-md-12">
-				<div class="row">
-					<div class="col-md-4 mb-5">
-						<h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-						<div class="d-flex flex-column justify-content-start">
-							<a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-							<a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-							<a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-							<a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-							<a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-							<a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-						</div>
-					</div>
-					<div class="col-md-4 mb-5">
-						<h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-						<div class="d-flex flex-column justify-content-start">
-							<a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-							<a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-							<a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-							<a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-							<a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-							<a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-						</div>
-					</div>
-					<div class="col-md-4 mb-5">
-						<h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
-						<form action="">
-							<div class="form-group">
-								<input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control border-0 py-4" placeholder="Your Email" required="required" />
-							</div>
-							<div>
-								<button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
-							</div>
-						</form>
-					</div>
-				</div>
+				<p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Jalan Raya Sidaraja, Desa Sidaraja, Kecamatan Ciawigebang, Kabupaten Kuningan, Jawa Barat</p>
+				<p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>sundaystore@gmail.com</p>
+				<p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>087723346534</p>
 			</div>
 		</div>
 		<div class="row border-top border-light mx-xl-5 py-4">
 			<div class="col-md-6 px-xl-0">
 				<p class="mb-md-0 text-center text-md-left text-dark">
-					&copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
-					by
-					<a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-					Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+					&copy; <a class="text-dark font-weight-semi-bold" href="#">Sunday Store</a>
 				</p>
-			</div>
-			<div class="col-md-6 px-xl-0 text-center text-md-right">
-				<img class="img-fluid" src="img/payments.png" alt="">
 			</div>
 		</div>
 	</div>

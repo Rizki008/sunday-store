@@ -10,7 +10,7 @@ class m_master_produk extends CI_Model
 		$this->db->select('*');
 		$this->db->from('kategori');
 		$this->db->group_by('id_kategori');
-		$this->db->order_by('id_kategori', 'desc');
+		$this->db->order_by('nama_kategori', 'asc');
 		return $this->db->get()->result();
 	}
 	public function add_kategori($data)

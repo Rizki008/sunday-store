@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">List Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -57,11 +57,11 @@
 <!-- Page Header Start -->
 <div class="container-fluid bg-secondary mb-5">
 	<div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-		<h1 class="font-weight-semi-bold text-uppercase mb-3">Shop Detail</h1>
+		<h1 class="font-weight-semi-bold text-uppercase mb-3">Detail Produk</h1>
 		<div class="d-inline-flex">
 			<p class="m-0"><a href="<?= base_url() ?>">Home</a></p>
 			<p class="m-0 px-2">-</p>
-			<p class="m-0">Shop Detail</p>
+			<p class="m-0">Detail Produk</p>
 		</div>
 	</div>
 </div>
@@ -73,14 +73,8 @@
 	<div class="row px-xl-5">
 		<div class="col-lg-5 pb-5">
 			<?php echo form_open('belanja/add');
-			echo form_hidden('id', $produk->id_produk);
-			echo form_hidden('name', $produk->nama_produk);
-			echo form_hidden('stock', $produk->stok);
-			echo form_hidden('netto', $produk->berat);
-			echo form_hidden('price', $produk->harga - ($produk->diskon / 100 * $produk->harga));
-			echo form_hidden('picture', $produk->foto);
+			echo form_hidden('id_produk', $produk->id_produk);
 			echo form_hidden('qty', 1);
-			echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 			?>
 			<div id="product-carousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner border">
@@ -111,17 +105,7 @@
 			<p class="mb-4"><?= $produk->deskripsi ?></p>
 			<div class="d-flex align-items-center mb-4 pt-2">
 				<div class="input-group quantity mr-3" style="width: 130px;">
-					<!-- <div class="input-group-btn">
-						<button class="btn btn-primary btn-minus">
-							<i class="fa fa-minus"></i>
-						</button>
-					</div> -->
 					<input class="form-control" type="number" name="qty" value="1" min="1" max="<?= $produk->stok ?>">
-					<!-- <div class="input-group-btn">
-						<button class="btn btn-primary btn-plus">
-							<i class="fa fa-plus"></i>
-						</button>
-					</div> -->
 				</div>
 				<button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
 			</div>
@@ -165,7 +149,7 @@
 <!-- Products Start -->
 <div class="container-fluid py-5">
 	<div class="text-center mb-4">
-		<h2 class="section-title px-5"><span class="px-2">You May Also Like</span></h2>
+		<h2 class="section-title px-5"><span class="px-2">Mungkin Kamu Suka Produk Ini</span></h2>
 	</div>
 	<div class="row px-xl-5">
 		<div class="col">
@@ -173,6 +157,10 @@
 				<?php if (count($produklain) > 0) : ?>
 					<?php foreach ($produklain as $product) : ?>
 						<div class="card product-item border-0">
+							<?php echo form_open('belanja/add');
+							echo form_hidden('id_produk', $product->id_produk);
+							echo form_hidden('qty', 1);
+							?>
 							<div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
 								<img class="img-fluid w-100" src="<?= base_url('assets/produk/' . $product->foto) ?>" alt="">
 							</div>
@@ -191,6 +179,7 @@
 								<a href="<?= base_url('home/detail/' . $product->id_produk) ?>" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
 								<button type="submit" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
 							</div>
+							<?php echo form_close() ?>
 						</div>
 					<?php endforeach; ?>
 				<?php endif; ?>

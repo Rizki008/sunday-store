@@ -31,11 +31,12 @@ class Laporanfpdf extends CI_Controller
 		$no = 0;
 		foreach ($pembayaran as $data) {
 			$no++;
+			$total = number_format($data->total_bayar, 0);
 			$pdf->Cell(15, 6, $no, 1, 0, 'C');
 			$pdf->Cell(60, 6, $data->id_pesanan, 1, 0);
 			$pdf->Cell(50, 6, $data->tanggal_pesanan, 1, 0);
 			$pdf->Cell(70, 6, $data->nama_produk, 1, 0);
-			$pdf->Cell(30, 6, $data->total_bayar, 1, 1);
+			$pdf->Cell(30, 6, "Rp. $total", 1, 1);
 		}
 		$pdf->Output();
 	}
@@ -63,11 +64,12 @@ class Laporanfpdf extends CI_Controller
 		$no = 0;
 		foreach ($pembayaran as $data) {
 			$no++;
+			$total = number_format($data->total_bayar, 0);
 			$pdf->Cell(15, 6, $no, 1, 0, 'C');
 			$pdf->Cell(60, 6, $data->id_pesanan, 1, 0);
 			$pdf->Cell(50, 6, $data->tanggal_pesanan, 1, 0);
 			$pdf->Cell(70, 6, $data->nama_produk, 1, 0);
-			$pdf->Cell(30, 6, $data->total_bayar, 1, 1);
+			$pdf->Cell(30, 6, "Rp. $total", 1, 1);
 		}
 		$pdf->Output();
 	}
@@ -94,11 +96,12 @@ class Laporanfpdf extends CI_Controller
 		$no = 0;
 		foreach ($pembayaran as $data) {
 			$no++;
+			$total = number_format($data->total_bayar, 0);
 			$pdf->Cell(15, 6, $no, 1, 0, 'C');
 			$pdf->Cell(60, 6, $data->id_pesanan, 1, 0);
 			$pdf->Cell(50, 6, $data->tanggal_pesanan, 1, 0);
 			$pdf->Cell(70, 6, $data->nama_produk, 1, 0);
-			$pdf->Cell(30, 6, $data->total_bayar, 1, 1);
+			$pdf->Cell(30, 6, "Rp. $total", 1, 1);
 		}
 		$pdf->Output();
 	}

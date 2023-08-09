@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">List Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -87,10 +87,10 @@
 						<tr>
 							<td class="align-middle"><img src="<?= base_url('assets/produk/' . $value->foto) ?>" alt="" width="100px"></td>
 							<td class="align-middle"><?= $value->nama_produk ?></td>
-							<td class="align-middle"><?= number_format($value->harga), 0 ?></td>
+							<td class="align-middle">Rp. <?= number_format($value->harga, 0) ?></td>
 							<td class="align-middle"><?= $value->qty ?></td>
 							<td class="align-middle">
-								Rp. <?= number_format($value->harga * $value->qty), 0 ?>
+								Rp. <?= number_format($value->harga * $value->qty, 0) ?>
 							</td>
 						</tr>
 					<?php } ?>
@@ -99,15 +99,15 @@
 		</div>
 		<?php if ($value->status_order == 4 && $value->status_ulasan == 0) { ?>
 			<div class="col-md-6">
-				<h4 class="mb-4">Menambahkan ulasan</h4>
+				<h4 class="mb-4">Menambahkan Ulasan</h4>
 				<form action="<?= base_url('pesanan/review/' . $value->id_pesanan) ?>" method="POST">
 					<input type="hidden" name="id_ulasan" value="<?= $value->id_ulasan ?>">
 					<div class="form-group">
-						<label for="message">Your Review *</label>
+
 						<textarea id="message" cols="30" name="ulasan" rows="5" class="form-control"></textarea>
 					</div>
 					<div class="form-group mb-0">
-						<input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+						<input type="submit" value="Kirim Ulasan" class="btn btn-primary px-3">
 					</div>
 				</form>
 			</div>

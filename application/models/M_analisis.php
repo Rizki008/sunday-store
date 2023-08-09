@@ -16,7 +16,7 @@ class M_analisis extends CI_Model
 	}
 	public function laporan_penjualan()
 	{
-		return $this->db->query("SELECT * FROM `produk`")->result();
+		return $this->db->query("SELECT * FROM `produk` LEFT JOIN detail_pesanan ON detail_pesanan.id_produk=produk.id_produk GROUP BY detail_pesanan.id_produk")->result();
 	}
 }
 

@@ -5,24 +5,20 @@
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title"><?= $title ?></h4>
-<<<<<<< HEAD
+
 						
-=======
-						<p class="card-description">
-							<?= $title ?>
-						</p>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
+
 						<form class="forms-sample" action="<?= base_url('master/add_gambar/' . $produk->id_produk) ?>" method="POST" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="exampleInputName1">Keterangan</label>
 								<input type="text" name="keterangan" class="form-control" id="exampleInputName1" placeholder="Name">
 							</div>
 							<div class="form-group">
-<<<<<<< HEAD
+
 								<label>Upload File Gambar</label>
-=======
-								<label>File Upload Gambar</label>
->>>>>>> 5840f3f495f81f9e33751da1d1402c0e16c12357
+
+							
+
 								<input type="file" name="gambar" class="form-control" id="">
 							</div>
 							<button type="submit" class="btn btn-primary mr-2">Simpan</button>

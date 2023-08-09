@@ -101,21 +101,21 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Save</button>
+						<button type="submit" class="btn btn-primary">Simpan</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 
-	<!-- Modal edit -->
+	<!-- Edit User-->
 	<?php foreach ($user as $key => $value) { ?>
 		<div class="modal fade" id="edit<?= $value->id_user ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Tambah Kategori</h5>
+						<h5 class="modal-title" id="exampleModalLongTitle">Edit User</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -147,8 +147,8 @@
 
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Save</button>
+							<button type="submit" class="btn btn-primary">Simpan</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 						</div>
 					</form>
 				</div>
@@ -156,13 +156,13 @@
 		</div>
 	<?php } ?>
 
-	<!-- Modal Hapus-->
+	<!--  Hapus User-->
 	<?php foreach ($user as $key => $value) { ?>
 		<div class="modal fade" id="hapus<?= $value->id_user ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Delete User</h5>
+						<h5 class="modal-title" id="exampleModalLongTitle">Hapus User</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -172,8 +172,8 @@
 						<h3><?= $value->username ?> ???</h3>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<a href="<?= base_url('admin/delete/' . $value->id_user) ?>" class="btn btn-primary">Save</a>
+						<a href="<?= base_url('admin/delete/' . $value->id_user) ?>" class="btn btn-primary">Hapus</a>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					</div>
 				</div>
 			</div>

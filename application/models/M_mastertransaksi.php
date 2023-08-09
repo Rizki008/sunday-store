@@ -68,6 +68,58 @@ class m_mastertransaksi extends CI_Model
 		$this->db->insert('ulasan', $data);
 	}
 
+	// CEK KERAJANG 
+	public function cek_keranjang($id_produk)
+	{
+		$this->db->select('*');
+		$this->db->from('keranjang');
+		$this->db->where('id_produk', $id_produk);
+		$this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+		return $this->db->get()->row();
+	}
+	public function simpan_keranjang($data)
+	{
+		$this->db->insert('keranjang', $data);
+	}
+	public function hapus($data)
+	{
+		$this->db->where('id_keranjang', $data['id_keranjang']);
+		$this->db->delete('keranjang');
+	}
+	public function update_keranjang($id_keranjang, $data)
+	{
+		$this->db->where('id_keranjang', $id_keranjang);
+		$this->db->update('keranjang', $data);
+	}
+	public function selectCart()
+	{
+		if ($this->session->userdata('id_pelanggan') != '') {
+			$data['jml'] = $this->db->query("SELECT SUM(qty_cart) as jml FROM `keranjang` WHERE id_pelanggan=" . $this->session->userdata('id_pelanggan'))->row();
+			$data['cart'] = $this->db->query("SELECT * FROM `keranjang` JOIN produk ON keranjang.id_produk=produk.id_produk WHERE id_pelanggan=" . $this->session->userdata('id_pelanggan'))->result();
+			return $data;
+		}
+	}
+	public function keranjang()
+	{
+		$this->db->select('*');
+		$this->db->from('keranjang');
+		$this->db->join('produk', 'produk.id_produk = keranjang.id_produk', 'left');
+		$this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+		$this->db->order_by('id_keranjang', 'desc');
+		return $this->db->get()->result();
+	}
+	public function cekout()
+	{
+		$status = '1';
+		$this->db->select('*');
+		$this->db->from('keranjang');
+		$this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+		$this->db->where('keranjang.status=', $status);
+		$this->db->join('produk', 'keranjang.id_produk = produk.id_produk', 'left');
+		$this->db->order_by('id_keranjang', 'desc');
+		return $this->db->get()->result();
+	}
+
 	//PESANAN PELANGGAN VIEW
 	public function pesanan()
 	{

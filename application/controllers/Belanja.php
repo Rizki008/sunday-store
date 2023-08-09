@@ -14,57 +14,60 @@ class Belanja extends CI_Controller
 
 	public function index()
 	{
-		if (empty($this->cart->contents())) {
-			redirect('home');
-		}
+		// if (empty($this->cart->contents())) {
+		// 	redirect('home');
+		// }
 		$data = array(
 			'title' => 'Keranjang Belanja',
+			// 'keranjang' => $this->m_mastertransaksi->keranjang(),
+			'cart' => $this->m_mastertransaksi->selectCart(),
 			'isi' => 'frontend/cart/v_cart'
 		);
 		$this->load->view('frontend/v_wrapper', $data, FALSE);
 	}
 
+
+	// ADD KE KERANJANG 
 	public function add()
 	{
 		$this->login_pelanggan->proteksi_halaman();
-		$redirect_page = $this->input->post('redirect_page');
-		$data = array(
-			'id' => $this->input->post('id'),
-			'qty' => $this->input->post('qty'),
-			'price' => $this->input->post('price'),
-			'name' => $this->input->post('name'),
-			'picture' => $this->input->post('picture'),
-			'netto' => $this->input->post('netto'),
-			'stock' => $this->input->post('stock'),
-		);
-		$this->cart->insert($data);
-		redirect($redirect_page, 'refresh');
+		$cek = $this->input->post('id_produk');
+		$produk_cek = $this->m_mastertransaksi->cek_keranjang($cek);
+		if ($produk_cek) {
+			$data = array(
+				'qty_cart' => $produk_cek->qty_cart + 1
+			);
+			$this->m_mastertransaksi->update_keranjang($produk_cek->id_keranjang, $data);
+		} else {
+			$data = array(
+				'id_produk' => $this->input->post('id_produk'),
+				'id_pelanggan' => $this->session->userdata('id_pelanggan'),
+				'qty_cart' => $this->input->post('qty'),
+			);
+			$this->m_mastertransaksi->simpan_keranjang($data);
+		}
+		redirect('home');
 	}
 
-	public function delete($rowid)
+	public function update_cart()
 	{
-		$this->cart->remove($rowid);
+		$this->login_pelanggan->proteksi_halaman();
+		$cart = $this->m_mastertransaksi->selectCart();
+		$i = 1;
+		foreach ($cart['cart'] as $key => $value) {
+			$data = array(
+				'qty_cart' => $this->input->post('qty' . $i++)
+			);
+			$this->db->where('id_keranjang', $value->id_keranjang);
+			$this->db->update('keranjang', $data);
+		}
 		redirect('belanja');
 	}
-	public function deletecart($rowid)
-	{
-		$redirect_page = $this->input->post('redirect_page');
-		$this->cart->remove($rowid);
-		redirect($redirect_page, 'refresh');
-	}
 
-	public function update()
+	public function deleteCart($id_keranjang)
 	{
-		$i = 1;
-		foreach ($this->cart->contents() as $items) {
-			$data = array(
-				'rowid' => $items['rowid'],
-				'qty' => $this->input->post($i . '[qty]'),
-			);
-			$this->cart->update($data);
-			$i++;
-		}
-		$this->session->set_flashdata('pesan', 'Pesanan Berhasil Diupdate');
+		$this->login_pelanggan->proteksi_halaman();
+		$this->m_mastertransaksi->hapus($id_keranjang);
 		redirect('belanja');
 	}
 
@@ -84,8 +87,14 @@ class Belanja extends CI_Controller
 		$this->form_validation->set_rules('paket', 'Paket', 'required', array('required' => '%s Mohon Untuk Diisi !!!'));
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('frontend/cart/v_cekout');
+			$data = array(
+				'title' => 'Cekout',
+				'cart' => $this->m_mastertransaksi->selectCart(),
+				'isi' => 'frontend/cart/v_cekout'
+			);
+			$this->load->view('frontend/cart/v_cekout', $data, FALSE);
 		} else {
+			$cart = $this->m_mastertransaksi->selectCart();
 			//tabel transaksi
 			$data = array(
 				'id_pesanan' => $this->input->post('id_pesanan'),
@@ -120,23 +129,23 @@ class Belanja extends CI_Controller
 			// SIMPAN KE TABEL DETAIL PESANAN
 			$i = 1;
 			$j = 1;
-			foreach ($this->cart->contents() as $item) {
+			foreach ($cart['cart'] as $key => $item) {
 				$rinci = array(
 					'id_pesanan' => $this->input->post('id_pesanan'),
 					'id_detail' => $this->input->post('id_detail' . $j++),
-					'id_produk' => $item['id'],
-					'qty' => $this->input->post('qty' . $i++),
+					'id_produk' => $item->id_produk,
+					'qty' => $item->qty_cart,
 				);
 				$this->m_mastertransaksi->rinci($rinci);
 			}
 
 			// SIMPAN KE TABEL ULASAN
 			$j = 1;
-			foreach ($this->cart->contents() as $value) {
+			foreach ($cart['cart'] as $key => $value) {
 				$penilaian = array(
 					'id_detail' => $this->input->post('id_detail' . $j++),
 					'ulasan' => '0',
-					'id_produk' => $value['id'],
+					'id_produk' => $value->id_produk,
 					'tanggal_ulasan' => '0',
 					// 'rating' => '0',
 					'status_ulasan' => '0'
@@ -144,7 +153,12 @@ class Belanja extends CI_Controller
 				$this->m_mastertransaksi->penilaian($penilaian);
 			}
 
-			$this->cart->destroy();
+			foreach ($cart['cart'] as $key => $valuesa) {
+				$this->db->where('id_keranjang', $valuesa->id_keranjang);
+				$this->db->delete('keranjang');
+			}
+
+			// $this->cart->destroy();
 			redirect('pesanan');
 		}
 	}

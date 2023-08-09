@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -55,8 +55,8 @@
 						<img class="img-fluid" src="<?= base_url() ?>front/img/carousel-1.jpg" alt="Image">
 						<div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 							<div class="p-3" style="max-width: 700px;">
-								<h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-								<h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+								<h4 class="text-light text-uppercase font-weight-medium mb-3">10% Diskon Akhir Bulan</h4>
+								<h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable</h3>
 								<a href="<?= base_url('home/list_product') ?>" class="btn btn-light py-2 px-3">Shop Now</a>
 							</div>
 						</div>
@@ -65,8 +65,8 @@
 						<img class="img-fluid" src="<?= base_url() ?>front/img/carousel-2.jpg" alt="Image">
 						<div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 							<div class="p-3" style="max-width: 700px;">
-								<h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-								<h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+								<h4 class="text-light text-uppercase font-weight-medium mb-3">5% Diskon Pertama Order</h4>
+								<h3 class="display-4 text-white font-weight-semi-bold mb-4">Produk Beragam</h3>
 								<a href="<?= base_url('home/list_product') ?>" class="btn btn-light py-2 px-3">Shop Now</a>
 							</div>
 						</div>
@@ -87,54 +87,6 @@
 	</div>
 </div>
 <!-- Navbar End -->
-<!-- Featured Start -->
-<!-- <div class="container-fluid pt-5">
-	<div class="row px-xl-5 pb-3">
-		<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-			<div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-				<h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-				<h5 class="font-weight-semi-bold m-0">Quality Product</h5>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-			<div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-				<h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-				<h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-			<div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-				<h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-				<h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-			<div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-				<h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-				<h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- Featured End -->
-
-
-<!-- Categories Start -->
-<!-- <div class="container-fluid pt-5">
-	<div class="row px-xl-5 pb-3">
-		<?php foreach ($kategori as $key => $gories) { ?>
-			<div class="col-lg-4 col-md-6 pb-1">
-				<div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;"> -->
-<!-- <a href="" class="cat-img position-relative overflow-hidden mb-3">
-						<img class="img-fluid" src="img/cat-1.jpg" alt="">
-					</a> -->
-<!-- <h5 class="font-weight-semi-bold m-0"><?= $gories->nama_kategori ?></h5>
-				</div>
-			</div>
-		<?php } ?>
-	</div>
-</div> -->
-<!-- Categories End -->
 
 <!-- Products Start -->
 <div class="container-fluid pt-5">
@@ -146,14 +98,8 @@
 		<?php foreach ($produk as $value) { ?>
 			<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
 				<?php echo form_open('belanja/add');
-				echo form_hidden('id', $value->id_produk);
-				echo form_hidden('name', $value->nama_produk);
-				echo form_hidden('stock', $value->stok);
-				echo form_hidden('netto', $value->berat);
-				echo form_hidden('price', $value->harga - ($value->diskon / 100 * $value->harga));
-				echo form_hidden('picture', $value->foto);
+				echo form_hidden('id_produk', $value->id_produk);
 				echo form_hidden('qty', 1);
-				echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 				?>
 				<div class="card product-item border-0 mb-4">
 					<div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -188,20 +134,6 @@
 <!-- Subscribe Start -->
 <div class="container-fluid bg-secondary my-5">
 	<div class="row justify-content-md-center py-5 px-xl-5">
-		<!-- <div class="col-md-6 col-12 py-5">
-			<div class="text-center mb-2 pb-2">
-				<h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
-				<p>Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo labore labore.</p>
-			</div>
-			<form action="">
-				<div class="input-group">
-					<input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
-					<div class="input-group-append">
-						<button class="btn btn-primary px-4">Subscribe</button>
-					</div>
-				</div>
-			</form>
-		</div> -->
 	</div>
 </div>
 <!-- Subscribe End -->
@@ -216,14 +148,8 @@
 		<?php foreach ($diskon as $key => $disk) { ?>
 			<div class="col-lg-3 col-md-6 col-sm-12 pb-1">
 				<?php echo form_open('belanja/add');
-				echo form_hidden('id', $disk->id_produk);
-				echo form_hidden('name', $disk->nama_produk);
-				echo form_hidden('stock', $disk->stok);
-				echo form_hidden('netto', $disk->berat);
-				echo form_hidden('price', $disk->harga - ($disk->diskon / 100 * $disk->harga));
-				echo form_hidden('picture', $disk->foto);
+				echo form_hidden('id_produk', $disk->id_produk);
 				echo form_hidden('qty', 1);
-				echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
 				?>
 				<div class="card product-item border-0 mb-4">
 					<div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">

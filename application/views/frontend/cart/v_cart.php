@@ -3,7 +3,7 @@
 	<div class="row border-top px-xl-5">
 		<div class="col-lg-3 d-none d-lg-block">
 			<a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Categories</h6>
+				<h6 class="m-0">Kategori</h6>
 				<i class="fa fa-angle-down text-dark"></i>
 			</a>
 			<?php $kategori = $this->m_master_produk->kategori(); ?>
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav mr-auto py-0">
 						<a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">Shop</a>
+						<a href="<?= base_url('home/list_product') ?>" class="nav-item nav-link">List Produk</a>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pesanan</a>
 							<div class="dropdown-menu rounded-0 m-0">
@@ -72,42 +72,46 @@
 
 
 <!-- Cart Start -->
-<form action="<?= base_url('belanja/update') ?>" method="POST">
-	<div class="container-fluid pt-5">
+<div class="container-fluid pt-5">
+	<form action="<?= base_url('belanja/update_cart') ?>" method="POST">
 		<div class="row px-xl-5">
 			<div class="col-lg-8 table-responsive mb-5">
 				<table class="table table-bordered text-center mb-0">
 					<thead class="bg-secondary text-dark">
 						<tr>
-							<th>Products</th>
+							<th>Produk</th>
 							<th>Harga</th>
+							<th>Diskon</th>
 							<th>Quantity</th>
 							<th>Berat</th>
-							<th>SubTotal</th>
-							<th>Remove</th>
+							<th>Total</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody class="align-middle">
-						<?php $i = 1 ?>
-						<?php $total_berat = 0;
-						$total = 0;
-						foreach ($this->cart->contents() as $items) {
-							$produk = $this->m_master_produk->detailprod($items['id']);
-							$berat = $items['qty'] * $produk->berat;
-							$total_berat = $total_berat + $berat; ?>
+						<?php
+						$i = 1;
+						$tot = 0;
+						$total_berat = 0;
+						foreach ($cart['cart'] as $key => $value) {
+							$berat = $value->qty_cart * $value->berat;
+							$total_berat = $total_berat + $berat;
+							$tot += $value->qty_cart * ($value->harga - ($value->diskon / 100 * $value->harga));
+						?>
 							<tr>
-								<td class="align-middle"><img src="<?= base_url('assets/produk/' . $items['picture']) ?>" alt="" style="width: 50px;"> <?= $items['name'] ?></td>
-								<td class="align-middle">Rp. <?= number_format($items['price']) ?></td>
+								<td class="align-middle"><img src="<?= base_url('assets/produk/' . $value->foto) ?>" alt="" style="width: 50px;"> <?= $value->nama_produk ?></td>
+								<td class="align-middle">Rp. <?= number_format($value->harga, 0) ?></td>
+								<td class="align-middle">Rp. <?= $value->diskon ?>%</td>
 								<td class="align-middle">
 									<div class="input-group quantity mx-auto" style="width: 100px;">
-										<input class="form-control form-control-sm bg-secondary text-center" type="number" value="<?= $items['qty'] ?>" min="1" max="stok" name="<?= $i . '[qty]' ?>">
+										<input class="form-control form-control-sm bg-secondary text-center" type="number" value="<?= $value->qty_cart ?>" min="1" max="stok" name="qty<?= $i++ ?>">
 									</div>
 								</td>
-								<td class="align-middle"><?= $berat ?> Kg</td>
-								<td class="align-middle">Rp. <?= number_format($items['subtotal']) ?></td>
+								<td class="align-middle"><?= $value->qty_cart * $value->berat ?> Kg</td>
+								<td class="align-middle">Rp. <?= number_format($value->harga * $value->qty_cart - ($value->diskon / 100 * $value->harga), 0) ?></td>
 								<td class="align-middle">
 									<button type="submit" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button>
-									<a href="<?= base_url('belanja/delete/' . $items['rowid']) ?>" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>
+									<a href="<?= base_url('belanja/deleteCart/' . $value->id_keranjang) ?>" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>
 								</td>
 							</tr>
 							<?php $i++ ?>
@@ -119,28 +123,29 @@
 			<div class="col-lg-4">
 				<div class="card border-secondary mb-5">
 					<div class="card-header bg-secondary border-0">
-						<h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
+						<h4 class="font-weight-semi-bold m-0">Rincian Pesanan</h4>
 					</div>
 					<div class="card-body">
 						<div class="d-flex justify-content-between mb-3 pt-1">
-							<h6 class="font-weight-medium">Subtotal</h6>
-							<h6 class="font-weight-medium"><?= number_format($this->cart->total(), 0) ?></h6>
+							<h6 class="font-weight-medium">Total</h6>
+							<h6 class="font-weight-medium"><?= number_format($tot, 0) ?></h6>
 						</div>
 						<div class="d-flex justify-content-between">
 							<h6 class="font-weight-medium">Total Berat</h6>
-							<h6 class="font-weight-medium"><?= $total_berat ?> Gr</h6>
+							<h6 class="font-weight-medium"><?= $total_berat ?> Kg</h6>
 						</div>
 					</div>
 					<div class="card-footer border-secondary bg-transparent">
 						<div class="d-flex justify-content-between mt-2">
-							<h5 class="font-weight-bold">Total</h5>
-							<h5 class="font-weight-bold">Rp. <?= number_format($this->cart->total(), 0) ?></h5>
+							<h5 class="font-weight-bold">Subtotal</h5>
+							<h5 class="font-weight-bold">Rp. <?= number_format($tot, 0) ?></h5>
 						</div>
-						<a href="<?= base_url('belanja/cekout') ?>" class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</a>
+						<!-- <button class="btn btn-block btn-primary my-3 py-3" type="submit">Cekout Produk</button> -->
+						<a href="<?= base_url('belanja/cekout') ?>" class="btn btn-block btn-primary my-3 py-3">Proses Untuk Checkout</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</form>
+	</form>
+</div>
 <!-- Cart End -->

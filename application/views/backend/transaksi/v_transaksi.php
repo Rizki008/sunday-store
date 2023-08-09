@@ -52,9 +52,9 @@
 															<td><?= $no++ ?></td>
 															<td><?= $value->id_pesanan ?></td>
 															<td><?= $value->qty ?></td>
-															<td>Rp. <?= number_format($value->total_harga), 0 ?></td>
-															<td>Rp. <?= number_format($value->ongkir), 0 ?></td>
-															<td>Rp. <?= number_format($value->total_bayar), 0 ?></td>
+															<td>Rp. <?= number_format($value->total_harga, 0) ?></td>
+															<td>Rp. <?= number_format($value->ongkir, 0) ?></td>
+															<td>Rp. <?= number_format($value->total_bayar, 0) ?></td>
 															<td>
 																<?php if ($value->metode_bayar == 1) { ?>
 																	<span class="badge badge-danger">Belum Bayar</span>
@@ -99,9 +99,9 @@
 															<td><?= $no++ ?></td>
 															<td><?= $values->id_pesanan ?></td>
 															<td><?= $values->qty ?></td>
-															<td>Rp. <?= number_format($values->total_harga), 0 ?></td>
-															<td>Rp. <?= number_format($values->ongkir), 0 ?></td>
-															<td>Rp. <?= number_format($values->total_bayar), 0 ?></td>
+															<td>Rp. <?= number_format($values->total_harga, 0) ?></td>
+															<td>Rp. <?= number_format($values->ongkir, 0) ?></td>
+															<td>Rp. <?= number_format($values->total_bayar, 0) ?></td>
 															<td><span class="badge badge-warning">Sudah Bayar</span></td>
 															<td>
 																<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $values->id_pesanan ?>">
@@ -135,9 +135,9 @@
 															<td><?= $no++ ?></td>
 															<td><?= $valuesa->id_pesanan ?></td>
 															<td><?= $valuesa->qty ?></td>
-															<td>Rp. <?= number_format($valuesa->total_harga), 0 ?></td>
-															<td>Rp. <?= number_format($valuesa->ongkir), 0 ?></td>
-															<td>Rp. <?= number_format($valuesa->total_bayar), 0 ?></td>
+															<td>Rp. <?= number_format($valuesa->total_harga, 0) ?></td>
+															<td>Rp. <?= number_format($valuesa->ongkir, 0) ?></td>
+															<td>Rp. <?= number_format($valuesa->total_bayar, 0) ?></td>
 															<td><span class="badge badge-primary">Kirim</span></td>
 														</tr>
 													<?php } ?>
@@ -164,9 +164,9 @@
 															<td><?= $no++ ?></td>
 															<td><?= $valueda->id_pesanan ?></td>
 															<td><?= $valueda->qty ?></td>
-															<td>Rp. <?= number_format($valueda->total_harga), 0 ?></td>
-															<td>Rp. <?= number_format($valueda->ongkir), 0 ?></td>
-															<td>Rp. <?= number_format($valueda->total_bayar), 0 ?></td>
+															<td>Rp. <?= number_format($valueda->total_harga, 0) ?></td>
+															<td>Rp. <?= number_format($valueda->ongkir, 0) ?></td>
+															<td>Rp. <?= number_format($valueda->total_bayar, 0) ?></td>
 															<td><span class="badge badge-success">Selesai</span></td>
 														</tr>
 													<?php } ?>
