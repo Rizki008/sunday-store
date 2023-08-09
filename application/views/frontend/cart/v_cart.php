@@ -72,8 +72,8 @@
 
 
 <!-- Cart Start -->
-<div class="container-fluid pt-5">
-	<form action="<?= base_url('belanja/update_cart') ?>" method="POST">
+<form action="<?= base_url('belanja/update_cart') ?>" method="POST">
+	<div class="container-fluid pt-5">
 		<div class="row px-xl-5">
 			<div class="col-lg-8 table-responsive mb-5">
 				<table class="table table-bordered text-center mb-0">
@@ -114,11 +114,9 @@
 									<a href="<?= base_url('belanja/deleteCart/' . $value->id_keranjang) ?>" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>
 								</td>
 							</tr>
-							<?php $i++ ?>
 						<?php } ?>
 					</tbody>
 				</table>
-
 			</div>
 			<div class="col-lg-4">
 				<div class="card border-secondary mb-5">
@@ -146,6 +144,7 @@
 				</div>
 			</div>
 		</div>
-	</form>
-</div>
+	</div>
+
+</form>
 <!-- Cart End -->
